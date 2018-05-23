@@ -2,9 +2,15 @@
 GLOBAL
 ///////////////////////////////////////////////////////////////////////////// */
 
+body, html{
+  height: 100%;
+}
+
 body {
   background-image: url("{{ "/assets/img/index-bg" | relative_url }}");
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   height 100%;
 
 
