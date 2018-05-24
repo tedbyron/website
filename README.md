@@ -1,3 +1,14 @@
-# [tedbyron.github.io](https://tedbyron.github.io "Ted Byron's Site")
+<div style="text-align:center;">
 
-## Ted Byron's Site
+  <h1>
+    <a href="https://tedbyron.github.io"
+      title="Ted Byron's Site">
+        tedbyron.github.io
+    </a>
+  </h1>
+
+  <h2>
+    Ted Byron's Site
+  </h2>
+
+</div>
