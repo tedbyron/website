@@ -1,14 +1,10 @@
-<div align="center">
+<h1 align="center">
+  <a href="https://tedbyron.github.io"
+    title="Ted Byron | Home">
+      tedbyron.github.io
+  </a>
+</h1>
 
-  <h1>
-    <a href="https://tedbyron.github.io"
-      title="Ted Byron's Site">
-        tedbyron.github.io
-    </a>
-  </h1>
-
-  <h3>
-    Ted Byron's Site
-  </h3>
-
-</div>
+<h3 align="center">
+  My personal static site made using <a href="https://github.com/jekyll/jekyll" title="github.com/jekyll/jekyll">Jekyll</a>.
+</h3>
