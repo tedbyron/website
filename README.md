@@ -1,4 +1,4 @@
-<div style="text-align:center;">
+<div align="center">
 
   <h1>
     <a href="https://tedbyron.github.io"
@@ -7,8 +7,8 @@
     </a>
   </h1>
 
-  <h2>
+  <h3>
     Ted Byron's Site
-  </h2>
+  </h3>
 
 </div>
