@@ -1,2 +1,30 @@
-baseurl: /tedbyron.github.io
-theme: jekyll-theme-minimal
+# Build after changes to _config.yml!
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Ted Byron
+email: tbyron11@gmail.com
+description: >- # >- ignore newlines until "baseurl:"
+  Ted Byron's Site
+baseurl: "" # subpath
+url: "https://tedbyron.github.io" # hostname & protocol
+github_username: tedbyron
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+
+# excludes
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
