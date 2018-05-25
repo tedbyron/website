@@ -6,6 +6,8 @@ $fa-font-path: "{{ "assets/fonts/font-awesome" | absolute_url }}";
 @import "{{ site.theme }}";
 @import "font-awesome/fontawesome";
 @import "font-awesome/fa-brands";
+@import "font-awesome/fa-regular";
+@import "font-awesome/fa-solid";
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 $font-stack: 'Comfortaa', cursive;
