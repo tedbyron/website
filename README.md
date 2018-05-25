@@ -4,6 +4,6 @@
 
 <br>
 
-####Resources used:
+#### Resources used:
   - [Jekyll](https://github.com/jekyll/jekyll "github.com/jekyll/jekyll")
   - [Font Awesome](https://github.com/FortAwesome/Font-Awesome "github.com/FortAwesome/Font-Awesome")
