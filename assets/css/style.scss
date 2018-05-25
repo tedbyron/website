@@ -18,10 +18,10 @@ $color-text: #000;
 $color-amber: #FFA726;
 $color-green: #66BB6A;
 $color-teal: #26A69A;
-$color-blue: #42A5F5;
+$color-light-blue-a2: #448AFF;
 $color-indigo: #5C6BC0;
-$color-red: #ef5350;
-$color-purple: #AB47BC;
+$color-red-3: #e57373;
+$color-purple-a1: #EA80FC;
 
 // /////////////////////////////////////////////////////////////////////////////
 // GLOBAL
@@ -120,7 +120,7 @@ $color-purple: #AB47BC;
 
   &:link, &:active, &:visited {
     #div-insta {
-      text-shadow: -1px 2px $color-blue;
+      text-shadow: -1px 2px $color-light-blue-a2;
     }
   }
 
@@ -134,7 +134,7 @@ $color-purple: #AB47BC;
 
     #div-insta {
       text-shadow: -1px 2px $color-drop,
-                   -2px 4px $color-blue;
+                   -2px 4px $color-light-blue-a2;
     }
   }
 
@@ -148,7 +148,7 @@ $color-purple: #AB47BC;
 
   &:link, &:active, &:visited {
     #div-github {
-      text-shadow: -1px 2px $color-purple;
+      text-shadow: -1px 2px $color-purple-a1;
     }
   }
 
@@ -162,7 +162,7 @@ $color-purple: #AB47BC;
 
     #div-github {
       text-shadow: -1px 2px $color-drop,
-                   -2px 4px $color-purple;
+                   -2px 4px $color-purple-a1;
     }
   }
 
@@ -176,7 +176,7 @@ $color-purple: #AB47BC;
 
   &:link, &:active, &:visited {
     #div-email {
-      text-shadow: -1px 2px $color-red;
+      text-shadow: -1px 2px $color-red-3;
     }
   }
 
@@ -190,7 +190,7 @@ $color-purple: #AB47BC;
 
     #div-email {
       text-shadow: -1px 2px $color-drop,
-                   -2px 4px $color-red;
+                   -2px 4px $color-red-3;
     }
   }
 
