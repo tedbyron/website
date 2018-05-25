@@ -247,10 +247,10 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-feed (>= 0.6)
-  jekyll-theme-cayman (>= 0.1)
+  jekyll-gist
+  jekyll-theme-cayman
   tzinfo-data
-  wdm (~> 0.1.0)
+  wdm
 
 BUNDLED WITH
    1.16.2

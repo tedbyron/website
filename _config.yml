@@ -7,24 +7,34 @@
 # in the templates via {{ site.myvariable }}.
 title: Ted Byron
 email: tbyron11@gmail.com
-description: >- # >- ignore newlines until "baseurl:"
+description: >- # >- ignore newlines until unindented
   Ted Byron's Site
 baseurl: "" # subpath
 url: "https://tedbyron.github.io" # hostname & protocol
 github_username: tedbyron
 
 # Build settings
-markdown: kramdown
+repository: tedbyron/tedbyron.github.io
+github: [metadata]
+encoding: UTF-8
+future: true
+jailed: false
 theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+gfm_quirks: paragraph_end
+sass:
+    sass_dir: _scss
+sass:
+  style: compressed
 plugins:
-  - jekyll-feed
+  - jekyll-gist
 
 # excludes
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
