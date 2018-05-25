@@ -11,10 +11,14 @@ $fa-font-path: "{{ "assets/fonts/font-awesome" | absolute_url }}";
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 $font-stack: 'Comfortaa', cursive;
-$bg-color: #f5f5f5;
-$shadow-color: rgba(#000,.2);
-$layer-color: rgba(#f5f5f5,.75);
-$text-color: #000;
+$color-bg: #f5f5f5;
+$color-shadow: rgba(#000,.2);
+$color-drop: rgba(#f5f5f5,.75);
+$color-text: #000;
+$color-amber: #FFA726;
+$color-teal: #26A69A;
+$color-red: #ef5350;
+$color-purple: #AB47BC;
 
 // /////////////////////////////////////////////////////////////////////////////
 // GLOBAL
@@ -39,23 +43,23 @@ $text-color: #000;
 // /////////////////////////////////////////////////////////////////////////////
 
 #h1-wip {
-  background-color: $bg-color;
+  background-color: $color-bg;
   border-radius: 4px 0 0 4px;
   padding: .5em 1em;
   margin-left: .67em;
 
-  color: $text-color;
+  color: $color-text;
   font-family: $font-stack;
   font-size: 2em;
 
-  text-shadow: -2px 4px $layer-color,
-               -5px 10px #FFA726;
-  box-shadow: 0 5px 10px $shadow-color;
+  text-shadow: -2px 4px $color-drop,
+               -5px 10px $color-amber;
+  box-shadow: 0 5px 10px $color-shadow;
   transition: text-shadow 1s;
 
   &:hover {
-    text-shadow: -2px 4px $layer-color,
-                 -5px 10px #29B6F6;
+    text-shadow: -2px 4px $color-drop,
+                 -5px 10px $color-red;
     transition: text-shadow 1s;
   }
 
@@ -76,6 +80,11 @@ $text-color: #000;
   }
 }
 
+#div-github, #div-email {
+  display: inline;
+  transition: text-shadow .5s;
+}
+
 #a-github, #a-email {
   position: absolute;
   left: 0;
@@ -85,17 +94,17 @@ $text-color: #000;
   text-align: left;
   font-family: $font-stack;
 
-  box-shadow: 0 5px 10px $shadow-color;
+  box-shadow: 0 5px 10px $color-shadow;
   transition: bottom .3s, padding .3s;
 
   &:link, &:active, &:visited {
-    background-color: $bg-color;
-    color: $text-color;
+    background-color: $color-bg;
+    color: $color-text;
   }
 
   &:hover {
-    background-color: $bg-color;
-    color: $text-color;
+    background-color: $color-bg;
+    color: $color-text;
     text-decoration: none;
   }
 
@@ -116,17 +125,12 @@ $text-color: #000;
   }
 }
 
-#div-github, #div-email {
-  display: inline;
-  transition: text-shadow .5s;
-}
-
 #a-github {
   bottom: 7em;
 
   &:link, &:active, &:visited {
     #div-github {
-      text-shadow: -1px 2px #26A69A;
+      text-shadow: -1px 2px $color-teal;
     }
   }
 
@@ -135,8 +139,8 @@ $text-color: #000;
     bottom: 6.95em;
 
     #div-github {
-      text-shadow: -1px 2px $layer-color,
-                   -2px 4px #26A69A;
+      text-shadow: -1px 2px $color-drop,
+                   -2px 4px $color-teal;
     }
   }
 }
@@ -146,7 +150,7 @@ $text-color: #000;
 
   &:link, &:active, &:visited {
     #div-email {
-      text-shadow: -1px 2px #AB47BC;
+      text-shadow: -1px 2px $color-purple;
     }
   }
 
@@ -155,8 +159,8 @@ $text-color: #000;
     bottom: 2.95em;
 
     #div-email {
-      text-shadow: -1px 2px $layer-color,
-                   -2px 4px #AB47BC;
+      text-shadow: -1px 2px $color-drop,
+                   -2px 4px $color-purple;
     }
   }
 }
