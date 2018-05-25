@@ -14,6 +14,7 @@ url: "https://tedbyron.github.io" # hostname & protocol
 github_username: tedbyron
 
 # Build settings
+google_analytics: UA-119879468-1
 repository: tedbyron/tedbyron.github.io
 github: [metadata]
 encoding: UTF-8

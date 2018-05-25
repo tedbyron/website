@@ -50,10 +50,8 @@ $color-purple-a1: #EA80FC;
   border-radius: 4px 0 0 4px;
   padding: .5em 1em;
   margin-left: .67em;
-
   color: $color-text;
   font-family: $font-stack;
-
   text-shadow: -2px 4px $color-drop,
                -5px 10px $color-amber;
   box-shadow: 0 5px 10px $color-shadow;
@@ -84,10 +82,8 @@ $color-purple-a1: #EA80FC;
   left: 0;
   border-radius: 0 4px 4px 0;
   padding: .5em 1em;
-
   text-align: left;
   font-family: $font-stack;
-
   box-shadow: 0 5px 10px $color-shadow;
   transition: bottom .3s, padding .3s;
 
