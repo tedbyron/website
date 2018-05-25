@@ -82,11 +82,11 @@ $text-color: #000;
   border-radius: 0 4px 4px 0;
   padding: .5em 1em;
 
-  text-align: right;
+  text-align: left;
   font-family: $font-stack;
 
   box-shadow: 0 5px 10px $shadow-color;
-  transition: text-shadow .3s, bottom .4s, padding .4s;
+  transition: bottom .3s, padding .3s;
 
   &:link, &:active, &:visited {
     background-color: $bg-color;
@@ -116,18 +116,28 @@ $text-color: #000;
   }
 }
 
+#div-github, #div-email {
+  display: inline;
+  transition: text-shadow .5s;
+}
+
 #a-github {
   bottom: 7em;
 
   &:link, &:active, &:visited {
-    text-shadow: -1px 2px #26A69A;
+    #div-github {
+      text-shadow: -1px 2px #26A69A;
+    }
   }
 
   &:hover {
     padding: .55em 1.05em;
     bottom: 6.95em;
-    text-shadow: -1px 2px $layer-color,
-                 -2px 4px #26A69A;
+
+    #div-github {
+      text-shadow: -1px 2px $layer-color,
+                   -2px 4px #26A69A;
+    }
   }
 }
 
@@ -135,14 +145,19 @@ $text-color: #000;
   bottom: 3em;
 
   &:link, &:active, &:visited {
-    text-shadow: -1px 2px #AB47BC;
+    #div-email {
+      text-shadow: -1px 2px #AB47BC;
+    }
   }
 
   &:hover {
     padding: .55em 1.05em;
     bottom: 2.95em;
-    text-shadow: -1px 2px $layer-color,
-                 -2px 4px #AB47BC;
+
+    #div-email {
+      text-shadow: -1px 2px $layer-color,
+                   -2px 4px #AB47BC;
+    }
   }
 }
 
