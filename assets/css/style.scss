@@ -106,11 +106,11 @@ $color-purple-a1: #EA80FC;
     font-size: 1.25em;
   }
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 350px) {
     font-size: 1.5em;
   }
 
-  @media screen and (min-width: 455px) and (min-height: 550px) {
+  @media screen and (min-width: 450px) and (min-height: 550px) {
     font-size: 2em;
   }
 }
