@@ -6,11 +6,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Ted Byron
-email: tbyron11@gmail.com
+email: ted@tedbyron.com
 description: >- # >- ignore newlines until unindented
   Ted Byron's Site
 baseurl: "" # subpath
-url: "https://tedbyron.github.io" # hostname & protocol
+url: "https://tedbyron.com" # hostname & protocol
 github_username: tedbyron
 
 # Build settings
