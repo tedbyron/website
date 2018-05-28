@@ -1,13 +1,7 @@
 ---
 ---
 
-$fa-font-path: "{{ "assets/fonts/font-awesome" | absolute_url }}";
-
 @import "{{ site.theme }}";
-@import "font-awesome/fontawesome";
-@import "font-awesome/fa-brands";
-@import "font-awesome/fa-regular";
-@import "font-awesome/fa-solid";
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 
 $font-stack: 'Fugaz One', cursive;
@@ -45,6 +39,11 @@ $color-purple-a1: #EA80FC;
 // BODY
 // /////////////////////////////////////////////////////////////////////////////
 
+body {
+  min-height: 350px;
+  overflow: auto;
+}
+
 #h1-wip {
   background-color: $color-bg;
   border-radius: 4px 0 0 4px;
@@ -78,8 +77,6 @@ $color-purple-a1: #EA80FC;
 }
 
 #a-github, #a-email, #a-insta {
-  position: absolute;
-  left: 0;
   border-radius: 0 4px 4px 0;
   padding: .5em 1em;
   text-align: left;
@@ -104,9 +101,11 @@ $color-purple-a1: #EA80FC;
 
   @media screen and (min-width: 350px) {
     font-size: 1.5em;
+    position: absolute;
+    left: 0;
   }
 
-  @media screen and (min-width: 450px) and (min-height: 550px) {
+  @media screen and (min-width: 480px) and (min-height: 680px) {
     font-size: 2em;
   }
 }
@@ -124,7 +123,7 @@ $color-purple-a1: #EA80FC;
     padding: .55em 1.05em;
     bottom: 5.7em;
 
-    @media screen and (min-height: 400px) {
+    @media screen and (min-height: 480px) {
       bottom: 9.95em;
     }
 
@@ -134,7 +133,7 @@ $color-purple-a1: #EA80FC;
     }
   }
 
-  @media screen and (min-height: 400px) {
+  @media screen and (min-height: 480px) {
     bottom: 10em;
   }
 }
@@ -152,7 +151,7 @@ $color-purple-a1: #EA80FC;
     padding: .55em 1.05em;
     bottom: 2.95em;
 
-    @media screen and (min-height: 400px) {
+    @media screen and (min-height: 480px) {
       bottom: 6.7em;
     }
 
@@ -162,7 +161,7 @@ $color-purple-a1: #EA80FC;
     }
   }
 
-  @media screen and (min-height: 400px) {
+  @media screen and (min-height: 480px) {
     bottom: 6.75em;
   }
 }
@@ -180,7 +179,7 @@ $color-purple-a1: #EA80FC;
     padding: .55em 1.05em;
     bottom: .2em;
 
-    @media screen and (min-height: 400px) {
+    @media screen and (min-height: 480px) {
       bottom: 3.45em;
     }
 
@@ -190,7 +189,7 @@ $color-purple-a1: #EA80FC;
     }
   }
 
-  @media screen and (min-height: 400px) {
+  @media screen and (min-height: 480px) {
     bottom: 3.5em;
   }
 }
