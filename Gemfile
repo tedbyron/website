@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 #gem "jekyll", "~> 3.7.3"
 
-# theme
+# theme base
 gem "jekyll-theme-cayman"
 
 # use github-pages gem
