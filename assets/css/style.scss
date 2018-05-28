@@ -2,13 +2,14 @@
 ---
 
 @import "{{ site.theme }}";
-@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
-$font-stack: 'Fugaz One', cursive;
-$color-bg: #f5f5f5;
-$color-shadow: rgba(#000,.2);
-$color-drop: rgba(#f5f5f5,.75);
+$font-title: 'Comfortaa', cursive;
+$font-content: 'Comfortaa', cursive;
 $color-text: #000;
+$color-text-bg: #f5f5f5;
+$color-text-drop: rgba(#f5f5f5,.75);
+$color-shadow: rgba(#000,.2);
 $color-amber: #FFA726;
 $color-green: #66BB6A;
 $color-teal: #26A69A;
@@ -17,17 +18,19 @@ $color-indigo: #5C6BC0;
 $color-red-3: #e57373;
 $color-purple-a1: #EA80FC;
 
+@mixin card($height) {
+  background-color: $color-text-bg;
+  color: $color-text;
+  box-shadow: 0 $height $height*1.5 $color-text-shadow;
+}
+
 // /////////////////////////////////////////////////////////////////////////////
 // GLOBAL
 // /////////////////////////////////////////////////////////////////////////////
 
-// homepage background image
-#html-index {
-  background: url({{ "assets/images/bg.jpg" | absolute_url }}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+// TODO: background
+html {
+  background-color: #263238;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -44,154 +47,91 @@ body {
   overflow: auto;
 }
 
+.fas, .far, .fab {
+  vertical-align: middle;
+}
+
 #h1-wip {
-  background-color: $color-bg;
+  @include card(4px);
   border-radius: 4px 0 0 4px;
   padding: .5em 1em;
   margin-left: .67em;
-  color: $color-text;
-  font-family: $font-stack;
-  text-shadow: -2px 4px $color-drop,
+  font-family: $font-title;
+  font-size: 4em;
+  text-shadow: -2px 4px $color-text-drop,
                -5px 10px $color-amber;
-  box-shadow: 0 5px 10px $color-shadow;
   transition: text-shadow 1s;
 
   &:hover {
-    text-shadow: -2px 4px $color-drop,
+    text-shadow: -2px 4px $color-text-drop,
                  -5px 10px $color-indigo;
     transition: text-shadow 1s;
   }
+}
 
-  @media screen and (min-width: 590px) and (min-height: 440px){
-    font-size: 3.00em;
+#a-insta, #a-github, #a-email {
+  @include card(4px);
+  position: absolute;
+  left: 0;
+  border-radius: 0 4px 4px 0;
+  padding: .5em 1em;
+  text-align: left;
+  font-family: $font-content;
+  font-size: 2em;
+  transition: bottom .3s, padding .3s;
+
+  &:link, &:active, &:visited {
   }
 
-  @media screen and (min-width: 940px) and (min-height: 600px) {
-    font-size: 4em;
+  &:hover {
+    @include card(6px);
+    text-decoration: none;
+    padding: .55em 1.05em .55em 1em;
+  }
+}
+
+#a-insta {
+  bottom: 10em;
+
+  &:hover {
+    bottom: 9.95em;
+
+    #div-insta {
+      text-shadow: -1px 2px $color-text-drop,
+                   -2px 4px $color-light-blue-a2;
+    }
+  }
+}
+
+#a-github {
+  bottom: 6.75em;
+
+  &:hover {
+    bottom: 6.7em;
+
+    #div-github {
+      text-shadow: -1px 2px $color-text-drop,
+                   -2px 4px $color-red-3;
+    }
+  }
+}
+
+#a-email {
+  bottom: 3.5em;
+
+  &:hover {
+    bottom: 3.45em;
+
+    #div-email {
+      text-shadow: -1px 2px $color-text-drop,
+                   -2px 4px $color-green;
+    }
   }
 }
 
 #div-github, #div-email, #div-insta {
   display: inline;
-  transition: text-shadow .5s;
-}
-
-#a-github, #a-email, #a-insta {
-  border-radius: 0 4px 4px 0;
-  padding: .5em 1em;
-  text-align: left;
-  font-family: $font-stack;
-  box-shadow: 0 5px 10px $color-shadow;
-  transition: bottom .3s, padding .3s;
-
-  &:link, &:active, &:visited {
-    background-color: $color-bg;
-    color: $color-text;
-  }
-
-  &:hover {
-    background-color: $color-bg;
-    color: $color-text;
-    text-decoration: none;
-  }
-
-  @media screen and (min-width: 0px) {
-    font-size: 1.25em;
-  }
-
-  @media screen and (min-width: 350px) {
-    font-size: 1.5em;
-    position: absolute;
-    left: 0;
-  }
-
-  @media screen and (min-width: 480px) and (min-height: 680px) {
-    font-size: 2em;
-  }
-}
-
-#a-insta {
-  bottom: 5.75em;
-
-  &:link, &:active, &:visited {
-    #div-insta {
-      text-shadow: -1px 2px $color-light-blue-a2;
-    }
-  }
-
-  &:hover {
-    padding: .55em 1.05em;
-    bottom: 5.7em;
-
-    @media screen and (min-height: 480px) {
-      bottom: 9.95em;
-    }
-
-    #div-insta {
-      text-shadow: -1px 2px $color-drop,
-                   -2px 4px $color-light-blue-a2;
-    }
-  }
-
-  @media screen and (min-height: 480px) {
-    bottom: 10em;
-  }
-}
-
-#a-github {
-  bottom: 3em;
-
-  &:link, &:active, &:visited {
-    #div-github {
-      text-shadow: -1px 2px $color-purple-a1;
-    }
-  }
-
-  &:hover {
-    padding: .55em 1.05em;
-    bottom: 2.95em;
-
-    @media screen and (min-height: 480px) {
-      bottom: 6.7em;
-    }
-
-    #div-github {
-      text-shadow: -1px 2px $color-drop,
-                   -2px 4px $color-purple-a1;
-    }
-  }
-
-  @media screen and (min-height: 480px) {
-    bottom: 6.75em;
-  }
-}
-
-#a-email {
-  bottom: .25em;
-
-  &:link, &:active, &:visited {
-    #div-email {
-      text-shadow: -1px 2px $color-red-3;
-    }
-  }
-
-  &:hover {
-    padding: .55em 1.05em;
-    bottom: .2em;
-
-    @media screen and (min-height: 480px) {
-      bottom: 3.45em;
-    }
-
-    #div-email {
-      text-shadow: -1px 2px $color-drop,
-                   -2px 4px $color-red-3;
-    }
-  }
-
-  @media screen and (min-height: 480px) {
-    bottom: 3.5em;
-  }
+  transition: text-shadow .2s;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
