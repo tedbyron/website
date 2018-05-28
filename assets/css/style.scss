@@ -21,7 +21,7 @@ $color-purple-a1: #EA80FC;
 @mixin card($height) {
   background-color: $color-text-bg;
   color: $color-text;
-  box-shadow: 0 $height $height*1.5 $color-text-shadow;
+  box-shadow: 0 $height $height*1.5 $color-shadow;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
