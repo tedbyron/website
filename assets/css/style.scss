@@ -30,7 +30,7 @@ $color-purple-a1: #EA80FC;
 
 // TODO: background
 html {
-  background-color: #263238;
+  background-color: $color-amber;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -81,12 +81,19 @@ body {
   transition: bottom .3s, padding .3s;
 
   &:link, &:active, &:visited {
+      #div-insta, #div-github, #div-email {
+        transition: color 2s;
+      }
   }
 
   &:hover {
-    @include card(6px);
+    @include card(8px);
     text-decoration: none;
-    padding: .55em 1.05em .55em 1em;
+    padding: .55em 1.05em;
+
+    #div-insta, #div-github, #div-email {
+      transition: color .5s;
+    }
   }
 }
 
@@ -97,8 +104,7 @@ body {
     bottom: 9.95em;
 
     #div-insta {
-      text-shadow: -1px 2px $color-text-drop,
-                   -2px 4px $color-light-blue-a2;
+      color: $color-light-blue-a2;
     }
   }
 }
@@ -110,8 +116,7 @@ body {
     bottom: 6.7em;
 
     #div-github {
-      text-shadow: -1px 2px $color-text-drop,
-                   -2px 4px $color-red-3;
+      color: $color-red-3;
     }
   }
 }
@@ -123,8 +128,7 @@ body {
     bottom: 3.45em;
 
     #div-email {
-      text-shadow: -1px 2px $color-text-drop,
-                   -2px 4px $color-green;
+      color: $color-green;
     }
   }
 }
