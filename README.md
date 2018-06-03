@@ -1,3 +1,5 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/tedbyron/tedbyron.github.io.svg?columns=all)](https://waffle.io/tedbyron/tedbyron.github.io)
+
 # [tedbyron.com](https://tedbyron.com "tedbyron.com")
 
 >   My personal static site
