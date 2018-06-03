@@ -1,6 +1,6 @@
 # [tedbyron.com](https://tedbyron.com "tedbyron.com")
 
-### My personal static site.
+### My personal static site
 
 #### Resources used:
   - [Jekyll](https://github.com/jekyll/jekyll "github.com/jekyll/jekyll")
