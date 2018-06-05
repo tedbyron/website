@@ -1,0 +1,110 @@
+////////////////////////////////////////
+// HTML->BODY->MAIN SCSS PARTIAL
+////////////////////////////////////////
+
+.h1-constr-wip {
+  @include card;
+
+  border-radius: 4px 0 0 4px;
+  font-family: $font-constr-title;
+  font-size: 4em;
+  margin-left: .67em;
+  padding: .5em 1em;
+  text-shadow: -1px 1px alpha($color-text-bg, .5), -2px 2px alpha($color-text-bg, .25), -3px 3px $color-amber;
+  transition: text-shadow .5s;
+
+  &:hover {
+    text-shadow: -1px 1px alpha($color-text-bg, .5),
+    -2px 2px alpha($color-text-bg, .25),
+    -3px 3px $color-indigo;
+    transition: text-shadow .5s;
+  }
+}
+
+.a-constr-insta,
+.a-constr-github,
+.a-constr-email {
+  @include card;
+
+  border-radius: 0 4px 4px 0;
+  font-family: $font-constr-content;
+  font-size: 2em;
+  left: 0;
+  padding: .5em 1em;
+  position: absolute;
+  text-align: left;
+  transition: bottom .3s, padding .3s;
+
+  &:link,
+  &:active,
+  &:visited {
+    .div-constr-insta,
+    .div-constr-github,
+    .div-constr-email {
+      transition: color .6s;
+    }
+  }
+
+  &:hover {
+    @include card(8px);
+
+    padding: .55em 1.05em;
+    text-decoration: none;
+
+    .div-constr-insta,
+    .div-constr-github,
+    .div-constr-email {
+      transition: color .3s;
+    }
+  }
+}
+
+.a-constr-insta {
+  bottom: 10em;
+
+  &:hover {
+    bottom: 9.95em;
+
+    .div-constr-insta {
+      color: $color-light-blue-a2;
+    }
+  }
+}
+
+.a-constr-github {
+  bottom: 6.75em;
+
+  &:hover {
+    bottom: 6.7em;
+
+    .div-constr-github {
+      color: $color-red-3;
+    }
+  }
+}
+
+.a-constr-email {
+  bottom: 3.5em;
+
+  &:hover {
+    bottom: 3.45em;
+
+    .div-constr-email:not(span) {
+      color: $color-green;
+    }
+  }
+}
+
+.div-constr-github,
+.div-constr-email,
+.div-constr-insta {
+  display: inline;
+  transition: text-shadow .2s;
+}
+
+.fas,
+.far,
+.fab {
+  margin-right: .5em;
+  vertical-align: middle;
+}

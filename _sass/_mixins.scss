@@ -1,0 +1,10 @@
+////////////////////////////////////////
+// SCSS MIXINS PARTIAL
+////////////////////////////////////////
+
+// card with box-shadow
+@mixin card($height: 4px) {
+  background-color: $color-text-bg;
+  box-shadow: 0 $height $height*1.5 $color-card-shadow;
+  color: $color-black;
+}
