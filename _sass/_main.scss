@@ -10,12 +10,14 @@
   font-size: 4em;
   margin-left: .67em;
   padding: .5em 1em;
-  text-shadow: -1px 1px alpha($color-text-bg, .5), -2px 2px alpha($color-text-bg, .25), -3px 3px $color-amber;
+  text-shadow: -1px 1px rgba($color-text-bg, .5),
+  -2px 2px rgba($color-text-bg, .25),
+  -3px 3px $color-amber;
   transition: text-shadow .5s;
 
   &:hover {
-    text-shadow: -1px 1px alpha($color-text-bg, .5),
-    -2px 2px alpha($color-text-bg, .25),
+    text-shadow: -1px 1px rgba($color-text-bg, .5),
+    -2px 2px rgba($color-text-bg, .25),
     -3px 3px $color-indigo;
     transition: text-shadow .5s;
   }
