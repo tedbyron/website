@@ -248,7 +248,8 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-gist
-  jekyll-theme-cayman
+  jekyll-seo-tag
+  jekyll-theme-primer
   tzinfo-data
   wdm
 

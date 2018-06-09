@@ -1,37 +1,32 @@
-# Build after changes to _config.yml!
+# rebuild after changing this file!
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# site variables
 title: Ted Byron
 email: ted@tedbyron.com
-description: >- # >- ignore newlines until unindented
-  Ted Byron's Site
-baseurl: "" # subpath
-url: "https://tedbyron.com" # hostname & protocol
+description: >-
+  Ted Byron's Website
+url: "https://tedbyron.com"
 github_username: tedbyron
 
-# Build settings
-google_analytics: UA-119879468-1
+# build options
 repository: tedbyron/tedbyron.github.io
 github: [metadata]
 encoding: UTF-8
 future: true
 jailed: false
-theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
 gfm_quirks: paragraph_end
 sass:
-    sass_dir: _scss
+  sass_dir: _scss
 sass:
   style: compressed
+
 plugins:
   - jekyll-gist
+  - jekyll-seo-tag
 
 # excludes
 exclude:

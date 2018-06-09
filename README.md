@@ -2,7 +2,7 @@
 
 # [tedbyron.com](https://tedbyron.com "tedbyron.com")
 
->   My personal site
+>   My personal website
 
 #### Resources used:
 -   [Jekyll](https://github.com/jekyll/jekyll "github.com/jekyll/jekyll")
