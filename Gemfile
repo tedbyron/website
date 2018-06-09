@@ -1,9 +1,6 @@
 source "https://rubygems.org"
 
-#gem "jekyll", "~> 3.7.3"
-
-# theme base
-gem "jekyll-theme-cayman"
+# gem "jekyll", "~> 3.7.3"
 
 # use github-pages gem
 gem "github-pages", group: :jekyll_plugins
@@ -17,4 +14,5 @@ gem "wdm" if Gem.win_platform?
 # plugins
 group :jekyll_plugins do
   gem "jekyll-gist"
+  gem "jekyll-seo-tag"
 end

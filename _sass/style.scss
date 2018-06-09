@@ -1,12 +1,51 @@
 ////////////////////////////////////////
-// HTML->BODY->MAIN SCSS PARTIAL
+// default scss partial
 ////////////////////////////////////////
 
-.h1-constr-wip {
+@import 'normalize';
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  // TODO: link color
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+////////////////////////////////////////
+// constr
+////////////////////////////////////////
+
+.html-constr {
+  background-color: $color-amber;
+  height: 100%;
+}
+
+.body-constr {
+  color: $color-black;
+  font-family: $font-constr;
+}
+
+.h1-constr-uc {
   @include card;
 
   border-radius: 4px 0 0 4px;
-  font-family: $font-constr-title;
   font-size: 4em;
   margin-left: .67em;
   padding: .5em 1em;
@@ -29,13 +68,12 @@
   @include card;
 
   border-radius: 0 4px 4px 0;
-  font-family: $font-constr-content;
   font-size: 2em;
   left: 0;
   padding: .5em 1em;
   position: absolute;
   text-align: left;
-  transition: bottom .3s, padding .3s;
+  transition: bottom .2s, padding .2s;
 
   &:link,
   &:active,
@@ -43,7 +81,7 @@
     .div-constr-insta,
     .div-constr-github,
     .div-constr-email {
-      transition: color .6s;
+      transition: color .4s;
     }
   }
 
@@ -56,7 +94,7 @@
     .div-constr-insta,
     .div-constr-github,
     .div-constr-email {
-      transition: color .3s;
+      transition: color .2s;
     }
   }
 }
