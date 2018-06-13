@@ -249,7 +249,6 @@ DEPENDENCIES
   github-pages
   jekyll-gist
   jekyll-seo-tag
-  jekyll-theme-primer
   tzinfo-data
   wdm
 
