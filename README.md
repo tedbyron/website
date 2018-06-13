@@ -6,12 +6,12 @@
 
 ## Resources used
 
--   [Jekyll](https://github.com/jekyll/jekyll "github.com/jekyll/jekyll")
--   [Liquid Template Language](https://help.shopify.com/themes/liquid)
--   [Google Fonts](https://fonts.google.com/ "fonts.google.com")
+-   [Jekyll](https://github.com/jekyll/jekyll)
+-   [Liquid Template Language](https://github.com/Shopify/liquid)
+-   [Google Fonts](https://fonts.google.com/)
     -   [Comfortaa](https://fonts.google.com/specimen/Comfortaa)
--   [Font Awesome](https://github.com/FortAwesome/Font-Awesome "github.com/FortAwesome/Font-Awesome")
--   [Cloudflare DNS & SSL](https://www.cloudflare.com/ "cloudflare.com")
+-   [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
+-   [Cloudflare DNS & SSL](https://www.cloudflare.com/)
 
 ## Instructions
 
