@@ -5,8 +5,12 @@ title: Ted Byron
 email: ted@tedbyron.com
 description: >-
   Ted Byron's Website
-url: "https://tedbyron.com"
+url: https://tedbyron.com
+
+author: tedbyron
 github_username: tedbyron
+github_url: https://github.com/tedbyron
+gitlab_url: https://gitlab.com/tedbyron
 
 # build options
 repository: tedbyron/tedbyron.github.io
@@ -28,6 +32,7 @@ theme: jekyll-theme-primer
 plugins:
   - jekyll-gist
   - jekyll-seo-tag
+  - jekyll-tidy
 
 # excludes
 exclude:

@@ -1,3 +1,37 @@
-<header>
-  
+<header class="site-header py-3 px-3">
+  <nav class="navbar">
+    <div class="container-lg d-flex flex-items-center">
+        <a href="{{ site.url }}"<i class="fas fa-code-branch navbar-logo ml-sm-3"></i></a>
+        <ul>
+          {% for item in site.data.header %}
+            {% if page.url contains item.slug %}
+              {% assign class = "navbar-item active ml-4" %}
+            {% else %}
+              {% assign class = "navbar-item ml-4" %}
+            {% endif %}
+            {% if item.subitems %}
+              <li class="navbar-dropdown{% if class %}{{ " "|append: class }}{% endif %}">
+                <a href="{{ site.url }}{{ item.slug }}">{{ item.title }}</a>
+                <ul class="dropdown p-0">
+                  {% for subitem in item.subitems %}
+                    <li>
+                      <a class="dropdown-item" href="{{ site.url }}{{ item.slug }}{{ subitem.slug }}">{{ subitem.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="{{ class }}">
+                <a href="{{ site.url }}{{ item.slug }}">{{ item.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      <div class="navbar-links mr-3">
+        <a class="navbar-logo ml-4" href="{{ site.github_url }}" alt="Ted's GitHub Profile"><i class="fab fa-github"></i></a>
+        <a class="navbar-logo ml-4" href="{{ site.gitlab_url }}" alt="Ted's GitLab Profile"><i class="fab fa-gitlab"></i></a>
+        <a class="navbar-logo ml-4" href="mailto:ted@tedbyron.com" alt="Email ted@tedbyron.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </nav>
 </header>

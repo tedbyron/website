@@ -1,0 +1,87 @@
+////////////////////////////////////////
+// constr scss partial
+////////////////////////////////////////
+
+.div-constr {
+  @include breakpoint(md) {
+    font-size: .75em;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 1em;
+  }
+
+  font-family: $font-constr;
+  font-size: .5em;
+  overflow: hidden;
+}
+
+.div-constr-uc {
+  @include panel;
+}
+
+.h1-constr-uc {
+  font-size: 4em;
+  left: .5em;
+  padding: .5em 1em;
+  right: 0;
+
+  transition: text-shadow .5s;
+
+  &:hover {
+    transition: text-shadow .5s;
+  }
+}
+
+.a-constr-github,
+.a-constr-gitlab,
+.a-constr-email {
+  @include panel;
+
+  font-size: 2em;
+  padding: .5em 1em;
+
+  .div-constr-github,
+  .div-constr-gitlab,
+  .div-constr-email {
+    display: inline;
+  }
+
+  .fas,
+  .far,
+  .fab {
+    vertical-align: middle;
+  }
+
+  &:link,
+  &:active,
+  &:visited {
+    .div-constr-github,
+    .giv-constr-gitlab,
+    .div-constr-email {
+      transition: color .4s;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .div-constr-github,
+    .div-constr-gitlab,
+    .div-constr-email {
+      transition: color .2s;
+    }
+
+    .div-constr-github {
+      color: lighten($color-indigo, 20%);
+    }
+
+    .div-constr-gitlab {
+      color: lighten($color-red, 20%);
+    }
+
+    .div-constr-email {
+      color: lighten($color-light-green, 20%);
+    }
+  }
+}

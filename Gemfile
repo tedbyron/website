@@ -15,4 +15,5 @@ gem "wdm" if Gem.win_platform?
 group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-seo-tag"
+  gem "jekyll-tidy"
 end

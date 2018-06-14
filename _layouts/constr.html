@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="html-constr">
+<html lang="{{ site.lang | default: "en-US" }}" dir="ltr">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8C9eff">
-  <meta name="msapplication-TileColor" content="#fff">
-  <title>{{ page.title|default: site.title }}</title>
-  {{ seo }}
-</head>
+{% include head.html %}
 
-<body class="container-lg px-3 my-5 body-constr">
+<body>
   {% include header.html %}
-  <main>
-    {{ content }}
+  <main class="main-constr container-lg px-3 my-3 my-lg-5">
+    <article class="div-constr">
+      <div class="div-constr-uc">
+        <h1 class="h1-constr-uc">under construction...</h1>
+      </div>
+
+      <div class="d-flex flex-column flex-items-end">
+        <a class="a-constr-github mt-3" href="{{ site.github_url }}" alt="Ted's GitHub Profile"><i class="fab fa-github mr-3"></i><div class="div-constr-github">@tedbyron</div></a>
+        <a class="a-constr-gitlab mt-3" href="{{ site.gitlab_url }}" alt="Ted's GitLab Profile"><i class="fab fa-gitlab mr-3"></i><div class="div-constr-gitlab">@tedbyron</div></a>
+        <a class="a-constr-email mt-3" href="mailto:ted@tedbyron.com" alt="Email ted@tedbyron.com"><i class="fas fa-envelope mr-3"></i><div class="div-constr-email">ted@tedbyron.com</div></a>
+      </div>
+    </article>
   </main>
   {% include footer.html %}
   {% include analytics.js %}
