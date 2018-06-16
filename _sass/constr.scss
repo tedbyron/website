@@ -2,7 +2,7 @@
 // constr scss partial
 ////////////////////////////////////////
 
-.div-constr {
+.article-constr {
   @include breakpoint(md) {
     font-size: .75em;
   }
@@ -22,30 +22,14 @@
 
 .h1-constr-uc {
   font-size: 4em;
-  left: .5em;
   padding: .5em 1em;
-  right: 0;
-
-  transition: text-shadow .5s;
-
-  &:hover {
-    transition: text-shadow .5s;
-  }
 }
 
-.a-constr-github,
-.a-constr-gitlab,
-.a-constr-email {
+.a-constr {
   @include panel;
 
   font-size: 2em;
   padding: .5em 1em;
-
-  .div-constr-github,
-  .div-constr-gitlab,
-  .div-constr-email {
-    display: inline;
-  }
 
   .fas,
   .far,
@@ -53,35 +37,8 @@
     vertical-align: middle;
   }
 
-  &:link,
-  &:active,
-  &:visited {
-    .div-constr-github,
-    .giv-constr-gitlab,
-    .div-constr-email {
-      transition: color .4s;
-    }
-  }
-
   &:hover {
+    background: darken($color-panel, 3%);
     text-decoration: none;
-
-    .div-constr-github,
-    .div-constr-gitlab,
-    .div-constr-email {
-      transition: color .2s;
-    }
-
-    .div-constr-github {
-      color: lighten($color-indigo, 20%);
-    }
-
-    .div-constr-gitlab {
-      color: lighten($color-red, 20%);
-    }
-
-    .div-constr-email {
-      color: lighten($color-light-green, 20%);
-    }
   }
 }

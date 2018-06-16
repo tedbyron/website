@@ -3,8 +3,8 @@
 ////////////////////////////////////////
 
 // card with box-shadow
-@mixin panel {
-  background-color: $color-text;
-  border-radius: 2px;
-  color: $color-text-alt;
+@mixin panel($a: $color-panel, $b: $color-text-alt) {
+  background: linear-gradient(15deg, $a, lighten($a, 8%));
+  border-radius: 3px;
+  color: $b;
 }

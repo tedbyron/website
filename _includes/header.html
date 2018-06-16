@@ -5,26 +5,11 @@
         <ul>
           {% for item in site.data.header %}
             {% if page.url contains item.slug %}
-              {% assign class = "navbar-item active ml-4" %}
-            {% else %}
-              {% assign class = "navbar-item ml-4" %}
+              {% assign class = " active" %}
             {% endif %}
-            {% if item.subitems %}
-              <li class="navbar-dropdown{% if class %}{{ " "|append: class }}{% endif %}">
-                <a href="{{ site.url }}{{ item.slug }}">{{ item.title }}</a>
-                <ul class="dropdown p-0">
-                  {% for subitem in item.subitems %}
-                    <li>
-                      <a class="dropdown-item" href="{{ site.url }}{{ item.slug }}{{ subitem.slug }}">{{ subitem.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </li>
-            {% else %}
-              <li class="{{ class }}">
-                <a href="{{ site.url }}{{ item.slug }}">{{ item.title }}</a>
-              </li>
-            {% endif %}
+            <li class="ml-4{{ class }}">
+              <a href="{{ site.url }}{{ item.slug }}">{{ item.title }}</a>
+            </li>
           {% endfor %}
         </ul>
       <div class="navbar-links mr-3">

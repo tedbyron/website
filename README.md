@@ -4,23 +4,11 @@
 
 >   My website
 
-## Resources used
+## Resources
 
 -   [Jekyll](https://github.com/jekyll/jekyll)
 -   [Liquid Template Language](https://github.com/Shopify/liquid)
 -   [Google Fonts](https://fonts.google.com/)
     -   [Comfortaa](https://fonts.google.com/specimen/Comfortaa)
 -   [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
--   [Cloudflare DNS & SSL](https://www.cloudflare.com/)
-
-## Instructions
-
--   Install bundler gem, then install jekyll and its dependencies
-    ```ruby
-    gem install bundler
-    bundler install
-    ```
--   Start the development environment
-    ```sh
-    bundler exec jekyll serve
-    ```
+-   [Cloudflare](https://www.cloudflare.com/)
