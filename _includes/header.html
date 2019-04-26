@@ -6,6 +6,8 @@
           {% for item in site.data.header %}
             {% if page.url contains item.slug %}
               {% assign class = " active" %}
+            {% else %}
+              {% assign class = "" %}
             {% endif %}
             <li class="ml-4{{ class }}">
               <a href="{{ site.url }}{{ item.slug }}">{{ item.title }}</a>

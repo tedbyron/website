@@ -24,8 +24,6 @@ kramdown:
   hard_wrap: false
 gfm_quirks: paragraph_end
 sass:
-  sass_dir: _scss
-sass:
   style: compressed
 theme: jekyll-theme-primer
 
