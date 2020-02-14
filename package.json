@@ -1,0 +1,28 @@
+{
+  "name": "tedbyron.com",
+  "version": "1.0.0",
+  "description": "My website",
+  "main": "src/pages/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedbyron/tedbyron.github.io.git"
+  },
+  "author": "Ted Byron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tedbyron/tedbyron.github.io/issues"
+  },
+  "homepage": "https://github.com/tedbyron/tedbyron.github.io#readme",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "gatsby": "^2.19.17",
+    "gatsby-plugin-styled-components": "^3.1.19",
+    "normalize.css": "^8.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
+  }
+}
