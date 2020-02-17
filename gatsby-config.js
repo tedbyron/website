@@ -1,3 +1,6 @@
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`]
+  plugins: [
+    `gatsby-plugin-mdx`,
+    `gatsby-plugin-styled-components`
+  ]
 }

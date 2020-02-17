@@ -1,7 +1,6 @@
 import React from 'react'
-import Layout from '../components/helpers/layout'
-import Button from '../components/button'
-import { H1 } from '../components/headings'
+import Layout from '../components/layout'
+import { Button, H1 } from '../components/elements'
 
 export default () => (
   <Layout>

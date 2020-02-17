@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/tedbyron/tedbyron.github.io#readme",
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.17",
+    "gatsby-plugin-mdx": "^1.0.73",
     "gatsby-plugin-styled-components": "^3.1.19",
     "normalize.css": "^8.0.1",
     "react": "^16.12.0",
