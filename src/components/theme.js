@@ -3,14 +3,14 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import 'normalize.css'
 
 const theme = {
-  colorPrimary: `#282828`,
+  colorPrimary: `#111111`,
   colorSecondary: `#eeeeee`,
+  colorTertiary: `#dddddd`,
   colorSucccess: `#00c853`,
   colorDanger: `#d50000`,
   colorWarning: `#ff6d00`,
   colorInfo: `#304ffe`,
   colorBackground: `#ffffff`,
-  colorDark: `#212121`,
   timeTransition: `.15s`
 }
 

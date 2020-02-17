@@ -12,6 +12,10 @@ const StyledButton = styled.a`
     cursor: pointer;
     background-color: ${props => props.theme.colorSecondary};
   }
+
+  &:focus {
+    background-color: ${props => props.theme.colorTertiary};
+  }
 `
 
 export const Button = ({ children, href }) => (
