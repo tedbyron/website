@@ -2,6 +2,7 @@
 
 .navbar-burger {
   border: 0;
+  touch-action: manipulation;
 
   &:focus {
     outline: none;
