@@ -27,28 +27,78 @@ const Header = class extends React.Component {
   render() {
     return (
       <header>
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              <span>tedbyron</span>
-            </Link>
+        <nav className="navbar is-spaced has-shadow" role="navigation" aria-label="main navigation">
+          <div className="container">
+            <div className="navbar-brand">
+              <Link to="/" className="navbar-item">
+                <span>tedbyron</span>
+              </Link>
 
-            <button className={`navbar-burger burger${this.state.class}`} aria-label="menu" aria-expanded={this.state.active} data-target="navbarMenu" onClick={this.toggleHamburger}>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </button>
-          </div>
+              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-desktop">
+                <span className="icon">
+                  <i className="fab fa-github"></i>
+                </span>
+              </a>
+              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-desktop">
+                <span className="icon">
+                  <i className="fab fa-gitlab"></i>
+                </span>
+              </a>
+              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-desktop">
+                <span className="icon">
+                  <i className="fab fa-instagram"></i>
+                </span>
+              </a>
+              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-desktop">
+                <span className="icon">
+                  <i className="fas fa-envelope"></i>
+                </span>
+              </a>
 
-          <div id="navbarMenu" className={`navbar-menu${this.state.class}`}>
-            <div className="navbar-start">
-              <Link to="/about" className="navbar-item" activeClassName="is-active">About</Link>
+              <button className={`navbar-burger burger${this.state.class}`} aria-label="menu" aria-expanded={this.state.active} data-target="navbarMenu" onClick={this.toggleHamburger}>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </button>
+            </div>
 
-              <Link to="/projects" className="navbar-item" activeClassName="is-active" partiallyActive={true}>Projects</Link>
+            <div id="navbarMenu" className={`navbar-menu${this.state.class}`}>
+              <div className="navbar-start">
+                <Link to="/about" className="navbar-item" activeClassName="is-active">About</Link>
 
-              <Link to="/blog" className="navbar-item" activeClassName="is-active" partiallyActive={true}>Blog</Link>
+                <Link to="/projects" className="navbar-item" activeClassName="is-active" partiallyActive={true}>Projects</Link>
 
-              <Link to="/contact" className="navbar-item" activeClassName="is-active">Contact</Link>
+                <Link to="/blog" className="navbar-item" activeClassName="is-active" partiallyActive={true}>Blog</Link>
+
+                <Link to="/contact" className="navbar-item" activeClassName="is-active">Contact</Link>
+              </div>
+
+              <div className="navbar-end is-hidden-touch">
+                <div className="level is-mobile">
+                  <div className="level-left">
+                    <a href="https://github.com/tedbyron" className="navbar-item">
+                      <span className="icon is-medium">
+                        <i className="fab fa-lg fa-github"></i>
+                      </span>
+                    </a>
+                    <a href="https://gitlab.com/tedbyron" className="navbar-item">
+                      <span className="icon is-medium">
+                        <i className="fab fa-lg fa-gitlab"></i>
+                      </span>
+                    </a>
+                    <a href="https://instagram.com/tedbyron" className="navbar-item">
+                      <span className="icon is-medium">
+                        <i className="fab fa-lg fa-instagram"></i>
+                      </span>
+                    </a>
+                    <a href="mailto:ted@tedbyron.com" className="navbar-item">
+                      <span className="icon is-medium">
+                        <i className="fas fa-lg fa-envelope"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </nav>

@@ -1,6 +1,10 @@
 @charset 'utf-8';
+@import '~bulma/sass/utilities/initial-variables.sass';
+
+$navbar-breakpoint: $tablet;
 
 .navbar-burger {
+  background-color: transparent;
   border: 0;
   touch-action: manipulation;
 
@@ -8,6 +12,8 @@
     outline: none;
   }
 }
+
+// TODO: navbar dropdown animation
 
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import '~bulma/bulma.sass';

@@ -5,7 +5,7 @@ import '../components/style.scss'
 export default ({ children }) => (
   <>
     <Header/>
-    <main className="container is-fluid">
+    <main>
       {children}
     </main>
   </>
