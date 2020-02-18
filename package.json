@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/tedbyron/tedbyron.github.io#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "bulma": "^0.8.0",
     "gatsby": "^2.19.17",
     "gatsby-plugin-manifest": "^2.2.41",
