@@ -30,7 +30,7 @@ const Header = class extends React.Component {
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item">
-              <h1>tedbyron</h1>
+              <span>tedbyron</span>
             </Link>
 
             <button className={`navbar-burger burger${this.state.class}`} aria-label="menu" aria-expanded={this.state.active} data-target="navbarMenu" onClick={this.toggleHamburger}>
