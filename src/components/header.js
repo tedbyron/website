@@ -42,18 +42,13 @@ const Header = class extends React.Component {
 
           <div id="navbarMenu" className={`navbar-menu${this.state.class}`}>
             <div className="navbar-start">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/projects">
-                Projects
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
+              <Link to="/about" className="navbar-item" activeClassName="is-active">About</Link>
+
+              <Link to="/projects" className="navbar-item" activeClassName="is-active" partiallyActive={true}>Projects</Link>
+
+              <Link to="/blog" className="navbar-item" activeClassName="is-active" partiallyActive={true}>Blog</Link>
+
+              <Link to="/contact" className="navbar-item" activeClassName="is-active">Contact</Link>
             </div>
           </div>
         </nav>

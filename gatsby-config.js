@@ -6,7 +6,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
@@ -16,8 +15,8 @@ module.exports = {
         name: `tedbyron.com`,
         short_name: `tedbyron.com`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#3030ff`,
+        // TODO: background_color: `#ffffff`,
+        // TODO: theme_color: `#3030ff`,
         display: `standalone`,
         // TODO: icon: `src/images/icon.png`
       },
@@ -58,6 +57,7 @@ module.exports = {
         name: `images`,
       },
     },
-    `gatsby-transformer-sharp`
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-offline`
   ]
 }
