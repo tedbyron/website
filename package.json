@@ -2,8 +2,12 @@
   "name": "tedbyron.com",
   "version": "1.0.0",
   "description": "My website",
-  "main": "src/pages/index.js",
+  "main": "n/a",
   "scripts": {
+    "clean": "gatsby clean",
+    "start": "npm run develop",
+    "build": "npm run clean && gatsby build",
+    "develop": "npm run clean && gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,15 +21,23 @@
   },
   "homepage": "https://github.com/tedbyron/tedbyron.github.io#readme",
   "dependencies": {
-    "@mdx-js/mdx": "^1.5.5",
-    "@mdx-js/react": "^1.5.5",
-    "babel-plugin-styled-components": "^1.10.7",
+    "bulma": "^0.8.0",
     "gatsby": "^2.19.17",
-    "gatsby-plugin-mdx": "^1.0.73",
-    "gatsby-plugin-styled-components": "^3.1.19",
-    "normalize.css": "^8.0.1",
+    "gatsby-plugin-manifest": "^2.2.41",
+    "gatsby-plugin-netlify": "^2.1.32",
+    "gatsby-plugin-netlify-cms": "^4.1.40",
+    "gatsby-plugin-offline": "^3.0.35",
+    "gatsby-plugin-purgecss": "^4.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-sass": "^2.1.28",
+    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-plugin-sitemap": "^2.2.27",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-sharp": "^2.3.14",
+    "netlify-cms-app": "^2.11.20",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^5.0.1"
+    "react-helmet": "^5.2.1"
   }
 }

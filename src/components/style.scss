@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+.navbar-burger {
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@import '~bulma/bulma.sass';
