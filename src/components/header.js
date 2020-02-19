@@ -34,22 +34,22 @@ const Header = class extends React.Component {
                 <span>tedbyron</span>
               </Link>
 
-              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-desktop">
+              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fab fa-github"></i>
                 </span>
               </a>
-              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-desktop">
+              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fab fa-gitlab"></i>
                 </span>
               </a>
-              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-desktop">
+              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fab fa-instagram"></i>
                 </span>
               </a>
-              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-desktop">
+              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fas fa-envelope"></i>
                 </span>
@@ -73,7 +73,7 @@ const Header = class extends React.Component {
                 <Link to="/contact" className="navbar-item" activeClassName="is-active">Contact</Link>
               </div>
 
-              <div className="navbar-end is-hidden-touch">
+              <div className="navbar-end is-hidden-mobile">
                 <div className="level is-mobile">
                   <div className="level-left">
                     <a href="https://github.com/tedbyron" className="navbar-item">
