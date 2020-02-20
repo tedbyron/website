@@ -18,7 +18,7 @@ const Head = props => (
         }
       }) => {
         const data = {
-          title: props.title ? `Teddy Byron | ` + props.title : defaultTitle,
+          title: props.title ? defaultTitle + ` | ` + props.title : defaultTitle,
           author: props.author || defaultAuthor,
           description: props.description || defaultDescription,
           url: props.pathname ? siteUrl + `/` + props.pathname : siteUrl

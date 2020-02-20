@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from './head'
 import Header from './header'
-import './style.scss'
+import Footer from './footer'
+import '../styles/global.scss'
 
 const Layout = props => (
   <>
@@ -15,6 +16,7 @@ const Layout = props => (
     <main>
       {props.children}
     </main>
+    <Footer/>
   </>
 )
 
