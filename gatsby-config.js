@@ -42,7 +42,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        purgeOnly: '/style.scss',
+        develop: true,
+        whitelist: [
+          '___gatsby',
+          'gatsby-focus-wrapper',
+        ],
       },
     },
     {

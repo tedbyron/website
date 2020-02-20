@@ -1,8 +1,9 @@
 @charset 'utf-8';
 @import '~bulma/sass/utilities/initial-variables.sass';
 
-$navbar-breakpoint: $tablet;
+$navbar-breakpoint: $tablet; // default: $desktop
 
+// sticky footer
 html, body, #___gatsby, #gatsby-focus-wrapper {
   height: 100%;
 }
@@ -20,6 +21,7 @@ footer {
   flex-shrink: 0;
 }
 
+// navbar-burger uses button tag instead of a tag
 .navbar-burger {
   background-color: transparent;
   border: 0;
@@ -30,11 +32,7 @@ footer {
   }
 }
 
-.navbar-menu {
-  position: absolute;
-  width: 100%;
-}
-
+// TODO: navbar-menu doesn't move content down
 // TODO: navbar-menu close on outside click
 // TODO: navbar dropdown animation
 
