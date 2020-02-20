@@ -22,7 +22,7 @@ const Layout = ({
       pathname={pathname}
     />
     <Header />
-    <main>
+    <main role="main">
       {children}
     </main>
     <Footer />

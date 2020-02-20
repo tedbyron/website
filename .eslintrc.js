@@ -8,7 +8,6 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
-    'airbnb/whitespace',
   ],
   plugins: [
     'import',

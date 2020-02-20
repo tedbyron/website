@@ -3,6 +3,23 @@
 
 $navbar-breakpoint: $tablet;
 
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+}
+
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 .navbar-burger {
   background-color: transparent;
   border: 0;
@@ -13,6 +30,12 @@ $navbar-breakpoint: $tablet;
   }
 }
 
+.navbar-menu {
+  position: absolute;
+  width: 100%;
+}
+
+// TODO: navbar-menu close on outside click
 // TODO: navbar dropdown animation
 
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
