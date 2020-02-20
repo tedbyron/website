@@ -1,0 +1,9 @@
+[build]
+  publish = "public/"
+  command = "gatsby build"
+
+[[redirects]]
+  from = "https://tedbyron.netlify.com/*"
+  to = "https://tedbyron.com/:splat"
+  status = 301
+  force = true

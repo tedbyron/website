@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: `https://tedbyron.com`
   },
   plugins: [
+    `gatsby-plugin-eslint`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,

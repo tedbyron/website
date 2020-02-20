@@ -23,7 +23,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "bulma": "^0.8.0",
-    "gatsby": "^2.19.18",
+    "gatsby": "^2.19.19",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-netlify": "^2.1.32",
@@ -31,7 +31,7 @@
     "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.22",
-    "gatsby-plugin-sass": "^2.1.28",
+    "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-source-filesystem": "^2.1.48",
@@ -42,5 +42,15 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gatsby-plugin-eslint": "^2.0.8"
   }
 }

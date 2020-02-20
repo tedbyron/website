@@ -1,5 +1,5 @@
-import React from 'react'
-import { Layout } from '../components'
+import React from 'react';
+import Layout from '../components/layout';
 
 const ContactPage = () => (
   <Layout
@@ -15,6 +15,6 @@ const ContactPage = () => (
       </div>
     </section>
   </Layout>
-)
+);
 
-export default ContactPage
+export default ContactPage;
