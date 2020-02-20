@@ -74,8 +74,7 @@ const Header = class extends React.Component {
               </div>
 
               <div className="navbar-end is-hidden-mobile">
-                <div className="level is-mobile">
-                  <div className="level-left">
+                <div className="field is-grouped">
                     <a href="https://github.com/tedbyron" className="navbar-item">
                       <span className="icon is-medium">
                         <i className="fab fa-lg fa-github"></i>
@@ -96,7 +95,6 @@ const Header = class extends React.Component {
                         <i className="fas fa-lg fa-envelope"></i>
                       </span>
                     </a>
-                  </div>
                 </div>
               </div>
             </div>

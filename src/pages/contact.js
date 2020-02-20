@@ -1,10 +1,14 @@
 import React from 'react'
-import Layout from '../layouts/main'
+import Layout from '../components/layout'
 
-export default () => (
-  <Layout>
+const Contact = () => (
+  <Layout
+    title="Contact"
+    description="Contact Teddy Byron."
+    pathname="contact"
+  >
     <section className="section">
-      <div className="container">
+      <div className="container has-text-centered">
 
         <h1 className="title is-1">Contact</h1>
 
@@ -12,3 +16,5 @@ export default () => (
     </section>
   </Layout>
 )
+
+export default Contact
