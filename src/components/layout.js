@@ -1,7 +1,5 @@
 import React from 'react'
-import Head from './head'
-import Header from './header'
-import Footer from './footer'
+import { Head, Header, Footer } from './'
 import '../styles/global.scss'
 
 const Layout = props => (

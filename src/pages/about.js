@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
+import { Layout } from '../components'
 
-const About = () => (
+const AboutPage = () => (
   <Layout
     title="About"
     description="About Teddy Byron."
@@ -15,4 +15,4 @@ const About = () => (
   </Layout>
 )
 
-export default About
+export default AboutPage

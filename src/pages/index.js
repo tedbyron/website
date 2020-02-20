@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
+import { Layout } from '../components'
 
-const Index = () => (
+const IndexPage = () => (
   <Layout>
     <section className="section">
       <div className="container has-text-centered">
@@ -19,4 +19,4 @@ const Index = () => (
   </Layout>
 )
 
-export default Index
+export default IndexPage
