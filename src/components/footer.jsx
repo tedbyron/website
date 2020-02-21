@@ -1,15 +1,23 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="footer">
+  <footer className="footer has-background-white">
     <div className="content has-text-centered">
-      <p>
-        <span className="has-text-grey-light">Website content licensed </span>
-        <a href="https://choosealicense.com/licenses/cc-by-sa-4.0/">CC BY-SA 4.0</a>
-        <span className="has-text-grey-light">. Source code licensed </span>
-        <a href="https://raw.githubusercontent.com/tedbyron/tedbyron.com/master/LICENSE">MIT</a>
-        <span className="has-text-grey-light">. </span>
-      </p>
+      <div className="columns is-mobile">
+        <div className="column has-text-right-desktop">
+          <span>Website content</span>
+          <span className="is-hidden-mobile" aria-hidden="true">: </span>
+          <br className="is-hidden-tablet" />
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" className="has-text-link">CC BY-NC-SA 4.0</a>
+        </div>
+        <div className="column has-text-left-desktop">
+          <span>Source code</span>
+          <span className="is-hidden-mobile" aria-hidden="true">: </span>
+          <br className="is-hidden-tablet" />
+          <a href="https://raw.githubusercontent.com/tedbyron/tedbyron.com/master/LICENSE">MIT License</a>
+        </div>
+      </div>
+
       <a href="https://github.com/tedbyron/tedbyron.com">
         See the source code on GitHub →
       </a>
