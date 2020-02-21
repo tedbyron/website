@@ -15,7 +15,7 @@
     "url": "git+https://github.com/tedbyron/tedbyron.github.io.git"
   },
   "author": "Ted Byron",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tedbyron/tedbyron.github.io/issues"
   },

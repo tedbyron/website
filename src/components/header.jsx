@@ -11,22 +11,12 @@ const Header = class extends React.Component {
   }
 
   toggleHamburger = () => {
-    this.setState(
-      (state) => ({ navIsActive: !state.navIsActive }),
-      () => {
-        const { navIsActive } = this.state;
-
-        if (navIsActive) {
-          this.setState({
-            navClass: ' is-active',
-          });
-        } else {
-          this.setState({
-            navClass: '',
-          });
-        }
-      },
-    );
+    this.setState((state) => (
+      {
+        navIsActive: !state.navIsActive,
+        navClass: state.navIsActive ? '' : ' is-active',
+      }
+    ));
   }
 
   render() {

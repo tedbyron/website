@@ -33,16 +33,15 @@ module.exports = {
         name: 'tedbyron.com',
         short_name: 'tedbyron.com',
         start_url: '/',
-        // TODO: background_color: '#ffffff',
-        // TODO: theme_color: '#3030ff',
-        display: 'standalone',
+        background_color: '#ffffff',
+        theme_color: '#b86bff',
+        display: 'minimal-ui',
         // TODO: icon: 'src/images/icon.png',
       },
     },
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        develop: true,
         whitelist: [
           '___gatsby',
           'gatsby-focus-wrapper',
