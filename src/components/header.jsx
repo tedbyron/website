@@ -31,22 +31,22 @@ const Header = class extends React.Component {
                 <span>tedbyron</span>
               </Link>
 
-              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet" aria-hidden="true">
+              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fab fa-github" />
                 </span>
               </a>
-              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-tablet" aria-hidden="true">
+              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fab fa-gitlab" />
                 </span>
               </a>
-              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet" aria-hidden="true">
+              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fab fa-instagram" />
                 </span>
               </a>
-              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet" aria-hidden="true">
+              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet">
                 <span className="icon">
                   <i className="fas fa-envelope" />
                 </span>
@@ -70,7 +70,7 @@ const Header = class extends React.Component {
                 <Link to="/contact" className="navbar-item" activeClassName="is-active">Contact</Link>
               </div>
 
-              <div className="navbar-end is-hidden-mobile" aria-hidden="true">
+              <div className="navbar-end is-hidden-mobile">
                 <div className="field is-grouped">
                   <a href="https://github.com/tedbyron" className="navbar-item">
                     <span className="icon is-medium">

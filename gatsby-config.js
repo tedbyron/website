@@ -2,10 +2,12 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Teddy Byron',
-    author: 'Teddy Byron',
-    description: 'Teddy Byron\'s website and blog.',
+    defaultTitle: 'Teddy Byron',
+    defaultAuthor: 'Teddy Byron',
+    defaultDescription: 'Teddy Byron\'s website and blog.',
     siteUrl: 'https://tedbyron.com',
+    referrer: 'no-referrer-when-downgrade',
+    colorScheme: 'only light',
   },
   plugins: [
     {
@@ -37,6 +39,7 @@ module.exports = {
         theme_color: '#b86bff',
         display: 'minimal-ui',
         // TODO: icon: 'src/images/icon.png',
+        include_favicon: false,
       },
     },
     {

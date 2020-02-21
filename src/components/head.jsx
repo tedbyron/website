@@ -14,20 +14,24 @@ const Head = ({
     query HeadQuery {
       site {
         siteMetadata {
-          title
-          author
-          description
+          defaultTitle
+          defaultAuthor
+          defaultDescription
           siteUrl
+          referrer
+          colorScheme
         }
       }
     }
   `);
 
   const data = {
-    title: title ? `${site.siteMetadata.title} | ${title}` : site.siteMetadata.title,
-    author: author || site.siteMetadata.author,
-    description: description || site.siteMetadata.description,
+    title: title ? `${site.siteMetadata.defaultTitle} | ${title}` : site.siteMetadata.defaultTitle,
+    author: author || site.siteMetadata.defaultAuthor,
+    description: description || site.siteMetadata.defaultDescription,
     url: pathname ? `${site.siteMetadata.siteUrl}/${pathname}` : site.siteMetadata.siteUrl,
+    referrer: site.siteMetadata.referrer,
+    colorScheme: site.siteMetadata.colorScheme,
   };
 
   return (
@@ -48,15 +52,11 @@ const Head = ({
         },
         {
           name: 'referrer',
-          content: 'no-referrer-when-downgrade',
-        },
-        {
-          name: 'theme-color',
-          content: '#363636',
+          content: data.referrer,
         },
         {
           name: 'color-scheme',
-          content: 'only light',
+          content: data.colorScheme,
         },
         {
           name: 'og:title',
@@ -73,6 +73,10 @@ const Head = ({
         {
           name: 'og:type',
           content: 'website',
+        },
+        {
+          name: 'og:locale',
+          content: 'en_US',
         },
       ].concat(meta)}
     />
