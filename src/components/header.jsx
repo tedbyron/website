@@ -11,13 +11,11 @@ const Header = class extends React.Component {
     };
   }
 
-  toggleHamburger = () => {
-    this.setState((state) => (
-      {
-        navIsActive: !state.navIsActive,
-        navClass: state.navIsActive ? '' : ' is-active',
-      }
-    ));
+  handleBurgerClick = () => {
+    this.setState((state) => ({
+      navIsActive: !state.navIsActive,
+      navClass: state.navIsActive ? '' : ' is-active',
+    }));
   }
 
   render() {
@@ -53,7 +51,7 @@ const Header = class extends React.Component {
                 </span>
               </a>
 
-              <button type="button" className={`navbar-burger burger${navClass}`} aria-label="menu" aria-expanded={navIsActive} data-target="navbarMenu" onClick={this.toggleHamburger}>
+              <button type="button" className={`navbar-burger burger${navClass}`} aria-label="menu" aria-expanded={navIsActive} data-target="navbarMenu" onClick={this.handleBurgerClick}>
                 <span aria-hidden="true" />
                 <span aria-hidden="true" />
                 <span aria-hidden="true" />
