@@ -31,22 +31,22 @@ const Header = class extends React.Component {
                 <span>tedbyron</span>
               </Link>
 
-              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet">
+              <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="GitHub">
                 <span className="icon">
                   <i className="fab fa-github" />
                 </span>
               </a>
-              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-tablet">
+              <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="GitLab">
                 <span className="icon">
                   <i className="fab fa-gitlab" />
                 </span>
               </a>
-              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet">
+              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="Instagram">
                 <span className="icon">
                   <i className="fab fa-instagram" />
                 </span>
               </a>
-              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet">
+              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet" aria-label="Email">
                 <span className="icon">
                   <i className="fas fa-envelope" />
                 </span>
@@ -72,22 +72,22 @@ const Header = class extends React.Component {
 
               <div className="navbar-end is-hidden-mobile">
                 <div className="field is-grouped">
-                  <a href="https://github.com/tedbyron" className="navbar-item">
+                  <a href="https://github.com/tedbyron" className="navbar-item" aria-label="GitHub">
                     <span className="icon is-medium">
                       <i className="fab fa-lg fa-github" />
                     </span>
                   </a>
-                  <a href="https://gitlab.com/tedbyron" className="navbar-item">
+                  <a href="https://gitlab.com/tedbyron" className="navbar-item" aria-label="GitLab">
                     <span className="icon is-medium">
                       <i className="fab fa-lg fa-gitlab" />
                     </span>
                   </a>
-                  <a href="https://instagram.com/tedbyron" className="navbar-item">
+                  <a href="https://instagram.com/tedbyron" className="navbar-item" aria-label="Instagram">
                     <span className="icon is-medium">
                       <i className="fab fa-lg fa-instagram" />
                     </span>
                   </a>
-                  <a href="mailto:ted@tedbyron.com" className="navbar-item">
+                  <a href="mailto:ted@tedbyron.com" className="navbar-item" aria-label="Email">
                     <span className="icon is-medium">
                       <i className="fas fa-lg fa-envelope" />
                     </span>
