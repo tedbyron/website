@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = class extends React.Component {
   constructor(props) {
@@ -33,22 +34,22 @@ const Header = class extends React.Component {
 
               <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="GitHub">
                 <span className="icon">
-                  <i className="fab fa-github" />
+                  <FontAwesomeIcon icon={['fab', 'github']} />
                 </span>
               </a>
               <a href="https://gitlab.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="GitLab">
                 <span className="icon">
-                  <i className="fab fa-gitlab" />
+                  <FontAwesomeIcon icon={['fab', 'gitlab']} />
                 </span>
               </a>
               <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="Instagram">
                 <span className="icon">
-                  <i className="fab fa-instagram" />
+                  <FontAwesomeIcon icon={['fab', 'instagram']} />
                 </span>
               </a>
               <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet" aria-label="Email">
                 <span className="icon">
-                  <i className="fas fa-envelope" />
+                  <FontAwesomeIcon icon="envelope" />
                 </span>
               </a>
 
@@ -74,22 +75,22 @@ const Header = class extends React.Component {
                 <div className="field is-grouped">
                   <a href="https://github.com/tedbyron" className="navbar-item" aria-label="GitHub">
                     <span className="icon is-medium">
-                      <i className="fab fa-lg fa-github" />
+                      <FontAwesomeIcon icon={['fab', 'github']} />
                     </span>
                   </a>
                   <a href="https://gitlab.com/tedbyron" className="navbar-item" aria-label="GitLab">
                     <span className="icon is-medium">
-                      <i className="fab fa-lg fa-gitlab" />
+                      <FontAwesomeIcon icon={['fab', 'gitlab']} />
                     </span>
                   </a>
                   <a href="https://instagram.com/tedbyron" className="navbar-item" aria-label="Instagram">
                     <span className="icon is-medium">
-                      <i className="fab fa-lg fa-instagram" />
+                      <FontAwesomeIcon icon={['fab', 'instagram']} />
                     </span>
                   </a>
                   <a href="mailto:ted@tedbyron.com" className="navbar-item" aria-label="Email">
                     <span className="icon is-medium">
-                      <i className="fas fa-lg fa-envelope" />
+                      <FontAwesomeIcon icon="envelope" />
                     </span>
                   </a>
                 </div>
