@@ -11,7 +11,7 @@ const NotFoundPage = () => (
       <div className="container has-text-centered">
         <h1 className="title is-1">404</h1>
         <h2 className="subtitle">
-          That route doesn&apos;t exist...
+          {'That route doesn\'t exist... '}
           <span role="img" aria-label="frowning face with open mouth emoji">😦</span>
         </h2>
         {/* TODO: search bar? */}
