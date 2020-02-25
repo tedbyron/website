@@ -11,6 +11,9 @@ const Header = class extends React.Component {
     };
   }
 
+  /**
+   * toggle navigation state on burger click
+   */
   handleBurgerClick = () => {
     this.setState((state) => ({
       navIsActive: !state.navIsActive,
@@ -40,12 +43,7 @@ const Header = class extends React.Component {
                   <FontAwesomeIcon icon={['fab', 'gitlab']} />
                 </span>
               </a>
-              <a href="https://instagram.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="Instagram">
-                <span className="icon">
-                  <FontAwesomeIcon icon={['fab', 'instagram']} />
-                </span>
-              </a>
-              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet" aria-label="Email">
+              <a href="mailto:ted@tedbyron.com" className="navbar-item is-hidden-tablet" aria-label="email">
                 <span className="icon">
                   <FontAwesomeIcon icon="envelope" />
                 </span>
@@ -81,12 +79,7 @@ const Header = class extends React.Component {
                       <FontAwesomeIcon icon={['fab', 'gitlab']} />
                     </span>
                   </a>
-                  <a href="https://instagram.com/tedbyron" className="navbar-item" aria-label="Instagram">
-                    <span className="icon is-medium">
-                      <FontAwesomeIcon icon={['fab', 'instagram']} />
-                    </span>
-                  </a>
-                  <a href="mailto:ted@tedbyron.com" className="navbar-item" aria-label="Email">
+                  <a href="mailto:ted@tedbyron.com" className="navbar-item" aria-label="email">
                     <span className="icon is-medium">
                       <FontAwesomeIcon icon="envelope" />
                     </span>

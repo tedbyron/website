@@ -14,7 +14,7 @@ const Footer = () => (
           <span>Source code</span>
           <span className="is-hidden-mobile" aria-hidden="true">: </span>
           <br className="is-hidden-tablet" />
-          <a href="https://raw.githubusercontent.com/tedbyron/tedbyron.com/master/LICENSE">MIT License</a>
+          <a href="https://raw.githubusercontent.com/tedbyron/tedbyron.com/master/license">MIT License</a>
         </div>
       </div>
 

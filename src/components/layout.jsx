@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faGitlab, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faGitlab } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import Footer from './footer';
@@ -11,23 +11,32 @@ import Header from './header';
 
 import '../styles/global.scss';
 
-library.add(faGithub, faGitlab, faInstagram, faEnvelope);
+// add icons to library for easier access in other components
+library.add(faGithub, faGitlab, faEnvelope);
 
-class Layout extends React.Component {
+const Layout = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      skipIsFocused: false,
+      a11yIsFocused: false,
     };
+
+    // create a ref for the main element
     this.main = React.createRef();
   }
 
-  handleSkipFocus = () => {
+  /**
+   * toggle a11y menu visibility on focus or blur
+   */
+  handleA11yFocus = () => {
     this.setState((state) => ({
-      skipIsFocused: !state.skipIsFocused,
+      a11yIsFocused: !state.a11yIsFocused,
     }));
   }
 
+  /**
+   * focus the main element through its this.main ref
+   */
   handleSkipClick = () => {
     this.main.current.focus();
   }
@@ -40,7 +49,7 @@ class Layout extends React.Component {
       pathname,
       children,
     } = this.props;
-    const { skipIsFocused } = this.state;
+    const { a11yIsFocused } = this.state;
 
     return (
       <>
@@ -51,20 +60,21 @@ class Layout extends React.Component {
           pathname={pathname}
         />
 
-        {/* TODO: style */}
-        <button type="button" className={`button${skipIsFocused ? '' : ' is-sr-only'}`} onFocus={this.handleSkipFocus} onBlur={this.handleSkipFocus} onClick={this.handleSkipClick}>
-          Skip to main content
-        </button>
+        <div className={`notification buttons is-centered is-marginless${a11yIsFocused ? '' : ' is-sr-only'}`} onFocus={this.handleA11yFocus} onBlur={this.handleA11yFocus}>
+          <button type="button" className="button is-marginless" onClick={this.handleSkipClick}>
+            Skip to main content
+          </button>
+        </div>
 
         <Header />
-        <main ref={this.main} role="main">
+        <main ref={this.main} role="main" tabIndex="-1">
           {children}
         </main>
         <Footer />
       </>
     );
   }
-}
+};
 
 export default Layout;
 
