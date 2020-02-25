@@ -30,7 +30,7 @@ const Header = class extends React.Component {
           <div className="container">
             <div className="navbar-brand">
               <Link to="/" className="navbar-item">
-                <span>tedbyron</span>
+                tedbyron
               </Link>
 
               <a href="https://github.com/tedbyron" className="navbar-item is-hidden-tablet" aria-label="GitHub">
