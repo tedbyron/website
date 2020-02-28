@@ -40,7 +40,6 @@ module.exports = {
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#b86bff',
-        // TODO: icon: 'src/images/icon.png',
         include_favicon: false,
       },
     },
