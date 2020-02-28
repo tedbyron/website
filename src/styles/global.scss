@@ -4,7 +4,10 @@
 $navbar-breakpoint: $tablet; // default: $desktop
 
 // sticky footer
-html, body, #___gatsby, #gatsby-focus-wrapper {
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
   height: 100%;
 }
 
@@ -32,9 +35,5 @@ footer {
     outline: none;
   }
 }
-
-// TODO: navbar-menu doesn't move content down
-// TODO: navbar-menu close on outside click
-// TODO: navbar dropdown animation
 
 @import '~bulma/bulma.sass';

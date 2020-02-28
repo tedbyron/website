@@ -9,9 +9,7 @@ const ContactPage = () => (
   >
     <section className="section">
       <div className="container has-text-centered">
-
         <h1 className="title is-1">Contact</h1>
-
       </div>
     </section>
   </Layout>

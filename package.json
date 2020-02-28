@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/tedbyron/tedbyron.github.io.git"
   },
-  "author": "Ted Byron",
+  "author": "Teddy Byron",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tedbyron/tedbyron.github.io/issues"
@@ -26,12 +26,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "bulma": "^0.8.0",
-    "gatsby": "^2.19.21",
+    "gatsby": "^2.19.22",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-canonical-urls": "^2.1.20",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-manifest": "^2.2.42",
-    "gatsby-plugin-netlify": "^2.1.32",
+    "gatsby-plugin-netlify": "^2.1.33",
     "gatsby-plugin-netlify-cms": "^4.1.40",
     "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-purgecss": "^4.0.1",
@@ -40,12 +40,12 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-sharp": "^2.3.14",
-    "netlify-cms-app": "^2.11.23",
+    "gatsby-transformer-sharp": "^2.3.16",
+    "netlify-cms-app": "^2.11.26",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
