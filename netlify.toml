@@ -1,9 +1,15 @@
 [build]
   publish = "public/"
-  command = "gatsby build"
+  command = "npm run build"
 
 [[redirects]]
   from = "https://tedbyron.netlify.com/*"
+  to = "https://tedbyron.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tedbyron.netlify.app/*"
   to = "https://tedbyron.com/:splat"
   status = 301
   force = true
