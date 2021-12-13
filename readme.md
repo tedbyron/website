@@ -1,7 +1,4 @@
-# tedbyron.com
-
-> My website
-
-<!--
-yarn add @dracula/dracula-ui@dracula/dracula-ui
--->
+<div align="center">
+  <h1><code>tedbyron.com</code></h1>
+  <p><strong>My website.</strong></p>
+</div>
