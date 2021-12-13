@@ -1,15 +1,18 @@
 [build]
-  publish = "public/"
-  command = "npm run build"
+publish = "public/"
+command = "yarn build"
+
+[[plugins]]
+package = "@netlify/plugin-gatsby"
 
 [[redirects]]
-  from = "https://tedbyron.netlify.com/*"
-  to = "https://tedbyron.com/:splat"
-  status = 301
-  force = true
+from = "https://tedbyron.netlify.com/*"
+to = "https://tedbyron.com/:splat"
+status = 301
+force = true
 
 [[redirects]]
-  from = "https://tedbyron.netlify.app/*"
-  to = "https://tedbyron.com/:splat"
-  status = 301
-  force = true
+from = "https://tedbyron.netlify.app/*"
+to = "https://tedbyron.com/:splat"
+status = 301
+force = true

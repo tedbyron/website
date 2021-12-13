@@ -1,87 +1,83 @@
-const path = require('path');
+const path = require('path')
+
+const HOST = 'tedbyron.com'
+const URL = 'https://tedbyron.com'
 
 module.exports = {
   siteMetadata: {
-    defaultTitle: 'Teddy Byron',
-    defaultAuthor: 'Teddy Byron',
-    defaultDescription: 'Teddy Byron\'s website and blog.',
-    siteUrl: 'https://tedbyron.com',
-    referrer: 'no-referrer-when-downgrade',
-    colorScheme: 'only light',
+    title: 'Teddy Byron',
+    author: 'Teddy Byron <ted@tedbyron.com>',
+    description: 'Teddy Byron\'s website.',
+    siteUrl: URL,
+    themeColor: '#282a36'
   },
   plugins: [
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-canonical-urls
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://tedbyron.com',
-        stripQueryString: true,
-      },
+        siteUrl: URL,
+        stripQueryString: true
+      }
     },
-    'gatsby-plugin-eslint',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-html-attributes
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
-        lang: 'en',
-      },
+        lang: 'en'
+      }
     },
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-netlify-cms',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-sitemap',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'tedbyron.com',
-        short_name: 'tedbyron.com',
+        name: HOST,
+        short_name: HOST,
         description: 'Teddy Byron\'s website and blog.',
         lang: 'en',
         display: 'minimal-ui',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#b86bff',
-        include_favicon: false,
-      },
+        icon: 'src/images/icon.jpg'
+        // TODO: once a little stable, don't bust favicon
+        // cache_busting_mode: 'none'
+      }
     },
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-netlify
+    'gatsby-plugin-netlify',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-offline
     {
-      resolve: 'gatsby-plugin-purgecss',
+      resolve: 'gatsby-plugin-offline',
       options: {
-        whitelist: [
-          '___gatsby',
-          'gatsby-focus-wrapper',
-        ],
-      },
+        workboxConfig: {
+          globPatterns: ['src/images/icon.jpg']
+        }
+      }
     },
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        useMozJpeg: true,
-        stripMetadata: true,
-        defaultQuality: 75,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'uploads',
-        path: path.join(__dirname, 'static', 'assets'),
-      },
-    },
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-postcss
+    'gatsby-plugin-postcss',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts
+    'gatsby-plugin-preload-fonts',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet
+    'gatsby-plugin-react-helmet',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap
+    'gatsby-plugin-sitemap',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-typescript
+    'gatsby-plugin-typescript',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: path.join(__dirname, 'src', 'pages'),
-      },
+        path: path.join(__dirname, 'src', 'pages')
+      }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: path.join(__dirname, 'src', 'images'),
-      },
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-offline',
-  ],
-};
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-image
+    'gatsby-plugin-image',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp
+    'gatsby-plugin-sharp',
+    // https://www.gatsbyjs.com/plugins/gatsby-transformer-sharp
+    'gatsby-transformer-sharp'
+  ]
+}

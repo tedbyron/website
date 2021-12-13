@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ staging ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+      - name: Dedupe dependencies
+        run: yarn dedupe --check
+      - name: Install dependencies
+        run: yarn --immutable
+      - name: Compile typescript
+        run: yarn tsc:ci
+      - name: Lint code
+        run: yarn lint:ci
+      - name: Build site
+        run: yarn build:ci
