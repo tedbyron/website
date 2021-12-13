@@ -2310,20 +2310,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/plugin-gatsby@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@netlify/plugin-gatsby@npm:1.0.3"
+"@netlify/plugin-gatsby@npm:^2.0.0-beta":
+  version: 2.0.0-zz-beta.0
+  resolution: "@netlify/plugin-gatsby@npm:2.0.0-zz-beta.0"
   dependencies:
     "@netlify/functions": ^0.7.2
     co-body: ^6.1.0
     cookie: ^0.4.1
     download: ^8.0.0
+    etag: ^1.8.1
     fs-extra: ^10.0.0
+    linkfs: ^2.1.0
     multer: ^1.4.2
     node-fetch: ^2.6.1
-    path-to-regexp: ^6.0.0
+    path-to-regexp: ^0.1.7
     tempy: ^1.0.0
-  checksum: 8caf6a6ea88fbba43355c38df5d390ef981b520852db1254b1cecff42f7c97f4f49f90c6a1aad852bcfd993c684eb3a928fb1df91bcee9c33a96eb4d7652df86
+  checksum: 1655320bf5965650a01cdd07728b9ea0c11a6b070dd163cce2f7dc5f2ff819edfe92a49ef29d5e27609e29712ea9f549eb135848f0382739b65aedc3960a5d7a
   languageName: node
   linkType: hard
 
@@ -6777,7 +6779,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"etag@npm:~1.8.1":
+"etag@npm:^1.8.1, etag@npm:~1.8.1":
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: 571aeb3dbe0f2bbd4e4fadbdb44f325fc75335cd5f6f6b6a091e6a06a9f25ed5392f0863c5442acb0646787446e816f13cbfc6edce5b07658541dff573cab1ff
@@ -10286,6 +10288,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"linkfs@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "linkfs@npm:2.1.0"
+  checksum: 85be8282f2510fc4a3d72a5ac4870d823cdef1485fa8e42ad967c6ab4f79224ed885886f242a023b935c2b34b5d268276a33cce207964726cd71de55a6d568db
+  languageName: node
+  linkType: hard
+
 "lmdb-store@npm:^1.6.11":
   version: 1.6.14
   resolution: "lmdb-store@npm:1.6.14"
@@ -12228,17 +12237,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:0.1.7":
+"path-to-regexp@npm:0.1.7, path-to-regexp@npm:^0.1.7":
   version: 0.1.7
   resolution: "path-to-regexp@npm:0.1.7"
   checksum: 69a14ea24db543e8b0f4353305c5eac6907917031340e5a8b37df688e52accd09e3cebfe1660b70d76b6bd89152f52183f28c74813dbf454ba1a01c82a38abce
-  languageName: node
-  linkType: hard
-
-"path-to-regexp@npm:^6.0.0":
-  version: 6.2.0
-  resolution: "path-to-regexp@npm:6.2.0"
-  checksum: a6aca74d2d6e2e7594d812f653cf85e9cb5054d3a8d80f099722a44ef6ad22639b02078e5ea83d11db16321c3e4359e3f1ab0274fa78dad0754a6e53f630b0fc
   languageName: node
   linkType: hard
 
@@ -15120,7 +15122,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.16.0
     "@dracula/dracula-ui": ^0.8.1
-    "@netlify/plugin-gatsby": ^1.0.3
+    "@netlify/plugin-gatsby": ^2.0.0-beta
     "@tailwindcss/aspect-ratio": ^0.4.0
     "@tailwindcss/forms": ^0.4.0
     "@tailwindcss/line-clamp": ^0.3.0

@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@dracula/dracula-ui": "^0.8.1",
-    "@netlify/plugin-gatsby": "^1.0.3",
+    "@netlify/plugin-gatsby": "^2.0.0-beta",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.0",
