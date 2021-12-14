@@ -22,6 +22,9 @@ module.exports = {
       red: '#ff5555',
       yellow: '#f1fa8c'
     },
+    container: {
+      center: true
+    },
     fontFamily: {
       sans: [
         'Iosevka SS07 Web Extended',

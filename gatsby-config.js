@@ -9,7 +9,7 @@ module.exports = {
     author: 'Teddy Byron <ted@tedbyron.com>',
     description: 'Teddy Byron\'s website.',
     siteUrl: URL,
-    themeColor: '#282a36' // TODO
+    themeColor: '#282a36'
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-canonical-urls
@@ -32,7 +32,7 @@ module.exports = {
         start_url: '/',
         background_color: '#282a36',
         theme_color: '#282a36',
-        icon: path.join('src', 'images', 'icon.png'),
+        icon: path.join('src', 'images', 'favicon.png'),
         cache_busting_mode: 'none'
       }
     },
@@ -51,13 +51,35 @@ module.exports = {
     'gatsby-plugin-postcss',
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts
     'gatsby-plugin-preload-fonts',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-purgecss
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: false,
+        develop: false,
+        tailwind: true,
+        // https://purgecss.com/configuration.html#options
+        purgeCSSOptions: {
+          content: [path.join(__dirname, 'src', '**', '!(*.d).{js,jsx,ts,tsx,md,mdx}')]
+        }
+      }
+    },
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet
     'gatsby-plugin-react-helmet',
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-react-svg
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/
+        }
+      }
+    },
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap
     'gatsby-plugin-sitemap',
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-typescript
     'gatsby-plugin-typescript',
-
+    // https://www.gatsbyjs.com/plugins/gatsby-source-filesystem
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -27,10 +27,10 @@ const Heading = ({
 }: HeadingProps): JSX.Element => {
   switch (as) {
     case HeadingLevel.h1:
-      className = className ?? 'text-4xl'
+      className = className ?? 'text-4xl md:text-6xl'
       break
     case HeadingLevel.h2:
-      className = className ?? 'text-2xl'
+      className = className ?? 'text-2xl md:text-4xl'
       break
     case HeadingLevel.h3:
       className = className ?? 'text-xl'

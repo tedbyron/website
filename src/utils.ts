@@ -22,8 +22,8 @@ export const classify = (...args: Array<ClassList | ClassListObject>): string =>
         .forEach(val => tmp.add(val.trim()))
     } else if (typeof arg === 'object' && arg !== null) {
       Object.entries(arg)
-        .filter(([_key, val]) => val)
-        .forEach(([key, _val]) => tmp.add(key.trim()))
+        .filter(([_, val]) => val)
+        .forEach(([key, _]) => tmp.add(key.trim()))
     }
   }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout } from '../components'
+import { Heading, Layout, Section } from '../components'
 
 export default (): JSX.Element => (
   <Layout
@@ -8,16 +8,10 @@ export default (): JSX.Element => (
     description='404 not found.'
     path='404'
   >
-    <section className='section'>
-      <div className='container has-text-centered'>
-        <h1 className='title is-1'>404</h1>
-        <h2 className='subtitle'>
-          {'That route doesn\'t exist... '}
-          <span role='img' aria-label='frowning face with open mouth emoji'>
-            😦
-          </span>
-        </h2>
-      </div>
-    </section>
+    {/* TODO */}
+    <Section className='mx-auto flex flex-col justify-center items-center'>
+      <Heading as='h1' className='inline-block'>404</Heading>
+      <Heading as='h2' className='inline-block'>That route doesn't exist...</Heading>
+    </Section>
   </Layout>
 )

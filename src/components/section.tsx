@@ -14,7 +14,7 @@ const Section = ({
   className = '',
   children
 }: SectionProps): JSX.Element => (
-  <section className={classify('container mx-auto p-6', className)}>
+  <section className={classify('container p-2 md:p-6', className)}>
     {children}
   </section>
 )
