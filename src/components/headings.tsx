@@ -21,31 +21,31 @@ type HeadingProps = PropsWithChildren<{
  * A heading element.
  */
 const Heading = ({
-  className = '',
+  className,
   as,
   children
 }: HeadingProps): JSX.Element => {
   switch (as) {
     case HeadingLevel.h1:
-      className = classify('text-4xl', className)
+      className = className ?? 'text-4xl'
       break
     case HeadingLevel.h2:
-      className = classify('text-2xl', className)
+      className = className ?? 'text-2xl'
       break
     case HeadingLevel.h3:
-      className = classify('text-xl', className)
+      className = className ?? 'text-xl'
       break
     case HeadingLevel.h4:
-      className = classify('text-base', className)
+      className = className ?? 'text-base'
       break
     case HeadingLevel.h5:
-      className = classify('text-sm', className)
+      className = className ?? 'text-sm'
       break
     case HeadingLevel.h6:
-      className = classify('text-xs', className)
+      className = className ?? 'text-xs'
       break
     default:
-      throw new Error('Heading component has an missing or invalid `as` prop.')
+      throw new Error('Heading component has a missing or invalid `as` prop.')
   }
 
   return React.createElement(

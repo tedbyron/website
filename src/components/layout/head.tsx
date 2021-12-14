@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import useSiteMetadata from '../../hooks/useSiteMetadata'
+import { useSiteMetadata } from '../../hooks'
 
 export interface HeadProps {
   title?: string
@@ -31,6 +31,7 @@ const Head = ({
 
   return (
     <Helmet>
+      <html lang='en' className='bg-black text-white' />
       <title>{data.title}</title>
       <meta charSet='UTF-8' />
       <meta name='author' content={siteMetadata.author} />

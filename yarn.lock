@@ -7655,15 +7655,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-html-attributes@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "gatsby-plugin-html-attributes@npm:1.0.5"
-  dependencies:
-    babel-runtime: ^6.26.0
-  checksum: a9b102dbcde45a24601acccb55530241d2172a4ee4fc5e98f892fa834535a15f8effa5e8cec667f665e3f28112c79c309237d0f15f1dfa9197c9ad00783de281
-  languageName: node
-  linkType: hard
-
 "gatsby-plugin-image@npm:^2.0.0":
   version: 2.3.0
   resolution: "gatsby-plugin-image@npm:2.3.0"
@@ -15134,7 +15125,6 @@ __metadata:
     autoprefixer: ^10.4.0
     gatsby: ^4.0.2
     gatsby-plugin-canonical-urls: ^4.0.0
-    gatsby-plugin-html-attributes: ^1.0.5
     gatsby-plugin-image: ^2.0.0
     gatsby-plugin-manifest: ^4.0.0
     gatsby-plugin-netlify: next

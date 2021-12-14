@@ -21,13 +21,6 @@ module.exports = {
         stripQueryString: true
       }
     },
-    // https://www.gatsbyjs.com/plugins/gatsby-plugin-html-attributes
-    {
-      resolve: 'gatsby-plugin-html-attributes',
-      options: {
-        lang: 'en'
-      }
-    },
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest
     {
       resolve: 'gatsby-plugin-manifest',
