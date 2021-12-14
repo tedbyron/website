@@ -2,7 +2,6 @@ const path = require('path')
 
 const HOST = 'tedbyron.com'
 const URL = 'https://tedbyron.com'
-const ICON = path.join(__dirname, 'src', 'images', 'icon.png')
 
 module.exports = {
   siteMetadata: {
@@ -10,7 +9,7 @@ module.exports = {
     author: 'Teddy Byron <ted@tedbyron.com>',
     description: 'Teddy Byron\'s website.',
     siteUrl: URL,
-    themeColor: '#282a36'
+    themeColor: '#282a36' // TODO
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-canonical-urls
@@ -31,11 +30,10 @@ module.exports = {
         lang: 'en',
         display: 'minimal-ui',
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#b86bff',
-        icon: ICON
-        // TODO: once a little stable, don't bust favicon
-        // cache_busting_mode: 'none'
+        background_color: '#282a36',
+        theme_color: '#282a36',
+        icon: path.join('src', 'images', 'icon.png'),
+        cache_busting_mode: 'none'
       }
     },
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-netlify
@@ -45,7 +43,7 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
-          globPatterns: [ICON]
+          globPatterns: [path.join('**', 'icons', '*')]
         }
       }
     },
