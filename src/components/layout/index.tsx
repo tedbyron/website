@@ -42,7 +42,7 @@ const Layout = ({
       </div> */}
 
       <Header />
-      <main ref={main} role='main' tabIndex='-1'>
+      <main ref={main} role='main' tabIndex={-1}>
         {children}
       </main>
       <Footer />

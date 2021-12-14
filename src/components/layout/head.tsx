@@ -7,14 +7,14 @@ export interface HeadProps {
   title?: string
   description?: string
   path?: string
-  meta?: readonly JSX.Element[]
+  meta?: JSX.Element[]
 }
 
 const Head = ({
   title = '',
   description,
   path = '',
-  meta = [] // TODO: loop through meta elements and add to Helmet.
+  meta = []
 }: HeadProps): JSX.Element => {
   const siteMetadata = useSiteMetadata()
 
@@ -38,7 +38,8 @@ const Head = ({
       <meta name='url' content={data.path} />
       <meta
         name='viewport'
-        content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no'
+        content='width=device-width, initial-scale=1, shrink-to-fit=no'
+        // FIXME: mobile zoom - maximum-scale=1?
       />
       <meta name='color-scheme' content={siteMetadata.themeColor} />
       <meta property='og:title' content={data.title} />
@@ -46,6 +47,7 @@ const Head = ({
       <meta property='og:url' content={data.path} />
       <meta property='og:type' content='website' />
       <meta property='og:locale' content='en_US' />
+      {meta}
     </Helmet>
   )
 }

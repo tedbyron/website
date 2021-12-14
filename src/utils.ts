@@ -3,33 +3,30 @@ type ClassListObject = Record<string, boolean>
 
 /**
  * Generate a string of class names given any number of `string`s, `Array`s of `string`s, or
- * `Objects` with `string` keys and `boolean` values. Performs minimal parsing of class names and
- * does not check their validity.
+ * `Objects` with `string` keys and `boolean` values. Removes extra whitespace and duplicates from
+ * input arguments.
  *
  * @param args Class names in any form.
  * @returns A string of classnames.
  */
 export const classify = (...args: Array<ClassList | ClassListObject>): string => {
-  const tmp: string[] = []
+  const tmp: Set<string> = new Set()
 
-  args.forEach(a => {
-    if (Array.isArray(a)) {
-      tmp.push(
-        ...a.flat(Infinity)
-          .map(v => v.trim())
-      )
-    } else if (typeof a === 'string' || a instanceof String) {
-      tmp.push(
-        ...a.split(/\s+/)
-      )
-    } else if (typeof a === 'object' && a !== null) {
-      tmp.push(
-        ...Object.entries(a)
-          .filter(([_k, v]) => v)
-          .map(([k, _v]) => k.trim())
-      )
+  for (const arg of args) {
+    if (Array.isArray(arg)) {
+      arg.flat(Infinity)
+        .forEach(val => tmp.add(val.trim()))
+    } else if (typeof arg === 'string') {
+      arg.trim()
+        .split(/\s+/)
+        .forEach(val => tmp.add(val.trim()))
+    } else if (typeof arg === 'object' && arg !== null) {
+      Object.entries(arg)
+        .filter(([_key, val]) => val)
+        .forEach(([key, _val]) => tmp.add(key.trim()))
     }
-  })
+  }
 
-  return tmp.join(' ')
+  tmp.delete('')
+  return [...tmp].join(' ')
 }

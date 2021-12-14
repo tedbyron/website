@@ -1,15 +1,12 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import Section from '../components/section'
-// import Heading from '../components/headings'
+import { Section, Heading } from '../components'
 
 export default (): JSX.Element => (
   <Layout>
-    <Section className='section'>
-      <div className='text-center'>
-        <h1 className='text-8xl font-serif'>Teddy Byron</h1>
-      </div>
+    <Section>
+      <Heading as='h1' className='text-center'>Teddy Byron</Heading>
     </Section>
   </Layout>
 )

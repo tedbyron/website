@@ -2,6 +2,7 @@ const path = require('path')
 
 const HOST = 'tedbyron.com'
 const URL = 'https://tedbyron.com'
+const ICON = path.join(__dirname, 'src', 'images', 'icon.png')
 
 module.exports = {
   siteMetadata: {
@@ -39,7 +40,7 @@ module.exports = {
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#b86bff',
-        icon: 'src/images/icon.jpg'
+        icon: ICON
         // TODO: once a little stable, don't bust favicon
         // cache_busting_mode: 'none'
       }
@@ -51,7 +52,7 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
-          globPatterns: ['src/images/icon.jpg']
+          globPatterns: [ICON]
         }
       }
     },

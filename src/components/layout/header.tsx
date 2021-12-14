@@ -5,7 +5,6 @@ const Header = (): JSX.Element => {
   const [navOpen, setNavOpen] = useState(false)
 
   const burgerClick = (): void => {
-    setNavClass(navOpen ? '' : ' is-active')
     setNavOpen(!navOpen)
   }
 
