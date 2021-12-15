@@ -21,7 +21,7 @@ type HeadingProps = PropsWithChildren<{
  * A heading element.
  */
 const Heading = ({
-  className,
+  className = '',
   as,
   children
 }: HeadingProps): JSX.Element => {
