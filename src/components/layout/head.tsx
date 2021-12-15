@@ -31,7 +31,7 @@ const Head = ({
 
   return (
     <Helmet>
-      <html lang='en' className='bg-black text-white' />
+      <html lang='en' className='bg-black text-white break-words' />
       <title>{data.title}</title>
       <meta charSet='UTF-8' />
       <meta name='author' content={siteMetadata.author} />

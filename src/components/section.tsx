@@ -14,7 +14,7 @@ const Section = ({
   className = '',
   children
 }: SectionProps): JSX.Element => (
-  <section className={classify('container', className)}>
+  <section className={classify('container px-3 sm:px-6', className)}>
     {children}
   </section>
 )

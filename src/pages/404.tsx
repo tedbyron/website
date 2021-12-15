@@ -8,10 +8,9 @@ export default (): JSX.Element => (
     description='404 not found.'
     path='404'
   >
-    {/* TODO */}
-    <Section className='mx-auto flex flex-col justify-center items-center'>
-      <Heading as='h1' className='inline-block'>404</Heading>
-      <Heading as='h2' className='inline-block'>That route doesn't exist...</Heading>
+    <Section>
+      <Heading as='h1' className='text-center'>404</Heading>
+      <Heading as='h2' className='text-center'>That route doesn't exist...</Heading>
     </Section>
   </Layout>
 )

@@ -27,7 +27,7 @@ const Heading = ({
 }: HeadingProps): JSX.Element => {
   switch (as) {
     case HeadingLevel.h1:
-      className = classify('text-4xl sm:text-6xl sm:leading-relaxed', className)
+      className = classify('text-4xl sm:text-6xl', className)
       break
     case HeadingLevel.h2:
       className = classify('text-2xl sm:text-4xl', className)
@@ -50,7 +50,7 @@ const Heading = ({
 
   return React.createElement(
     as,
-    { className: classify('font-serif font-bold', className) },
+    { className: classify('font-serif font-bold text-slate', className) },
     children
   )
 }

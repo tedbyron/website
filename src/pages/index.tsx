@@ -4,8 +4,8 @@ import { Heading, Layout, Section } from '../components'
 
 export default (): JSX.Element => (
   <Layout>
-    <Section className='flex justify-center'>
-      <Heading as='h1' className='text-slate'>Teddy Byron</Heading>
+    <Section>
+      <Heading as='h1' className='text-center'>Teddy Byron</Heading>
     </Section>
   </Layout>
 )
