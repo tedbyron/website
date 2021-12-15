@@ -27,22 +27,22 @@ const Heading = ({
 }: HeadingProps): JSX.Element => {
   switch (as) {
     case HeadingLevel.h1:
-      className = className ?? 'text-4xl md:text-6xl'
+      className = classify('text-4xl md:text-6xl', className)
       break
     case HeadingLevel.h2:
-      className = className ?? 'text-2xl md:text-4xl'
+      className = classify('text-2xl md:text-4xl', className)
       break
     case HeadingLevel.h3:
-      className = className ?? 'text-xl'
+      className = classify('text-xl', className)
       break
     case HeadingLevel.h4:
-      className = className ?? 'text-base'
+      className = classify('text-base', className)
       break
     case HeadingLevel.h5:
-      className = className ?? 'text-sm'
+      className = classify('text-sm', className)
       break
     case HeadingLevel.h6:
-      className = className ?? 'text-xs'
+      className = classify('text-xs', className)
       break
     default:
       throw new Error('Heading component has a missing or invalid `as` prop.')
