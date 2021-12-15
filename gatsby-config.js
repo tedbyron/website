@@ -64,7 +64,7 @@ module.exports = {
         purgeCSSOptions: {
           content: [path.join(__dirname, 'src', '**', '!(*.d).{js,jsx,ts,tsx,md,mdx}')],
           fontFace: true,
-          safelist: ['gatsby-focus-wrapper']
+          safelist: ['___gatsby', 'gatsby-focus-wrapper']
         }
       }
     },
