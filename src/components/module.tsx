@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react'
 import { classify } from '../utils'
 
 type ModuleProps = PropsWithChildren<{
-  autoComplete: 'on' | 'off'
+  autoComplete?: 'on' | 'off'
   className?: string
   name: string
 }>
