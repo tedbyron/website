@@ -18,7 +18,7 @@ type HeadingProps = PropsWithChildren<{
 }>
 
 /**
- * A heading element.
+ * Heading element.
  */
 const Heading = ({
   className = '',

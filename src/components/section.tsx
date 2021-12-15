@@ -8,7 +8,7 @@ type SectionProps = PropsWithChildren<{
 }>
 
 /**
- * A `section` element.
+ * `section` element.
  */
 const Section = ({
   className = '',
