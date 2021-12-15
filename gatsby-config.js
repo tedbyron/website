@@ -2,14 +2,16 @@ const path = require('path')
 
 const HOST = 'tedbyron.com'
 const URL = 'https://tedbyron.com'
+const DESCRIPTION = 'Teddy Byron\'s website.'
+const THEME_COLOR = '#282a36'
 
 module.exports = {
   siteMetadata: {
     title: 'Teddy Byron',
     author: 'Teddy Byron <ted@tedbyron.com>',
-    description: 'Teddy Byron\'s website.',
+    description: DESCRIPTION,
     siteUrl: URL,
-    themeColor: '#282a36'
+    themeColor: THEME_COLOR
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-canonical-urls
@@ -26,12 +28,12 @@ module.exports = {
       options: {
         name: HOST,
         short_name: HOST,
-        description: 'Teddy Byron\'s website and blog.',
+        description: DESCRIPTION,
         lang: 'en',
         display: 'minimal-ui',
         start_url: '/',
-        background_color: '#282a36',
-        theme_color: '#282a36',
+        background_color: THEME_COLOR,
+        theme_color: THEME_COLOR,
         icon: path.join('src', 'images', 'favicon.png'),
         cache_busting_mode: 'none'
       }
@@ -60,7 +62,9 @@ module.exports = {
         tailwind: true,
         // https://purgecss.com/configuration.html#options
         purgeCSSOptions: {
-          content: [path.join(__dirname, 'src', '**', '!(*.d).{js,jsx,ts,tsx,md,mdx}')]
+          content: [path.join(__dirname, 'src', '**', '!(*.d).{js,jsx,ts,tsx,md,mdx}')],
+          fontFace: true,
+          safelist: ['gatsby-focus-wrapper']
         }
       }
     },
