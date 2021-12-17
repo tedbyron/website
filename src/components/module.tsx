@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react'
 import { classify } from '../utils'
 
 type ModuleProps = PropsWithChildren<{
-  autoComplete?: 'on' | 'off'
+  borderColor: string
   className?: string
   name: string
 }>
@@ -13,14 +13,14 @@ type ModuleProps = PropsWithChildren<{
  * Converter module.
  */
 const Module = ({
-  autoComplete = 'on',
+  borderColor,
   className = '',
   children,
   name
 }: ModuleProps): JSX.Element => (
-  <form name={name} autoComplete={autoComplete} className={classify('', className)}>
-    <fieldset className='p-3 pt-1 border-2 border-green rounded-lg '>
-      <legend className='mx-2 px-2 border-2 border-green rounded-md font-bold'>Module</legend>
+  <form name={name}>
+    <fieldset className={classify('p-3 border-2 rounded-lg', `border-${borderColor}`, className)}>
+      <legend className={classify('mx-2 px-2 border-2 rounded-md font-bold', `border-${borderColor}`)}>{name}</legend>
       {children}
     </fieldset>
   </form>
