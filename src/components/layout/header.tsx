@@ -6,7 +6,7 @@ const Header = (): JSX.Element => {
     <header className='container p-3 sm:pt-6'>
       <nav className='flex justify-center'>
         <Link to='/'>
-          <div className='w-6 h-6 sm:w-10 sm:h-10 rounded-full drac-bg-animated focus:border focus:border-green hover:outline hover:outline-2 hover:outline-green hover:outline-offset-1' />
+          <div className='w-6 h-6 sm:w-10 sm:h-10 rounded-full drac-bg-animated hover:outline hover:outline-2 hover:outline-green hover:outline-offset-1' />
         </Link>
       </nav>
     </header>
