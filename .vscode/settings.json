@@ -19,5 +19,6 @@
     "typescript": "javascript"
   },
   "xd.globalEditor": false,
-  "xd.lastPackage": "/Users/ted/git/tedbyron.com/node_modules/@dracula/dracula-ui/dsp"
+  "xd.lastPackage": "/Users/ted/git/tedbyron.com/node_modules/@dracula/dracula-ui/dsp",
+  "standard.enable": false
 }

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Header = (): JSX.Element => {
   return (
-    <header className='container p-3 sm:pt-6'>
+    <header className='container px-3 pt-3 sm:px-6 sm:pt-6'>
       <nav className='flex justify-center'>
         <Link to='/'>
           <div className='w-6 h-6 sm:w-10 sm:h-10 rounded-full drac-bg-animated hover:outline hover:outline-2 hover:outline-green hover:outline-offset-1' />

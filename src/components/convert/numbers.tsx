@@ -35,16 +35,18 @@ const NumbersModule = (): JSX.Element => {
     const n = Number.parseInt(e.target.value, radix)
     if (!isNaN(n)) {
       setNum(n)
+    } else {
+      e.target.value
     }
   }
 
   return (
-    <Module name='Numbers' color='border-green' className='flex'>
+    <Module name='Numbers' color='border-green' className='grid grid-cols-[auto_1fr] sm:grid-cols-[repeat(2,auto_1fr)] gap-1'>
       <select
         name='numbers-select-left'
         value={leftRadix}
         onChange={e => changeRadix(e, setLeftRadix)}
-        className='mr-1 bg-black border-2 border-gray rounded-l-md capitalize'
+        className='bg-black border-2 border-gray rounded-l-md capitalize'
       >
         {Object.entries(Radices).filter(([k]) => k !== `${rightRadix}`).map(([k, v]) => (
           <option key={k} value={k}>{v}</option>
@@ -57,14 +59,14 @@ const NumbersModule = (): JSX.Element => {
         name='numbers'
         value={left}
         onChange={e => inputNum(e, leftRadix)}
-        className='mr-3 bg-black border-2 border-gray rounded-r-md flex-grow'
+        className='min-w-0 sm:mr-1 bg-black border-2 border-gray rounded-r-md'
       />
 
       <select
         name='numbers-select-right'
         value={rightRadix}
         onChange={e => changeRadix(e, setRightRadix)}
-        className='mr-1 bg-black border-2 border-gray rounded-l-md capitalize'
+        className='sm:ml-1 bg-black border-2 border-gray rounded-l-md capitalize'
       >
         {Object.entries(Radices).filter(([k]) => k !== `${leftRadix}`).map(([k, v]) => (
           <option key={k} value={k}>{v}</option>
@@ -77,7 +79,7 @@ const NumbersModule = (): JSX.Element => {
         name='numbers'
         value={right}
         onChange={e => inputNum(e, rightRadix)}
-        className='bg-black border-2 border-gray rounded-r-md flex-grow'
+        className='min-w-0 bg-black border-2 border-gray rounded-r-md'
       />
     </Module>
   )
