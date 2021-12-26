@@ -31,7 +31,7 @@ const Head = ({
 
   return (
     <Helmet>
-      <html lang='en' className='h-full bg-black text-white break-words' />
+      <html lang='en' className='h-full bg-black text-white' />
       <body className='h-full' />
       <title>{data.title}</title>
       <meta charSet='UTF-8' />

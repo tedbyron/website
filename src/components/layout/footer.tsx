@@ -7,7 +7,7 @@ import EmailIcon from '../../images/svg/email.svg'
 const svgClass = 'text-2xl sm:text-3xl text-slate hover:text-green'
 
 const Footer = (): JSX.Element => (
-  <footer className='container max-w-xs mx-auto p-3 sm:p-6 flex justify-around sm:justify-between items-center'>
+  <footer className='container max-w-xs mx-auto mt-3 sm:mt-6 p-3 sm:p-6 flex justify-around sm:justify-between items-center'>
     <a href='https://github.com/tedbyron'>
       <GitHubIcon className={svgClass} />
     </a>

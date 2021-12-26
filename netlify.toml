@@ -25,28 +25,3 @@ from = "https://tedbyron.netlify.app/*"
 to = "https://tedbyron.com/:splat"
 status = 301
 force = true
-
-[[headers]]
-for = "*.js"
-[headers.values]
-cache-control = "public, max-age=31536000, immutable"
-
-[[headers]]
-for = "sw.js"
-[headers.values]
-cache-control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-for = "*.html"
-[headers.values]
-cache-control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-for = "public/page-data/"
-[headers.values]
-cache-control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-for = "public/static/"
-[headers.values]
-cache-control = "public, max-age=31536000, immutable"

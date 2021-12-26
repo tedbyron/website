@@ -1,5 +1,9 @@
+import ColorsModule from './colors'
 import NumbersModule from './numbers'
 
-export {
+const Convert = {
+  ColorsModule,
   NumbersModule
 }
+
+export default Convert

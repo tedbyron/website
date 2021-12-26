@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Layout, Section } from '../components'
-import { NumbersModule } from '../components/convert'
+import { Convert, Heading, Layout, Section } from '../components'
 
 export default (): JSX.Element => (
   <Layout
@@ -10,7 +9,9 @@ export default (): JSX.Element => (
     path='convert'
   >
     <Section>
-      <NumbersModule />
+      <Heading as='h1' className='text-center'>Convert</Heading>
+      <Convert.NumbersModule />
+      {/* <Convert.ColorsModule /> */}
     </Section>
   </Layout>
 )
