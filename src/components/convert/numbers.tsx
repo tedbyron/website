@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import type { ChangeEvent } from 'react'
 
 import Module from './module'
+import { useLocalStorageNumber } from '../../hooks'
 import { classify } from '../../utils'
 
 const RADICES = {
@@ -18,25 +19,15 @@ const handleRadixChange = (e: ChangeEvent<HTMLSelectElement>, setRadix: Function
 const INVALID = 'border-red focus:border-red focus:ring-red'
 
 const NumbersModule = (): JSX.Element => {
-  const [num, setNum] = useState(Number.parseInt(localStorage.getItem('num') ?? '42', 10))
+  const [num, setNum] = useLocalStorageNumber('num', 42)
 
-  const [leftRadix, setLeftRadix] = useState(Number.parseInt(localStorage.getItem('leftRadix') ?? '10', 10))
+  const [leftRadix, setLeftRadix] = useLocalStorageNumber('leftRadix', 10)
   const [left, setLeft] = useState(num.toString(leftRadix))
   const [leftValid, setLeftValid] = useState(true)
 
-  const [rightRadix, setRightRadix] = useState(Number.parseInt(localStorage.getItem('rightRadix') ?? '2', 10))
+  const [rightRadix, setRightRadix] = useLocalStorageNumber('rightRadix', 2)
   const [right, setRight] = useState(num.toString(rightRadix))
   const [rightValid, setRightValid] = useState(true)
-
-  useEffect(() => {
-    localStorage.setItem('num', num.toString())
-  }, [num])
-  useEffect(() => {
-    localStorage.setItem('leftRadix', leftRadix.toString())
-  }, [leftRadix])
-  useEffect(() => {
-    localStorage.setItem('rightRadix', rightRadix.toString())
-  }, [rightRadix])
 
   useEffect(() => {
     setLeft(num.toString(leftRadix))
