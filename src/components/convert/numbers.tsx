@@ -72,6 +72,7 @@ const NumbersModule = (): JSX.Element => {
       <input
         type='text'
         name='numbers-input-left'
+        aria-label={`number with radix ${leftRadix}`}
         value={left}
         onChange={e => handleNumChange(e, leftRadix, setLeft, setLeftValid)}
         onFocus={e => e.target.select()}
@@ -95,6 +96,7 @@ const NumbersModule = (): JSX.Element => {
       <input
         type='text'
         name='numbers-input-right'
+        aria-label={`number with radix ${rightRadix}`}
         value={right}
         onChange={e => handleNumChange(e, rightRadix, setRight, setRightValid)}
         onFocus={e => e.target.select()}
