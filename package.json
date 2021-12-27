@@ -17,7 +17,6 @@
     "dev": "gatsby develop",
     "clean": "gatsby clean",
     "preload-fonts": "gatsby-preload-fonts",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "tsc:watch": "tsc --watch",
     "tsc:ci": "tsc --pretty false",
     "lint": "ts-standard --report stylish",

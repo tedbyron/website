@@ -13,7 +13,7 @@ const RADICES = {
 } as const
 
 const handleRadixChange = (e: ChangeEvent<HTMLSelectElement>, setRadix: Function): void => {
-  setRadix(Number.parseInt(e.target.value, 10))
+  setRadix(parseInt(e.target.value, 10))
 }
 
 const INVALID = 'border-red focus:border-red focus:ring-red'
@@ -42,7 +42,7 @@ const NumbersModule = (): JSX.Element => {
     setValue: Function,
     setValid: Function
   ): void => {
-    const n = Number.parseInt(e.target.value, radix)
+    const n = parseInt(e.target.value, radix)
     if (!isNaN(n)) {
       setNum(n)
       setValid(true)

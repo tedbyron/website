@@ -11,7 +11,7 @@ export default (): JSX.Element => (
     <Section>
       <Heading as='h1' className='text-center'>Convert</Heading>
       <Convert.NumbersModule />
-      {/* <Convert.ColorsModule /> */}
+      <Convert.ColorsModule />
     </Section>
   </Layout>
 )

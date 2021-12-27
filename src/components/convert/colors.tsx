@@ -1,92 +1,91 @@
-import React, { useEffect, useState } from 'react'
-import type { ChangeEvent } from 'react'
+import React, { useState } from 'react'
+// import type { ChangeEvent } from 'react'
 
 import Module from './module'
+import { useLocalStorage, useLocalStorageNumber } from '../../hooks'
 
-const radices = {
-  2: 'bin',
-  8: 'oct',
-  10: 'dec',
-  16: 'hex'
-} as const
+interface Rgb {
+  red: number
+  green: number
+  blue: number
+}
+interface Rgba extends Rgb {
+  alpha: number
+}
+
+interface Hsl {
+  hue: number
+  saturation: number
+  lightness: number
+}
+interface Hsla extends Hsl {
+  alpha: number
+}
+
+const hexToRgb = (hex: string): Rgb => {
+  const red = parseInt(hex.slice(1, 3), 16)
+  const green = parseInt(hex.slice(3, 5), 16)
+  const blue = parseInt(hex.slice(5, 7), 16)
+
+  return { red, green, blue }
+}
+// const hexToHsl = (): Hsl => {}
 
 const ColorsModule = (): JSX.Element => {
-  const [num, setNum] = useState(Number.parseInt(localStorage.getItem('convert-color') ?? '42', 10))
+  const [color, setColor] = useLocalStorage('color', '#bd93f9')
+  const [alpha, setAlpha] = useLocalStorageNumber('alpha', 1)
 
-  const [leftRadix, setLeftRadix] = useState(10)
-  const [left, setLeft] = useState(num.toString(leftRadix))
-
-  const [rightRadix, setRightRadix] = useState(2)
-  const [right, setRight] = useState(num.toString(rightRadix))
-
-  useEffect(() => {
-    localStorage.setItem('convert-color', num.toString())
-  }, [num])
-
-  useEffect(() => {
-    setLeft(num.toString(leftRadix))
-  }, [num, leftRadix])
-
-  useEffect(() => {
-    setRight(num.toString(rightRadix))
-  }, [num, rightRadix])
-
-  const handleRadixChange = (e: ChangeEvent<HTMLSelectElement>, f: Function): void => {
-    f(Number.parseInt(e.target.value, 10))
-  }
-
-  const handleNumChange = (e: ChangeEvent<HTMLInputElement>, radix: number, f: Function): void => {
-    const n = Number.parseInt(e.target.value, radix)
-    if (!isNaN(n)) {
-      setNum(n)
-    } else {
-      f(e.target.value)
-    }
-  }
+  const [rgba, setRgba]: [Rgba, React.Dispatch<React.SetStateAction<Rgba>>] = useState()
+  const [hsla, setHsla]: [Hsla, React.Dispatch<React.SetStateAction<Hsla>>] = useState()
 
   return (
     <Module
       name='Colors'
-      color='text-purple'
-      className='grid grid-cols-[auto_1fr] sm:grid-cols-[repeat(2,auto_1fr)] gap-1'
+      color={`text-[${color}]`}
+      className='grid grid-cols-[auto_1fr] sm:grid-cols-[repeat(3,auto_1fr)] gap-1'
     >
-      <select
-        name='colors-select-left'
-        value={leftRadix}
-        onChange={e => handleRadixChange(e, setLeftRadix)}
-        className='bg-black border-2 border-gray rounded-l-md capitalize'
+      <label
+        htmlFor='colors-input-hex'
+        className='border-2 border-gray rounded-l-md text-center'
       >
-        {Object.entries(radices).map(([k, v]) => (
-          <option key={k} value={k}>{v}</option>
-        ))}
-      </select>
-
+        Hex
+      </label>
       <input
         type='text'
-        id='colors-input-left'
+        id='colors-input-hex'
         name='colors'
-        value={left}
-        onChange={e => handleNumChange(e, leftRadix, setLeft)}
+        value={color}
+        onFocus={e => e.target.select()}
         className='min-w-0 sm:mr-1 bg-black border-2 border-gray rounded-r-md'
       />
 
-      <select
-        name='colors-select-right'
-        value={rightRadix}
-        onChange={e => handleRadixChange(e, setRightRadix)}
-        className='sm:ml-1 bg-black border-2 border-gray rounded-l-md capitalize'
+      <label
+        htmlFor='colors-input-rgba'
+        className='sm:ml-1 border-2 border-gray rounded-l-md text-center'
       >
-        {Object.entries(radices).map(([k, v]) => (
-          <option key={k} value={k}>{v}</option>
-        ))}
-      </select>
-
+        RGBA
+      </label>
       <input
         type='text'
-        id='colors-input-right'
+        id='colors-input-rgba'
         name='colors'
-        value={right}
-        onChange={e => handleNumChange(e, rightRadix, setRight)}
+        value={rgba}
+        onFocus={e => e.target.select()}
+        className='min-w-0 sm:mr-1 bg-black border-2 border-gray rounded-r-md'
+      />
+
+      <label
+        htmlFor='colors-input-hsla'
+        className='sm:ml-1 border-2 border-gray rounded-l-md text-center'
+      >
+        HSLA
+      </label>
+      <input
+        type='text'
+        id='colors-input-hsla'
+        name='colors'
+        value={hsla}
+        onFocus={e => e.target.select()}
         className='min-w-0 bg-black border-2 border-gray rounded-r-md'
       />
     </Module>
