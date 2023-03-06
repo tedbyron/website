@@ -9,20 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Use node.js 16.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 16.x
-          cache: 'yarn'
-      - name: Dedupe dependencies
-        run: yarn dedupe --check
+          version: 7
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'pnpm'
       - name: Install dependencies
-        run: yarn --immutable
-      - name: Compile typescript
-        run: yarn tsc:ci
+        run: pnpm i
       - name: Lint code
-        run: yarn lint:ci
+        run: pnpm lint
       - name: Build site
-        run: yarn build:ci
+        run: pnpm build
