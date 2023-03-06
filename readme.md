@@ -1,6 +1,6 @@
 <div align="center">
   <h1><code>tedbyron.com</code></h1>
-  <p><strong>My website.</strong></p>
+  <p><strong>My website</strong></p>
   <a href="https://github.com/tedbyron/tedbyron.com/actions/workflows/ci.yml">
     <img src="https://github.com/tedbyron/tedbyron.com/actions/workflows/ci.yml/badge.svg?branch=staging" alt="github actions status" />
   </a>

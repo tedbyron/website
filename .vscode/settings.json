@@ -1,24 +1,6 @@
 {
-  "css.validate": false,
-  "editor.quickSuggestions": {
-    "strings": true
+  "files.associations": {
+    "*.css": "tailwindcss"
   },
-  "standard.engine": "ts-standard",
-  "standard.autoFixOnSave": true,
-  "standard.enableGlobally": true,
-  "search.exclude": {
-    ".gitignore": true,
-    "**/.yarn": true,
-    "yarn.lock": true,
-    "**/.pnp.*": true,
-    ".vscode": true,
-    ".github": true
-  },
-  "tailwindCSS.includeLanguages": {
-    "typescriptreact": "javascript",
-    "typescript": "javascript"
-  },
-  "xd.globalEditor": false,
-  "xd.lastPackage": "/Users/ted/git/tedbyron.com/node_modules/@dracula/dracula-ui/dsp",
-  "standard.enable": true
+  "svelte.enable-ts-plugin": false
 }
