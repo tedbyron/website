@@ -24,7 +24,6 @@
       break
     case 'h6':
       className = classnames('text-xs', className)
-      break
   }
 </script>
 
