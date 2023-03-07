@@ -6,7 +6,7 @@
  * @param args Class names in any form.
  * @returns A string of classnames.
  */
-export function classnames(...args: Array<string | string | Record<string, boolean>>): string {
+export const classnames = (...args: Array<string | string[] | Record<string, boolean>>): string => {
   const tmp = new Set<string>()
 
   for (const arg of args) {

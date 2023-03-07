@@ -9,6 +9,33 @@
 }
 
 @layer components {
+  .convert {
+    input {
+      @apply min-w-0 rounded-r-md border-2 border-gray bg-black;
+
+      &:not(:last-of-type) {
+        @apply sm:mr-1;
+      }
+    }
+
+    & label,
+    select {
+      @apply rounded-l-md border-2 border-gray;
+
+      &:not(:first-of-type) {
+        @apply sm:ml-1;
+      }
+    }
+
+    label {
+      @apply text-center;
+    }
+
+    select {
+      @apply bg-black capitalize;
+    }
+  }
+
   .footer-icon {
     @apply text-2xl hover:text-green sm:text-3xl;
   }
