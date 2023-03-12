@@ -8,10 +8,10 @@
 
   switch (tag) {
     case 'h1':
-      className = classnames('text-4xl sm:text-6xl', className)
+      className = classnames('text-5xl sm:text-6xl', className)
       break
     case 'h2':
-      className = classnames('text-2xl sm:text-4xl', className)
+      className = classnames('text-3xl sm:text-4xl', className)
       break
     case 'h3':
       className = classnames('text-xl', className)

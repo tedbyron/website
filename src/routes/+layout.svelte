@@ -17,7 +17,7 @@
 </svelte:head>
 
 <div class="flex min-h-full flex-col">
-  <header class="container px-3 pt-3 sm:px-6 sm:pt-6">
+  <header class="container px-6 pt-6">
     <nav class="flex justify-center">
       <a
         bind:this={a}
@@ -27,7 +27,7 @@
         class:pointer-events-none={a?.href === $page.url.href}
       >
         <div
-          class="h-6 w-6 rounded-full bg-green hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green sm:h-10 sm:w-10"
+          class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green sm:h-10 sm:w-10"
         />
       </a>
     </nav>
@@ -37,9 +37,7 @@
     <slot />
   </main>
 
-  <footer
-    class="container mx-auto flex max-w-xs items-center justify-around p-3 sm:justify-between sm:p-6"
-  >
+  <footer class="container mx-auto flex max-w-xs items-center justify-between p-6">
     <a href="https://github.com/tedbyron" aria-label="Ted Byron's GitHub profile"
       ><IconGithub class="footer-icon" /></a
     >
