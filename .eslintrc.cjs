@@ -38,9 +38,7 @@ module.exports = {
           ['object', 'type']
         ],
         'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc'
-        }
+        alphabetize: { order: 'asc' }
       }
     ]
   }
