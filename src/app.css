@@ -9,6 +9,11 @@
 }
 
 @layer base {
+  :root,
+  body {
+    @apply h-full;
+  }
+
   :root {
     @apply bg-black text-slate;
   }

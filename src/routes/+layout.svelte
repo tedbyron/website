@@ -16,7 +16,7 @@
   <meta name="color-scheme" content="#282a36" />
 </svelte:head>
 
-<div class="flex min-h-screen flex-col">
+<div class="flex min-h-full flex-col">
   <header class="container px-3 pt-3 sm:px-6 sm:pt-6">
     <nav class="flex justify-center">
       <a
@@ -38,7 +38,7 @@
   </main>
 
   <footer
-    class="container mx-auto mt-3 flex max-w-xs items-center justify-around p-3 sm:mt-6 sm:justify-between sm:p-6"
+    class="container mx-auto flex max-w-xs items-center justify-around p-3 sm:justify-between sm:p-6"
   >
     <a href="https://github.com/tedbyron" aria-label="Ted Byron's GitHub profile"
       ><IconGithub class="footer-icon" /></a
