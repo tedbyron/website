@@ -1,10 +1,10 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     colors: {
-      transparent: 'transparent',
-      current: 'current',
       black: '#282a36',
       gray: '#44475a',
       white: '#f8f8f2',
@@ -15,45 +15,14 @@ module.exports = {
       pink: '#ff79c6',
       purple: '#bd93f9',
       red: '#ff5555',
-      yellow: '#f1fa8c'
+      yellow: '#f1fa8c',
+      ...defaultTheme.colors
     },
     container: {
       center: true
     },
     fontFamily: {
-      sans: [
-        'Iosevka SS07 Web Extended',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"'
-      ],
-      serif: [
-        'Iosevka Slab Web Extended',
-        'Georgia',
-        'Cambria',
-        '"Times New Roman"',
-        'Times',
-        'serif'
-      ],
-      mono: [
-        'Iosevka SS07 Web Extended',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace'
-      ]
+      serif: ['Mackinac', ...defaultTheme.fontFamily.serif]
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],

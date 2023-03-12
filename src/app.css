@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Mackinac';
+  src: url('/assets/fonts/P22Mackinac-Book_13.woff2') format('woff2'),
+    url('/assets/fonts/P22Mackinac-Book_13.woff') format('woff');
+}
+
 @layer base {
   :root {
     @apply bg-black text-slate;
@@ -11,7 +17,7 @@
 @layer components {
   .convert {
     input {
-      @apply min-w-0 rounded-r-md border-2 border-gray bg-black;
+      @apply min-w-0 rounded-r-md border-2 border-gray bg-black px-1;
 
       &:not(:last-of-type) {
         @apply sm:mr-1;
@@ -28,7 +34,7 @@
     }
 
     label {
-      @apply text-center;
+      @apply px-1 text-center;
     }
 
     select {
