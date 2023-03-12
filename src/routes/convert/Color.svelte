@@ -1,38 +1,38 @@
 <script lang="ts">
   import Module from './Module.svelte'
 
-  interface Rgb {
-    r: number
-    g: number
-    b: number
-  }
+  // interface Rgb {
+  //   r: number
+  //   g: number
+  //   b: number
+  // }
 
-  interface Rgba extends Rgb {
-    a: number
-  }
+  // interface Rgba extends Rgb {
+  //   a: number
+  // }
 
-  interface Hsl {
-    h: number
-    s: number
-    l: number
-  }
+  // interface Hsl {
+  //   h: number
+  //   s: number
+  //   l: number
+  // }
 
-  interface Hsla extends Hsl {
-    a: number
-  }
+  // interface Hsla extends Hsl {
+  //   a: number
+  // }
 
   let hex = '#bd93f9'
-  const alpha = 1
+  // const alpha = 1
   let rgba = ''
   let hsla = ''
 
-  const hexToRgb = (hex: string): Rgb => {
-    const r = parseInt(hex.slice(1, 3), 16)
-    const g = parseInt(hex.slice(3, 5), 16)
-    const b = parseInt(hex.slice(5, 7), 16)
+  // const hexToRgb = (hex: string): Rgb => {
+  //   const r = parseInt(hex.slice(1, 3), 16)
+  //   const g = parseInt(hex.slice(3, 5), 16)
+  //   const b = parseInt(hex.slice(5, 7), 16)
 
-    return { r, g, b }
-  }
+  //   return { r, g, b }
+  // }
 </script>
 
 <Module
