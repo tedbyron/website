@@ -34,8 +34,9 @@ module.exports = {
         groups: [
           'builtin',
           'external',
-          ['internal', 'parent', 'sibling', 'index'],
-          ['object', 'type']
+          ['internal', 'unknown', 'parent', 'sibling', 'index'],
+          'type',
+          'object'
         ],
         'newlines-between': 'always',
         alphabetize: { order: 'asc' }
