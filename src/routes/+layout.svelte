@@ -12,6 +12,7 @@
   <title>Teddy Byron</title>
   <meta name="description" content="Teddy Byron's website" />
   <meta name="color-scheme" content="#282a36" />
+  <meta name="theme-color" content="#282a36" />
 </svelte:head>
 
 <div class="flex min-h-full flex-col">
