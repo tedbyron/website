@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+
   import { page } from '$app/stores'
   import IconGithub from '~icons/iconoir/github'
   import IconGitlab from '~icons/iconoir/gitlab-full'
@@ -7,7 +9,12 @@
 
   import '../app.css'
 
-  let a: HTMLAnchorElement | undefined
+  let homeButton: HTMLAnchorElement | undefined
+  let homePage = true
+
+  onMount(() => {
+    homePage = homeButton!.pathname === $page.url.pathname
+  })
 </script>
 
 <svelte:head>
@@ -20,11 +27,11 @@
   <header class="container px-6 pt-6">
     <nav class="flex justify-center">
       <a
-        bind:this={a}
+        bind:this={homeButton}
         href="/"
         aria-label="home"
         class="rounded-full"
-        class:pointer-events-none={a?.href === $page.url.href}
+        class:pointer-events-none={homePage}
       >
         <div
           class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green sm:h-10 sm:w-10"
