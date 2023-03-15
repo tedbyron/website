@@ -37,8 +37,8 @@
 
 <Module
   name="Color"
-  styleColor={hex}
-  class="grid grid-cols-[auto_1fr] gap-1 sm:grid-cols-[repeat(3,auto_1fr)]"
+  legendClass="text-purple"
+  fieldsetClass="grid grid-cols-[auto_1fr] gap-1 sm:grid-cols-[repeat(3,auto_1fr)]"
 >
   <div class="col-span-2 mb-1 h-6 rounded-md sm:col-span-6" style:background-color={hex} />
 

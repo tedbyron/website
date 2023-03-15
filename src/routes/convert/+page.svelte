@@ -1,9 +1,8 @@
 <script lang="ts">
-  import ColorModule from './Color.svelte'
-  import NumberModule from './Number.svelte'
-
   import Heading from '$lib/Heading.svelte'
   import Section from '$lib/Section.svelte'
+  import ColorModule from './Color.svelte'
+  import NumberModule from './Number.svelte'
 </script>
 
 <svelte:head>

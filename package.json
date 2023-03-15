@@ -1,6 +1,7 @@
 {
   "name": "tedbyron.com",
   "private": true,
+  "packageManager": "pnpm@7.28.0",
   "type": "module",
   "scripts": {
     "dev": "vite dev",

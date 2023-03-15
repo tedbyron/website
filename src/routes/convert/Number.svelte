@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Module from './Module.svelte'
-
   import { classnames } from '$lib'
+  import Module from './Module.svelte'
 
   type Side = 'left' | 'right'
 
@@ -54,8 +53,8 @@
 
 <Module
   name="Number"
-  color="text-orange"
-  class="grid grid-cols-[auto_1fr] gap-1 sm:grid-cols-[repeat(2,auto_1fr)]"
+  legendClass="text-orange"
+  fieldsetClass="grid grid-cols-[auto_1fr] gap-1 sm:grid-cols-[repeat(2,auto_1fr)]"
 >
   <select
     aria-label="left radix"

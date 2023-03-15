@@ -2,17 +2,17 @@
   import { classnames } from '$lib'
 
   export let name: string | null | undefined
-  export let color = ''
-  let className = ''
-  export let styleColor = ''
-  export { className as class }
+  export let legendClass = ''
+  export let fieldsetClass = ''
 </script>
 
 <form {name} class="mt-3 sm:mt-6">
-  <fieldset class={classnames('rounded-lg border-2 border-slate p-3', className)}>
+  <fieldset class={classnames('rounded-lg border-2 border-slate p-3', fieldsetClass)}>
     <legend
-      class={classnames('mx-2 rounded-md border-2 border-slate px-2 font-serif font-bold', color)}
-      style:color={styleColor ?? 'revert'}
+      class={classnames(
+        'mx-2 rounded-md border-2 border-slate px-2 font-serif font-bold',
+        legendClass
+      )}
     >
       {name}
     </legend>
