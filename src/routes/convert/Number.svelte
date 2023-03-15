@@ -53,8 +53,8 @@
 
 <Module
   name="Number"
-  legendClass="text-orange"
   fieldsetClass="grid grid-cols-[auto_1fr] gap-1 sm:grid-cols-[repeat(2,auto_1fr)]"
+  legendClass="text-orange"
 >
   <select
     aria-label="left radix"

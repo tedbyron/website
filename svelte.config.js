@@ -11,7 +11,8 @@ const config = {
         'base-uri': ['self'],
         'connect-src': ['self', 'cloudflareinsights.com'],
         'default-src': ['self'],
-        'script-src': ['self', 'ajax.cloudflare.com', 'static.cloudflareinsights.com']
+        'script-src': ['self', 'ajax.cloudflare.com', 'static.cloudflareinsights.com'],
+        'style-src': ['self', 'unsafe-inline']
       }
     }
   }

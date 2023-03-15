@@ -18,10 +18,6 @@
   :root {
     @apply bg-black text-slate;
   }
-
-  #sveltekit-root {
-    @apply contents;
-  }
 }
 
 @layer components {
