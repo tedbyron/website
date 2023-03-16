@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Curlio Web';
+  font-family: 'Curlio';
   font-display: swap;
   font-weight: 400;
   src: url('/assets/fonts/curlio-regular.woff2') format('woff2');
