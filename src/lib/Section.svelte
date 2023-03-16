@@ -5,6 +5,6 @@
   export { className as class }
 </script>
 
-<section class={classnames('container px-3 pt-3 sm:px-6 sm:pt-6', className)}>
+<section class={classnames('container px-3 pt-6 sm:px-6', className)}>
   <slot />
 </section>
