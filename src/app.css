@@ -3,10 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Mackinac';
-  src: url('/assets/fonts/P22Mackinac-Book_13.woff2') format('woff2'),
-    url('/assets/fonts/P22Mackinac-Book_13.woff') format('woff');
+  font-family: 'Curlio Web';
   font-display: swap;
+  font-weight: 400;
+  src: url('/assets/fonts/curlio-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Mackinac';
+  font-display: swap;
+  font-weight: 400;
+  src: url('/assets/fonts/mackinac-book.woff2') format('woff2'),
+    url('/assets/fonts/mackinac-book.woff') format('woff');
 }
 
 @layer base {
@@ -21,6 +29,19 @@
 }
 
 @layer components {
+  .footer-icon {
+    @apply text-2xl hover:text-green sm:text-3xl;
+  }
+
+  .link {
+    @apply underline decoration-green underline-offset-[6px];
+
+    &:hover,
+    &:active {
+      @apply text-green decoration-wavy underline-offset-4;
+    }
+  }
+
   .convert {
     input {
       @apply min-w-0 rounded-r-md border-2 border-gray bg-black px-1;
@@ -46,9 +67,5 @@
     select {
       @apply bg-black capitalize;
     }
-  }
-
-  .footer-icon {
-    @apply text-2xl hover:text-green sm:text-3xl;
   }
 }

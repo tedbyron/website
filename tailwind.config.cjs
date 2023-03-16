@@ -22,7 +22,9 @@ module.exports = {
       center: true
     },
     fontFamily: {
-      serif: ['Mackinac', ...defaultTheme.fontFamily.serif]
+      sans: ['Curlio', ...defaultTheme.fontFamily.sans],
+      serif: ['Mackinac', ...defaultTheme.fontFamily.serif],
+      mono: ['Curlio', ...defaultTheme.fontFamily.mono]
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],

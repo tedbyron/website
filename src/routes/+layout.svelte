@@ -10,9 +10,25 @@
 
 <svelte:head>
   <title>Teddy Byron</title>
+
   <meta name="description" content="Teddy Byron's website" />
   <meta name="color-scheme" content="#282a36" />
   <meta name="theme-color" content="#282a36" />
+
+  <link
+    rel="preload"
+    href="/assets/fonts/curlio-regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/mackinac-book.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
 </svelte:head>
 
 <div class="flex min-h-full flex-col">

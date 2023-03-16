@@ -8,10 +8,10 @@
 
   switch (tag) {
     case 'h1':
-      className = classnames('text-5xl sm:text-6xl', className)
+      className = classnames('text-5xl sm:text-6xl sm:leading-none', className)
       break
     case 'h2':
-      className = classnames('text-3xl sm:text-4xl', className)
+      className = classnames('text-3xl sm:text-4xl sm:leading-none', className)
       break
     case 'h3':
       className = classnames('text-xl', className)
@@ -27,6 +27,8 @@
   }
 </script>
 
-<svelte:element this={tag} class={classnames('font-serif font-bold text-slate', className)}
+<svelte:element
+  this={tag}
+  class={classnames('font-serif font-bold leading-none text-slate', className)}
   ><slot /></svelte:element
 >
