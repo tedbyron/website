@@ -19,8 +19,7 @@
 
 @layer base {
   :root,
-  body,
-  #sveltekit {
+  body {
     @apply h-full;
   }
 
