@@ -31,7 +31,7 @@
   />
 </svelte:head>
 
-<div class="flex min-h-full flex-col">
+<div class="flex h-full flex-col">
   <header class="container px-6 pt-6">
     <nav class="flex justify-center">
       <a
