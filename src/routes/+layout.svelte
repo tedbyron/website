@@ -17,14 +17,14 @@
 
   <link
     rel="preload"
-    href="/assets/fonts/curlio-regular.woff2"
+    href="/assets/fonts/mackinac-book.woff2"
     as="font"
     type="font/woff2"
     crossorigin="anonymous"
   />
   <link
     rel="preload"
-    href="/assets/fonts/mackinac-book.woff2"
+    href="/assets/fonts/curlio-regular.woff2"
     as="font"
     type="font/woff2"
     crossorigin="anonymous"
