@@ -8,6 +8,7 @@ import icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig(({ mode }) => ({
+  esbuild: { drop: mode === 'development' ? [] : ['console', 'debugger'] },
   plugins: [
     sveltekit(),
     icons({
@@ -20,17 +21,17 @@ export default defineConfig(({ mode }) => ({
       plugins: [
         nesting(),
         tailwindcss(),
-        ...(mode === 'production'
-          ? [
+        autoprefixer(),
+        ...(mode === 'development'
+          ? []
+          : [
               cssnano({
                 preset: advancedPreset({
-                  autoprefixer: { add: true },
                   convertValues: { length: true },
                   discardComments: { removeAll: true }
                 })
               })
-            ]
-          : [autoprefixer()])
+            ])
       ]
     }
   }
