@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { classnames } from '$lib'
+  import { cn } from '$lib'
   import Module from './Module.svelte'
 
   type Side = 'left' | 'right'
@@ -8,7 +8,7 @@
     { radix: 2, name: 'bin' },
     { radix: 8, name: 'oct' },
     { radix: 10, name: 'dec' },
-    { radix: 16, name: 'hex' }
+    { radix: 16, name: 'hex' },
   ] as const
 
   const invalid = 'border-red focus:border-red focus:ring-red'
@@ -59,7 +59,9 @@
   <select
     aria-label="left radix"
     bind:value={leftRadix}
-    on:change={(e) => changeRadix(e, 'left')}
+    on:change={(e) => {
+      changeRadix(e, 'left')
+    }}
     class=""
   >
     {#each radices as { radix, name } (radix)}
@@ -71,15 +73,21 @@
     type="text"
     aria-label="left number"
     value={left}
-    on:input={(e) => changeNum(e, leftRadix, 'left')}
-    on:focus={(e) => e.currentTarget.select()}
-    class={classnames({ [invalid]: leftInvalid })}
+    on:input={(e) => {
+      changeNum(e, leftRadix, 'left')
+    }}
+    on:focus={(e) => {
+      e.currentTarget.select()
+    }}
+    class={cn({ [invalid]: leftInvalid })}
   />
 
   <select
     aria-label="right radix"
     bind:value={rightRadix}
-    on:change={(e) => changeRadix(e, 'right')}
+    on:change={(e) => {
+      changeRadix(e, 'right')
+    }}
   >
     {#each radices as { radix, name } (radix)}
       <option value={radix}>{name}</option>
@@ -90,8 +98,12 @@
     type="text"
     aria-label="right number"
     value={right}
-    on:input={(e) => changeNum(e, rightRadix, 'right')}
-    on:focus={(e) => e.currentTarget.select()}
-    class={classnames({ [invalid]: rightInvalid })}
+    on:input={(e) => {
+      changeNum(e, rightRadix, 'right')
+    }}
+    on:focus={(e) => {
+      e.currentTarget.select()
+    }}
+    class={cn({ [invalid]: rightInvalid })}
   />
 </Module>

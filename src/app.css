@@ -6,29 +6,22 @@
   font-family: 'Curlio';
   font-display: swap;
   font-weight: 400;
-  src: url('/assets/fonts/curlio-regular.woff2') format('woff2');
+  src: url('lib/assets/fonts/curlio-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Mackinac';
   font-display: swap;
   font-weight: 400;
-  src: url('/assets/fonts/mackinac-book.woff2') format('woff2'),
-    url('/assets/fonts/mackinac-book.woff') format('woff');
+  src:
+    url('lib/assets/fonts/mackinac-book.woff2') format('woff2'),
+    url('lib/assets/fonts/mackinac-book.woff') format('woff');
 }
 
 @layer base {
   :root,
   body {
-    @apply h-full;
-  }
-
-  :root {
-    @apply bg-black text-slate;
-  }
-
-  #sveltekit {
-    @apply contents;
+    @apply h-full bg-black text-slate;
   }
 }
 

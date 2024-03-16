@@ -1,7 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     colors: {
@@ -16,15 +17,15 @@ module.exports = {
       purple: '#bd93f9',
       red: '#ff5555',
       yellow: '#f1fa8c',
-      ...defaultTheme.colors
+      ...defaultTheme.colors,
     },
     container: {
-      center: true
+      center: true,
     },
     fontFamily: {
       sans: ['Curlio', ...defaultTheme.fontFamily.sans],
       serif: ['Mackinac', ...defaultTheme.fontFamily.serif],
-      mono: ['Curlio', ...defaultTheme.fontFamily.mono]
+      mono: ['Curlio', ...defaultTheme.fontFamily.mono],
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],
@@ -39,8 +40,8 @@ module.exports = {
       '6xl': ['3.75rem', '5rem'],
       '7xl': ['4.5rem', '6rem'],
       '8xl': ['6rem', '8rem'],
-      '9xl': ['8rem', '11rem']
-    }
+      '9xl': ['8rem', '11rem'],
+    },
   },
-  plugins: []
-}
+  plugins: [],
+} satisfies Config

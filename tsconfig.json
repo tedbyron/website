@@ -16,8 +16,6 @@
     "resolveJsonModule": true,
 
     /* Emit */
-    "importsNotUsedAsValues": "error",
-    "noEmit": true,
     "sourceMap": true,
 
     /* JavaScript Support */

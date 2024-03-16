@@ -47,7 +47,9 @@
     type="text"
     id="colors-input-hex"
     bind:value={hex}
-    on:focus={(e) => e.currentTarget.select()}
+    on:focus={(e) => {
+      e.currentTarget.select()
+    }}
   />
 
   <label for="colors-input-rgba">RGBA</label>
@@ -55,7 +57,9 @@
     type="text"
     id="colors-input-rgba"
     bind:value={rgba}
-    on:focus={(e) => e.currentTarget.select()}
+    on:focus={(e) => {
+      e.currentTarget.select()
+    }}
   />
 
   <label for="colors-input-hsla">HSLA</label>
@@ -63,6 +67,8 @@
     type="text"
     id="colors-input-hsla"
     bind:value={hsla}
-    on:focus={(e) => e.currentTarget.select()}
+    on:focus={(e) => {
+      e.currentTarget.select()
+    }}
   />
 </Module>

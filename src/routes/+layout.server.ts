@@ -1,8 +1,8 @@
 import type { LayoutServerLoad } from './$types'
 
-export const load = (({ setHeaders }) => {
+export const load: LayoutServerLoad = ({ setHeaders }) => {
   setHeaders({
-    'X-Frame-Options': 'DENY',
-    'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin'
+    'x-frame-options': 'DENY',
+    'referrer-policy': 'origin-when-cross-origin, strict-origin-when-cross-origin',
   })
-}) satisfies LayoutServerLoad
+}

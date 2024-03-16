@@ -1,6 +1,6 @@
 <script lang="ts">
   import Heading from '$lib/Heading.svelte'
-  import Section from '$lib/Section.svelte'
+  import Page from '$lib/Page.svelte'
   import ColorModule from './Color.svelte'
   import NumberModule from './Number.svelte'
 </script>
@@ -10,9 +10,9 @@
   <meta name="description" content="Simple conversions for data, colors, images, etc." />
 </svelte:head>
 
-<Section class="convert">
+<Page class="convert">
   <Heading tag="h1" class="text-center">Convert</Heading>
 
   <NumberModule />
   <ColorModule />
-</Section>
+</Page>

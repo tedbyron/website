@@ -1,5 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
+  import Curlio from '$lib/assets/fonts/curlio-regular.woff2'
+  import Mackinac from '$lib/assets/fonts/mackinac-book.woff2'
   import IconGithub from '~icons/iconoir/github'
   import IconGitlab from '~icons/iconoir/gitlab-full'
   import IconMail from '~icons/iconoir/mail'
@@ -15,36 +17,21 @@
   <meta name="color-scheme" content="#282a36" />
   <meta name="theme-color" content="#282a36" />
 
-  <link
-    rel="preload"
-    href="/assets/fonts/mackinac-book.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/curlio-regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
+  <link rel="preload" href={Mackinac} as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href={Curlio} as="font" type="font/woff2" crossorigin="anonymous" />
 </svelte:head>
 
 <div class="flex h-full flex-col">
   <header class="container px-6 pt-6">
-    <nav class="flex justify-center">
-      <a
-        href="/"
-        aria-label="home"
-        class="rounded-full"
-        class:pointer-events-none={$page.url.pathname === '/'}
-      >
-        <div
-          class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green sm:h-10 sm:w-10"
-        />
-      </a>
-    </nav>
+    {#if $page.route.id !== '/'}
+      <nav class="flex justify-center">
+        <a href="/" aria-label="home" class="rounded-full">
+          <div
+            class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green sm:h-10 sm:w-10"
+          />
+        </a>
+      </nav>
+    {/if}
   </header>
 
   <main class="flex-grow">
@@ -58,8 +45,6 @@
     <a href="https://gitlab.com/tedbyron" aria-label="Ted Byron's GitLab profile"
       ><IconGitlab class="footer-icon" /></a
     >
-    <a href="mailto:ted@tedbyron.com" aria-label="email Ted Byron"
-      ><IconMail class="footer-icon" /></a
-    >
+    <a href="mailto:ted@ted.ooo" aria-label="email Ted Byron"><IconMail class="footer-icon" /></a>
   </footer>
 </div>

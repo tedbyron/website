@@ -8,13 +8,14 @@ import icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig(({ mode }) => ({
+  server: { strictPort: true },
   esbuild: { drop: mode === 'development' ? [] : ['console', 'debugger'] },
   plugins: [
     sveltekit(),
     icons({
       autoInstall: true,
-      compiler: 'svelte'
-    })
+      compiler: 'svelte',
+    }),
   ],
   css: {
     postcss: {
@@ -28,11 +29,11 @@ export default defineConfig(({ mode }) => ({
               cssnano({
                 preset: advancedPreset({
                   convertValues: { length: true },
-                  discardComments: { removeAll: true }
-                })
-              })
-            ])
-      ]
-    }
-  }
+                  discardComments: { removeAll: true },
+                }),
+              }),
+            ]),
+      ],
+    },
+  },
 }))

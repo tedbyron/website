@@ -1,46 +1,38 @@
-/** @type {import('@typescript-eslint/utils').TSESLint.Linter.Config} */
+/** @type { import("eslint").Linter.Config } */
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  extends: ['standard-with-typescript', 'prettier'],
-  plugins: ['svelte3', '@typescript-eslint'],
-  ignorePatterns: ['*.cjs', 'svelte.config.js'],
-  settings: { 'svelte3/typescript': () => require('typescript') },
-  overrides: [
-    {
-      files: ['*.svelte'],
-      processor: 'svelte3/svelte3',
-      rules: {
-        'import/first': 'off'
-      }
-    }
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/strict-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:svelte/recommended',
+    'prettier',
   ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   parserOptions: {
-    ecmaFeatures: { impliedStrict: true },
-    ecmaVersion: 'latest',
-    extraFileExtensions: ['.svelte'],
     project: './tsconfig.json',
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaFeatures: { impliedStrict: true },
+    ecmaVersion: 2020,
+    extraFileExtensions: ['.svelte'],
   },
   env: {
     browser: true,
-    es2022: true,
-    node: true
+    es2017: true,
+    node: true,
   },
+  overrides: [
+    {
+      files: ['*.svelte'],
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
+    },
+  ],
   rules: {
-    'import/order': [
-      'error',
-      {
-        groups: [
-          'builtin',
-          'external',
-          ['internal', 'unknown', 'parent', 'sibling', 'index'],
-          'type',
-          'object'
-        ],
-        'newlines-between': 'always',
-        alphabetize: { order: 'asc' }
-      }
-    ]
-  }
+    '@typescript-eslint/no-non-null-assertion': 0,
+  },
 }
