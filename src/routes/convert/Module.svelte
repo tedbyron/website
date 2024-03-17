@@ -8,9 +8,9 @@
 </script>
 
 <div class="mt-3 sm:mt-6">
-  <fieldset class={cn('rounded-lg border-2 border-slate p-3', fieldsetClass)}>
+  <fieldset class={cn('rounded-lg border-2 border-gray p-3', fieldsetClass)}>
     <legend
-      class={cn('mx-2 rounded-md border-2 border-slate px-2 font-serif font-bold', legendClass)}
+      class={cn('mx-2 rounded-md border-2 border-gray px-2 font-serif font-bold', legendClass)}
       style:color={legendColor}
     >
       {name}

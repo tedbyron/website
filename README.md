@@ -1,1 +1,1 @@
-# tedbyron.com
+# ted.ooo

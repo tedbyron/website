@@ -27,6 +27,6 @@
   }
 </script>
 
-<svelte:element this={tag} class={cn('font-serif font-bold leading-none text-slate', className)}
+<svelte:element this={tag} class={cn('font-serif font-bold leading-none', className)}
   ><slot /></svelte:element
 >

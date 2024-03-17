@@ -2,10 +2,6 @@
   import { page } from '$app/stores'
   import Curlio from '$lib/assets/fonts/curlio-regular.woff2'
   import Mackinac from '$lib/assets/fonts/mackinac-book.woff2'
-  import IconGithub from '~icons/iconoir/github'
-  import IconGitlab from '~icons/iconoir/gitlab-full'
-  import IconMail from '~icons/iconoir/mail'
-  // import IconLinkedin from '~icons/iconoir/linkedin'
 
   import '../app.css'
 </script>
@@ -21,8 +17,8 @@
   <link rel="preload" href={Curlio} as="font" type="font/woff2" crossorigin="anonymous" />
 </svelte:head>
 
-<div class="flex h-full flex-col">
-  <header class="container px-6 pt-6">
+<div class="flex min-h-dvh flex-col">
+  <header class="container px-2 py-4">
     {#if $page.route.id !== '/'}
       <nav class="flex justify-center">
         <a href="/" aria-label="home" class="rounded-full">
@@ -38,13 +34,7 @@
     <slot />
   </main>
 
-  <footer class="container mx-auto flex max-w-xs items-center justify-between p-6">
-    <a href="https://github.com/tedbyron" aria-label="Ted Byron's GitHub profile"
-      ><IconGithub class="footer-icon" /></a
-    >
-    <a href="https://gitlab.com/tedbyron" aria-label="Ted Byron's GitLab profile"
-      ><IconGitlab class="footer-icon" /></a
-    >
-    <a href="mailto:ted@ted.ooo" aria-label="email Ted Byron"><IconMail class="footer-icon" /></a>
+  <footer class="mb-4 mt-8 flex justify-center">
+    <a href="https://github.com/tedbyron/website">source</a>
   </footer>
 </div>

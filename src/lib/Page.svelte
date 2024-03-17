@@ -1,10 +1,11 @@
 <script lang="ts">
   import { cn } from '$lib'
 
+  let element = 'div'
   let className = ''
-  export { className as class }
+  export { element as this, className as class }
 </script>
 
-<div class={cn('container px-3 pt-6 sm:px-6', className)}>
+<svelte:element this={element} class={cn('container px-2 pt-4', className)}>
   <slot />
-</div>
+</svelte:element>

@@ -21,24 +21,19 @@
 @layer base {
   :root,
   body {
-    @apply h-full bg-black text-slate;
+    @apply min-h-dvh bg-black text-white;
+  }
+
+  a {
+    @apply underline decoration-green underline-offset-[3px] hover:text-green group-hover:text-green;
+  }
+
+  code {
+    @apply rounded-sm bg-gray px-1 py-px;
   }
 }
 
 @layer components {
-  .footer-icon {
-    @apply text-2xl hover:text-green sm:text-3xl;
-  }
-
-  .link {
-    @apply underline decoration-green underline-offset-[6px];
-
-    &:hover,
-    &:active {
-      @apply text-green decoration-wavy underline-offset-4;
-    }
-  }
-
   .convert {
     input {
       @apply min-w-0 rounded-r-md border-2 border-gray bg-black px-1;
