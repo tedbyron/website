@@ -45,7 +45,7 @@
 
   <span class="text-lg">software engineer @ <a href="https://darkoinc.com">darko</a></span>
 
-  <div class="flex flex-col items-start gap-2">
+  <div class="flex flex-col items-start gap-4">
     {#each links as { href, icon, label }}
       <a {href} class="group flex items-center gap-2 no-underline">
         <svelte:component this={icon} class="group-hover:text-green" />
@@ -54,7 +54,7 @@
     {/each}
   </div>
 
-  <div class="flex flex-col gap-2 text-sm">
+  <div class="flex max-w-full flex-col gap-2 text-sm">
     <div class="flex flex-wrap items-center justify-center gap-2">
       <span>pgp</span>
 
@@ -68,10 +68,7 @@
     </div>
 
     <details class="group">
-      <summary
-        class="cursor-pointer text-center marker:content-['>_'] after:content-['_<'] group-open:marker:content-['<_'] group-open:after:content-['_>']"
-        >public key</summary
-      >
+      <summary class="text-center">public key</summary>
 
       <div class="mt-2 overflow-hidden rounded-t-lg bg-gray">
         <a
@@ -83,10 +80,11 @@
         </a>
       </div>
 
-      <pre class="rounded-b-lg border border-t-0 border-gray px-4 py-2">{pgp.publicKey}</pre>
+      <pre
+        class="overflow-x-auto rounded-b-lg border border-t-0 border-gray px-4 py-2">{pgp.publicKey}</pre>
 
       <div class="mt-2 text-center">
-        <code>curl -s 'https://ted.ooo/pubkey.asc' | gpg --show-keys</code>
+        <code>curl -s 'https://ted.ooo/pubkey.asc' | gpg</code>
       </div>
     </details>
   </div>
