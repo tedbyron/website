@@ -45,7 +45,7 @@
 
   <span class="text-lg">software engineer @ <a href="https://darkoinc.com">darko</a></span>
 
-  <div class="flex flex-col items-start gap-4">
+  <div class="flex flex-col gap-4">
     {#each links as { href, icon, label }}
       <a {href} class="group flex items-center gap-2 no-underline">
         <svelte:component this={icon} class="group-hover:text-green" />
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <details class="group">
+    <details>
       <summary class="text-center">public key</summary>
 
       <div class="mt-2 overflow-hidden rounded-t-lg bg-gray">
@@ -75,7 +75,7 @@
           href="/pubkey.asc"
           class="flex items-center justify-between gap-1 px-2 py-1 no-underline"
         >
-          <span>pubkey.asc</span>
+          <span>/pubkey.asc</span>
           <Link />
         </a>
       </div>

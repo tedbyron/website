@@ -32,7 +32,7 @@
     {/if}
   </header>
 
-  <main class="flex-grow">
+  <main class="flex grow flex-col">
     <slot />
   </main>
 
