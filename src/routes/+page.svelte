@@ -1,77 +1,89 @@
 <script lang="ts">
   import { pgp } from '$lib'
-  import Heading from '$lib/Heading.svelte'
-  import Page from '$lib/Page.svelte'
-  import GitHub from '~icons/iconoir/github'
-  import GitLab from '~icons/iconoir/gitlab-full'
-  import Link from '~icons/iconoir/link'
-  import Mail from '~icons/iconoir/mail'
-  // import IconLinkedin from '~icons/iconoir/linkedin'
+  import { Heading, Page } from '$components'
+  import Discord from '~icons/tabler/brand-discord'
+  import GitHub from '~icons/tabler/brand-github'
+  import GitLab from '~icons/tabler/brand-gitlab'
+  import Matrix from '~icons/tabler/brand-matrix'
+  import Link from '~icons/tabler/external-link'
+  import Mail from '~icons/tabler/mail'
+  // import IconLinkedin from '~icons/tabler/brand-linkedin'
+
+  const pgpFp = pgp.fingerprint.split(/\s+/)
 
   const links = [
     {
       href: 'https://github.com/tedbyron',
       icon: GitHub,
-      alt: 'github',
-      label: 'tedbyron',
+      label: 'github',
     },
     {
       href: 'https://gitlab.com/tedbyron',
       icon: GitLab,
-      alt: 'gitlab',
-      label: 'tedbyron',
+      label: 'gitlab',
+    },
+    {
+      href: 'https://discord.com/users/176074985377366017',
+      icon: Discord,
+      label: 'discord',
+    },
+    {
+      href: 'https://matrix.to/#/@tedbyron:matrix.org',
+      icon: Matrix,
+      label: 'matrix',
     },
     {
       href: 'mailto:ted@ted.ooo',
       icon: Mail,
-      alt: 'email',
-      label: 'ted@ted.ooo',
+      label: 'email',
     },
   ]
-
-  const pgpFp = pgp.fingerprint.split(/\s+/)
 </script>
 
-<Page class="flex flex-col items-center gap-y-8 text-xl">
+<Page class="flex flex-col items-center gap-8">
   <Heading tag="h1" class="text-center">Teddy Byron</Heading>
 
-  <p>
-    software engineer @ <a href="https://darkoinc.com" class="link">darko</a>
-  </p>
+  <span class="text-lg">software engineer @ <a href="https://darkoinc.com">darko</a></span>
 
-  <div class="flex flex-col items-start gap-y-4">
-    {#each links as { href, icon, alt, label }}
-      <a {href} class="group flex items-center gap-x-2 no-underline">
-        <svelte:component this={icon} aria-label={alt} class="group-hover:text-green" />
+  <div class="flex flex-col items-start gap-2">
+    {#each links as { href, icon, label }}
+      <a {href} class="group flex items-center gap-2 no-underline">
+        <svelte:component this={icon} class="group-hover:text-green" />
         <span class="leading-none">{label}</span>
       </a>
     {/each}
   </div>
 
-  <div class="text-sm">
-    <details>
-      <summary class="mx-auto text-center">
-        <span class="ml-1">PGP:</span>
-        <div class="inline-flex items-center gap-x-4">
-          {#each [pgpFp.slice(0, pgpFp.length / 2), pgpFp.slice(pgpFp.length / 2)] as half}
-            <div class="inline-flex gap-x-2">
-              {#each half as word}
-                <span>{word} </span>
-              {/each}
-            </div>
-          {/each}
-        </div>
-      </summary>
+  <div class="flex flex-col gap-2 text-sm">
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <span>pgp</span>
 
-      <div class="mt-2 overflow-hidden rounded-t-lg border border-b-0 border-gray bg-gray">
-        <a href="/tedbyron.asc" class="flex items-center gap-x-1 px-2 py-1 no-underline">
-          <Link class="text-xs" />
-          <span>/tedbyron.asc</span>
+      <div
+        class="inline-flex flex-wrap items-center justify-center gap-2 rounded-sm bg-gray px-1 py-px"
+      >
+        {#each pgpFp as word, i}
+          <span class:ml-2={i === pgpFp.length / 2}>{word}</span>
+        {/each}
+      </div>
+    </div>
+
+    <details class="group">
+      <summary
+        class="cursor-pointer text-center marker:content-['>_'] after:content-['_<'] group-open:marker:content-['<_'] group-open:after:content-['_>']"
+        >public key</summary
+      >
+
+      <div class="mt-2 overflow-hidden rounded-t-lg bg-gray">
+        <a
+          href="/tedbyron.asc"
+          class="flex items-center justify-between gap-1 px-2 py-1 no-underline"
+        >
+          <span>tedbyron.asc</span>
+          <Link />
         </a>
       </div>
 
-      <pre
-        class="overflow-x-scroll rounded-b-lg border border-t-0 border-gray px-4 py-2">{pgp.publicKey}</pre>
+      <pre class="rounded-b-lg border border-t-0 border-gray px-4 py-2">{pgp.publicKey}</pre>
 
       <div class="mt-2 text-center">
         <code>curl -O 'https://ted.ooo/tedbyron.asc'</code>

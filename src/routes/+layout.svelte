@@ -4,12 +4,14 @@
   import Mackinac from '$lib/assets/fonts/mackinac-book.woff2'
 
   import '../app.css'
+
+  $: source = $page.route.id === null || $page.route.id === '/' ? '' : encodeURI($page.route.id)
 </script>
 
 <svelte:head>
-  <title>Teddy Byron</title>
+  <title>{$page.data.title}</title>
 
-  <meta name="description" content="Teddy Byron's website" />
+  <meta name="description" content={$page.data.description} />
   <meta name="color-scheme" content="#282a36" />
   <meta name="theme-color" content="#282a36" />
 
@@ -34,7 +36,9 @@
     <slot />
   </main>
 
-  <footer class="mb-4 mt-8 flex justify-center">
-    <a href="https://github.com/tedbyron/website">source</a>
+  <footer class="mb-4 mt-8 flex justify-center text-sm">
+    <a href={`https://github.com/tedbyron/website/blob/main/src/routes${source}/%2Bpage.svelte`}
+      >source</a
+    >
   </footer>
 </div>

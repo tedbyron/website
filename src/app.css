@@ -19,13 +19,12 @@
 }
 
 @layer base {
-  :root,
-  body {
-    @apply min-h-dvh bg-black text-white;
+  :root {
+    @apply min-h-dvh min-w-80 bg-black text-white;
   }
 
   a {
-    @apply underline decoration-green underline-offset-[3px] hover:text-green group-hover:text-green;
+    @apply underline decoration-green decoration-1 underline-offset-2 hover:text-green group-hover:text-green;
   }
 
   code {
