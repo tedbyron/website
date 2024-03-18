@@ -75,10 +75,10 @@
 
       <div class="mt-2 overflow-hidden rounded-t-lg bg-gray">
         <a
-          href="/tedbyron.asc"
+          href="/pubkey.asc"
           class="flex items-center justify-between gap-1 px-2 py-1 no-underline"
         >
-          <span>tedbyron.asc</span>
+          <span>pubkey.asc</span>
           <Link />
         </a>
       </div>
@@ -86,7 +86,7 @@
       <pre class="rounded-b-lg border border-t-0 border-gray px-4 py-2">{pgp.publicKey}</pre>
 
       <div class="mt-2 text-center">
-        <code>curl -O 'https://ted.ooo/tedbyron.asc'</code>
+        <code>curl -s 'https://ted.ooo/pubkey.asc' | gpg --show-keys</code>
       </div>
     </details>
   </div>

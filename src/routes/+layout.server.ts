@@ -2,6 +2,8 @@ import { defaultTitle } from '$lib'
 
 import type { LayoutServerLoad } from './$types'
 
+export const csr = false
+
 export const load: LayoutServerLoad = ({ setHeaders }) => {
   setHeaders({
     'x-frame-options': 'DENY',

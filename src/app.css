@@ -24,7 +24,7 @@
   }
 
   a {
-    @apply underline decoration-green decoration-1 underline-offset-2 hover:text-green group-hover:text-green;
+    @apply underline decoration-green decoration-1 underline-offset-2 hover:text-green;
   }
 
   code {

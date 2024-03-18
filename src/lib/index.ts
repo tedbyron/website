@@ -9,6 +9,7 @@ export const cn = (...args: ClassValue[]) => twMerge(clsx(args))
 export const pgp = {
   fingerprint: 'B9A9 D49D 6D7C FC58 899A  4122 E049 6EDD DF6B B87D',
   publicKey: `-----BEGIN PGP PUBLIC KEY BLOCK-----
+
 mQENBFsULx4BCADDwSU2IGJS45/yZFmFLXHqyWcHvzVhJvC73Z6rM2j5rq558Xzh
 ui0HZ+fC+1OSwx4X6pnJmrpEckRFVGibh6+9qt/OlCU+QCBCiINRAW2pfpAisPLL
 DJTLjqOW0XLnC2VJ0Ro4IvRNUz+7Jl/m0TYCaLeT+sHotQaRQMYm+XkS7yTb6B3e
