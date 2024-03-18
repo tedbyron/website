@@ -1,13 +1,13 @@
 <script lang="ts">
   import { pgp } from '$lib'
-  import { Heading, Page } from '$components'
+  import { Heading, Page } from '$lib/components'
   import Discord from '~icons/tabler/brand-discord'
   import GitHub from '~icons/tabler/brand-github'
   import GitLab from '~icons/tabler/brand-gitlab'
+  // import IconLinkedin from '~icons/tabler/brand-linkedin'
   import Matrix from '~icons/tabler/brand-matrix'
   import Link from '~icons/tabler/external-link'
   import Mail from '~icons/tabler/mail'
-  // import IconLinkedin from '~icons/tabler/brand-linkedin'
 
   const pgpFp = pgp.fingerprint.split(/\s+/)
 
@@ -62,7 +62,7 @@
         class="inline-flex flex-wrap items-center justify-center gap-2 rounded-sm bg-gray px-1 py-px"
       >
         {#each pgpFp as word, i}
-          <span class:ml-2={i === pgpFp.length / 2}>{word}</span>
+          <span class:ml-1={i === pgpFp.length / 2}>{word}</span>
         {/each}
       </div>
     </div>

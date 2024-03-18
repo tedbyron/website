@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 import adapter from '@sveltejs/adapter-cloudflare'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
@@ -22,19 +19,12 @@ export default {
       config: (config) => ({
         ...config,
         include: [
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           ...config.include,
           '../.eslintrc.cjs',
           '../svelte.config.js',
           '../tailwind.config.ts',
         ],
-        compilerOptions: {
-          ...config.compilerOptions,
-          paths: {
-            ...config.compilerOptions.paths,
-            $components: ['../src/lib/components'],
-            '$components/*': ['../src/lib/components/*'],
-          },
-        },
       }),
     },
   },
