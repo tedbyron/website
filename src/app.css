@@ -24,11 +24,15 @@
   }
 
   a {
-    @apply underline decoration-green decoration-1 underline-offset-2 hover:text-green;
+    @apply underline decoration-green decoration-1 underline-offset-[2.25px] hover:text-green;
   }
 
   code {
     @apply rounded-sm bg-gray px-1 py-px;
+  }
+
+  summary {
+    @apply cursor-pointer;
   }
 }
 

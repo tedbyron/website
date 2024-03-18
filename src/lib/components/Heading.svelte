@@ -8,10 +8,10 @@
 
   switch (tag) {
     case 'h1':
-      className = cn('text-5xl sm:text-6xl sm:leading-none', className)
+      className = cn('text-4xl sm:text-5xl sm:leading-none', className)
       break
     case 'h2':
-      className = cn('text-3xl sm:text-4xl sm:leading-none', className)
+      className = cn('text-2xl sm:text-3xl sm:leading-none', className)
       break
     case 'h3':
       className = cn('text-xl', className)

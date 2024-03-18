@@ -36,7 +36,7 @@
     <slot />
   </main>
 
-  <footer class="mb-4 mt-8 flex justify-center text-sm">
+  <footer class="mb-4 mt-8 flex justify-center">
     <a href={`https://github.com/tedbyron/website/blob/main/src/routes${source}/%2Bpage.svelte`}
       >source</a
     >
