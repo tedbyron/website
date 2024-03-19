@@ -35,32 +35,3 @@
     @apply cursor-pointer;
   }
 }
-
-@layer components {
-  .convert {
-    input {
-      @apply min-w-0 rounded-r-md border-2 border-gray bg-black px-1;
-
-      &:not(:last-of-type) {
-        @apply sm:mr-1;
-      }
-    }
-
-    & label,
-    select {
-      @apply rounded-l-md border-2 border-gray;
-
-      &:not(:first-of-type) {
-        @apply sm:ml-1;
-      }
-    }
-
-    label {
-      @apply px-1 text-center;
-    }
-
-    select {
-      @apply bg-black capitalize;
-    }
-  }
-}

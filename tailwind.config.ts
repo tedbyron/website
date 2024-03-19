@@ -45,5 +45,4 @@ export default {
       '9xl': ['8rem', '11rem'],
     },
   },
-  plugins: [],
 } satisfies Config
