@@ -5,7 +5,7 @@
   import GitHub from '~icons/tabler/brand-github'
   import GitLab from '~icons/tabler/brand-gitlab'
   import Matrix from '~icons/tabler/brand-matrix'
-  import Link from '~icons/tabler/external-link'
+  import Link from '~icons/tabler/link'
   import Mail from '~icons/tabler/mail'
 
   const pgpFp = pgp.fingerprint.split(/\s+/)
