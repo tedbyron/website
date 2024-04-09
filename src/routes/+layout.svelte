@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import Curlio from '$lib/assets/fonts/curlio-regular.woff2'
-  import Mackinac from '$lib/assets/fonts/mackinac-book.woff2'
 
   import '../app.css'
 
@@ -15,7 +14,6 @@
   <meta name="color-scheme" content="#282a36" />
   <meta name="theme-color" content="#282a36" />
 
-  <link rel="preload" href={Mackinac} as="font" type="font/woff2" crossorigin="anonymous" />
   <link rel="preload" href={Curlio} as="font" type="font/woff2" crossorigin="anonymous" />
 </svelte:head>
 

@@ -10,15 +10,6 @@
     src: url('lib/assets/fonts/curlio-regular.woff2') format('woff2');
   }
 
-  @font-face {
-    font-family: 'Mackinac';
-    font-display: swap;
-    font-weight: 400;
-    src:
-      url('lib/assets/fonts/mackinac-book.woff2') format('woff2'),
-      url('lib/assets/fonts/mackinac-book.woff') format('woff');
-  }
-
   :root {
     @apply min-h-dvh min-w-80 bg-black text-white;
   }
