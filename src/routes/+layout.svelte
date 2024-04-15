@@ -1,10 +1,16 @@
 <script lang="ts">
   import { page } from '$app/stores'
-  import Curlio from '$lib/assets/fonts/curlio-regular.woff2'
-
+  import Curlio from '$lib/assets/fonts/curlio.woff2'
   import '../app.css'
 
-  $: source = $page.route.id === null || $page.route.id === '/' ? '' : encodeURI($page.route.id)
+  const base = 'https://github.com/tedbyron/website/blob/main'
+  const routes = base + '/src/routes'
+  const source =
+    $page.data.sourcePath === undefined
+      ? $page.route.id === null
+        ? `${routes}/+error.svelte`
+        : `${routes}${encodeURI($page.route.id)}/+page.svelte`
+      : base + $page.data.sourcePath
 </script>
 
 <svelte:head>
@@ -19,15 +25,13 @@
 
 <div class="flex min-h-dvh flex-col">
   <header class="container px-2 py-4">
-    {#if $page.route.id !== '/'}
-      <nav class="flex justify-center">
-        <a href="/" aria-label="home" class="rounded-full">
-          <div
-            class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green sm:h-10 sm:w-10"
-          />
-        </a>
-      </nav>
-    {/if}
+    <nav class="flex justify-center">
+      <a href="/" aria-label="home" class="rounded-full">
+        <div
+          class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-1 hover:outline-offset-1 hover:outline-green"
+        />
+      </a>
+    </nav>
   </header>
 
   <main class="flex grow flex-col">
@@ -35,8 +39,6 @@
   </main>
 
   <footer class="mb-4 mt-8 flex justify-center">
-    <a href={`https://github.com/tedbyron/website/blob/main/src/routes${source}/%2Bpage.svelte`}
-      >source</a
-    >
+    <a href={source}>source</a>
   </footer>
 </div>

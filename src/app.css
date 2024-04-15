@@ -5,9 +5,28 @@
 @layer base {
   @font-face {
     font-family: 'Curlio';
-    font-display: swap;
     font-weight: 400;
-    src: url('lib/assets/fonts/curlio-regular.woff2') format('woff2');
+    src: url('$lib/assets/fonts/curlio.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Curlio';
+    font-weight: 400;
+    font-style: italic;
+    src: url('$lib/assets/fonts/curlio-italic.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Curlio';
+    font-weight: 700;
+    src: url('$lib/assets/fonts/curlio-bold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Curlio';
+    font-weight: 700;
+    font-style: italic;
+    src: url('$lib/assets/fonts/curlio-bold-italic.woff2') format('woff2');
   }
 
   :root {
@@ -15,14 +34,26 @@
   }
 
   a {
-    @apply underline decoration-green decoration-1 underline-offset-[2.25px] hover:text-green;
+    @apply underline-green hover:text-green;
   }
 
-  code {
-    @apply rounded-sm bg-gray px-1 py-px;
+  code:not([class*='language-']) {
+    @apply rounded-[.3125rem] bg-gray px-1 text-start;
+  }
+}
+
+@layer components {
+  .prose h2 > a {
+    @apply decoration-[1.8px] underline-offset-[3px];
   }
 
-  summary {
-    @apply cursor-pointer;
+  .prose h3 > a {
+    @apply decoration-[1.5px] underline-offset-[2.6px];
+  }
+}
+
+@layer utilities {
+  .underline-green {
+    @apply underline decoration-green decoration-[1.3px] underline-offset-2;
   }
 }

@@ -22,9 +22,9 @@
   </div>
 
   <div class="flex flex-col gap-4">
-    {#each links as { label, icon, href }}
+    {#each links as { label, icon, href } (label)}
       <a {href} class="group flex items-center gap-2 no-underline">
-        <svelte:component this={icon} class="group-hover:text-green" />
+        <svelte:component this={icon} />
         <span class="leading-none">{label}</span>
       </a>
     {/each}
@@ -35,11 +35,11 @@
       <span>pgp</span>
 
       <div class="overflow-auto">
-        <div class="flex min-w-max items-center justify-center gap-2 rounded-sm bg-gray px-1 py-px">
+        <code class="flex min-w-max items-center justify-center gap-2">
           {#each fingerprint as word, i}
             <span class:ml-1={i === fingerprint.length / 2}>{word}</span>
           {/each}
-        </div>
+        </code>
       </div>
     </div>
   </div>

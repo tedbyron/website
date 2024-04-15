@@ -19,7 +19,8 @@
     "sourceMap": true,
 
     /* JavaScript Support */
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": true,
 
     /* Interop Constraints */
     "allowSyntheticDefaultImports": true,

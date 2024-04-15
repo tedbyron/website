@@ -1,0 +1,94 @@
+/**
+ * Dracula Theme originally by Zeno Rocha [@zenorocha]
+ * https://draculatheme.com/
+ *
+ * Ported for PrismJS by Albert Vallverdu [@byverdu]
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply hyphens-none whitespace-pre break-normal text-left;
+  word-wrap: normal;
+  tab-size: 4;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  @apply overflow-auto rounded-md px-3 py-2;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  @apply whitespace-normal rounded-sm;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-slate;
+}
+
+.token.punctuation {
+  @apply text-white;
+}
+
+.namespace {
+  @apply opacity-70;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-pink;
+}
+
+.token.boolean,
+.token.number {
+  @apply text-purple;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-green;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  @apply text-white;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  @apply text-yellow;
+}
+
+.token.keyword {
+  @apply text-cyan;
+}
+
+.token.regex,
+.token.important {
+  @apply text-orange;
+}
+
+.token.important,
+.token.bold {
+  @apply font-bold;
+}
+
+.token.entity {
+  @apply cursor-help;
+}
