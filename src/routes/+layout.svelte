@@ -9,7 +9,9 @@
     $page.data.sourcePath === undefined
       ? $page.route.id === null
         ? `${routes}/+error.svelte`
-        : `${routes}${encodeURI($page.route.id)}/+page.svelte`
+        : $page.route.id === '/'
+          ? `${routes}/+page.svelte`
+          : `${routes}${encodeURI($page.route.id)}/+page.svelte`
       : base + $page.data.sourcePath
 </script>
 
