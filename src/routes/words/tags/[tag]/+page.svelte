@@ -7,9 +7,7 @@
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
-  <h1>Words</h1>
+  <h1>Words about #{data.postTagLabel}</h1>
 
-  {#if data.postsMetadata}
-    <PostList postsMetadata={data.postsMetadata} />
-  {/if}
+  <PostList postsMetadata={data.postsMetadata} />
 </div>

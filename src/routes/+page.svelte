@@ -16,11 +16,13 @@
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
+  <!-- Header -->
   <div class="flex flex-col gap-4">
     <h1 class="text-center">Teddy Byron</h1>
     <span>software engineer @ <a href="https://darkoinc.com">darko</a></span>
   </div>
 
+  <!-- Links -->
   <div class="flex flex-col gap-4">
     {#each links as { label, icon, href } (label)}
       <a {href} class="group flex items-center gap-2 no-underline">
@@ -30,6 +32,7 @@
     {/each}
   </div>
 
+  <!-- Pgp fingerprint -->
   <div class="flex max-w-full flex-col gap-2">
     <div class="flex flex-wrap items-center justify-center gap-2">
       <span>pgp</span>

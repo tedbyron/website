@@ -1,6 +1,6 @@
 import 'unplugin-icons/types/svelte'
 
-import type { ErrorMessage } from '$lib'
+import type { ErrorMessage, postTag } from '$lib'
 import type { ComponentType } from 'svelte'
 
 declare global {
@@ -14,7 +14,9 @@ declare global {
       description: string
       sourcePath?: string
 
-      posts?: PostMetadataParsed[]
+      postsMetadata?: PostMetadataParsed[]
+      postTagLabel?: (typeof postTag)[PostTag]['label']
+      postTags?: [PostTag, (typeof postTag)[PostTag]][]
 
       component?: ComponentType
       metadata?: PostMetadata
@@ -28,6 +30,7 @@ declare global {
     interface PostMetadata {
       title: string
       description: string
+      tags: PostTag[]
       date: string
       published?: boolean
     }
@@ -36,5 +39,7 @@ declare global {
       slug: string
       date: Date
     }
+
+    type PostTag = keyof typeof postTag
   }
 }

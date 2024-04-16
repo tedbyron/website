@@ -2,6 +2,8 @@
 title: Learning nix
 description: Beginner thoughts on nix
 date: 2024-04-14T18:00:00-04:00
+tags:
+  - nix
 published: true
 ---
 
