@@ -1,15 +1,16 @@
 <script lang="ts">
-  import { cn } from '$lib'
-
   import type { postTag } from '$lib'
 
-  export let tag: App.PostTag
-  export let label: (typeof postTag)[App.PostTag]['label']
-  let className: (typeof postTag)[App.PostTag]['className']
-  export { className as class }
+  interface Props {
+    tag: App.PostTag
+    label: (typeof postTag)[App.PostTag]['label']
+    class: (typeof postTag)[App.PostTag]['className']
+  }
+
+  const { tag, label, class: className }: Props = $props()
 </script>
 
 <a
   href="/words/tags/{tag}"
-  class={cn('inline-flex items-center gap-0.5 no-underline hover:underline', className)}>#{label}</a
+  class={['inline-flex items-center gap-0.5 no-underline hover:underline', className]}>#{label}</a
 >

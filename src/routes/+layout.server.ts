@@ -1,5 +1,4 @@
 import { defaultTitle } from '$lib'
-
 import type { LayoutServerLoad } from './$types'
 
 export const csr = false

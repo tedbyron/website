@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        black: '#282a36',
-        gray: '#44475a',
-        white: '#f8f8f2',
-        slate: '#6272a4',
-        cyan: '#8be9fd',
-        green: '#50fa7b',
-        orange: '#ffb86c',
-        pink: '#ff79c6',
-        purple: '#bd93f9',
-        red: '#ff5555',
-        yellow: '#f1fa8c',
+        black: '#282828',
+        gray: '#3c3836',
+        white: '#ebdbb2',
+        slate: '#928374',
+        cyan: '#83a598',
+        green: '#b8bb26',
+        orange: '#fe8019',
+        pink: '#8ec07c',
+        purple: '#d3869b',
+        red: '#fb4934',
+        yellow: '#fabd2f',
       },
       typography: (theme: (field: string) => string) => ({
         dracula: {

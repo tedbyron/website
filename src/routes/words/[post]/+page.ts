@@ -1,6 +1,6 @@
-import { ErrorMessage, formatDate, formatTitle, postModules, postPath } from '$lib'
 import { error } from '@sveltejs/kit'
 
+import { ErrorMessage, formatDate, formatTitle, postModules, postPath } from '$lib'
 import type { PageLoad } from './$types'
 
 export const load: PageLoad = async ({ params }) => {

@@ -2,8 +2,11 @@
   import TagLink from '$components/TagLink.svelte'
   import { formatDate, postTag } from '$lib'
 
-  export let postsMetadata: App.PostMetadataParsed[]
+  interface Props {
+    postsMetadata: App.PostMetadataParsed[]
+  }
 
+  const { postsMetadata }: Props = $props()
   const tags = (post: App.PostMetadataParsed) =>
     [...new Set(post.tags)]
       .map<[App.PostTag, (typeof postTag)[App.PostTag]]>((tag) => [tag, postTag[tag]])
@@ -19,12 +22,12 @@
       <!-- Post title and description -->
       <a href="/words/{post.slug}" class="flex gap-4 no-underline">
         <div class="flex flex-col">
-          <span class="underline-green">{post.title}</span>
+          <span class="underline-orange">{post.title}</span>
           <span>{post.description}</span>
         </div>
       </a>
 
-      <div />
+      <div></div>
 
       <!-- Post tags -->
       <div class="flex gap-2">

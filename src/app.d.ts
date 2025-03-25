@@ -1,7 +1,7 @@
 import 'unplugin-icons/types/svelte'
 
 import type { ErrorMessage, postTag } from '$lib'
-import type { ComponentType } from 'svelte'
+import type { Component } from 'svelte'
 
 declare global {
   namespace App {
@@ -18,12 +18,12 @@ declare global {
       postTagLabel?: (typeof postTag)[PostTag]['label']
       postTags?: [PostTag, (typeof postTag)[PostTag]][]
 
-      component?: ComponentType
+      component?: Component
       metadata?: PostMetadata
     }
 
     interface Post {
-      default: ComponentType
+      default: Component
       metadata: PostMetadata
     }
 
@@ -43,3 +43,5 @@ declare global {
     type PostTag = keyof typeof postTag
   }
 }
+
+export {}

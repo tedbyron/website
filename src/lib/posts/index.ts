@@ -1,4 +1,4 @@
-import type { ClassValue } from '$lib'
+import type { ClassValue } from 'svelte/elements'
 
 // Matches extensions in svelte.config.js.
 const mdsvexExtensions = ['.md', '.svelte.md', '.svx']

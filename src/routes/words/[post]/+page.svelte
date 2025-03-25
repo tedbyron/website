@@ -1,9 +1,8 @@
 <script lang="ts">
+  import type { PageProps } from './$types'
   import './prism-dracula.css'
 
-  import type { PageData } from './$types'
-
-  export let data: PageData
+  const { data }: PageProps = $props()
 </script>
 
 <article
@@ -17,5 +16,5 @@
   <h1 class="mb-0">{data.metadata.title}</h1>
   <span class="text-slate">{data.metadata.date}</span>
 
-  <svelte:component this={data.component} />
+  <data.component />
 </article>

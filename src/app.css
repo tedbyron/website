@@ -6,27 +6,27 @@
   @font-face {
     font-family: 'Curlio';
     font-weight: 400;
-    src: url('$lib/assets/fonts/curlio.woff2') format('woff2');
+    src: url('$lib/assets/fonts/Iosevkacurlio-normal.woff2') format('woff2');
   }
 
   @font-face {
     font-family: 'Curlio';
     font-weight: 400;
     font-style: italic;
-    src: url('$lib/assets/fonts/curlio-italic.woff2') format('woff2');
+    src: url('$lib/assets/fonts/Iosevkacurlio-normalItalic.woff2') format('woff2');
   }
 
   @font-face {
     font-family: 'Curlio';
     font-weight: 700;
-    src: url('$lib/assets/fonts/curlio-bold.woff2') format('woff2');
+    src: url('$lib/assets/fonts/Iosevkacurlio-normalBold.woff2') format('woff2');
   }
 
   @font-face {
     font-family: 'Curlio';
     font-weight: 700;
     font-style: italic;
-    src: url('$lib/assets/fonts/curlio-bold-italic.woff2') format('woff2');
+    src: url('$lib/assets/fonts/Iosevkacurlio-normalBoldItalic.woff2') format('woff2');
   }
 
   :root {
@@ -34,7 +34,7 @@
   }
 
   a {
-    @apply underline-green hover:text-green;
+    @apply underline-orange hover:text-orange;
   }
 
   code:not([class*='language-']) {
@@ -53,7 +53,7 @@
 }
 
 @layer utilities {
-  .underline-green {
-    @apply underline decoration-green decoration-[1.3px] underline-offset-2;
+  .underline-orange {
+    @apply underline decoration-orange decoration-[1.3px] underline-offset-2;
   }
 }

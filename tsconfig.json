@@ -22,6 +22,14 @@
     "allowJs": true,
     "checkJs": true,
 
+    /* Editor Support */
+    "plugins": [
+      {
+        "name": "typescript-svelte-plugin",
+        "enabled": true
+      }
+    ],
+
     /* Interop Constraints */
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

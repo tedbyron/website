@@ -1,9 +1,9 @@
 <script lang="ts">
   import PostList from '$components/PostList.svelte'
 
-  import type { PageData } from './$types'
+  import type { PageProps } from './$types'
 
-  export let data: PageData
+  const { data }: PageProps = $props()
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">

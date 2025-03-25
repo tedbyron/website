@@ -17,17 +17,17 @@
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
   <!-- Header -->
-  <div class="flex flex-col gap-4">
-    <h1 class="text-center">Teddy Byron</h1>
+  <div class="flex flex-col gap-4 text-center">
+    <h1>Teddy Byron</h1>
     <span>software engineer @ <a href="https://darkoinc.com">darko</a></span>
   </div>
 
   <!-- Links -->
   <div class="flex flex-col gap-4">
-    {#each links as { label, icon, href } (label)}
-      <a {href} class="group flex items-center gap-2 no-underline">
-        <svelte:component this={icon} />
-        <span class="leading-none">{label}</span>
+    {#each links as link (link.label)}
+      <a href={link.href} class="group flex items-center gap-2 no-underline">
+        <link.icon />
+        <span class="leading-none">{link.label}</span>
       </a>
     {/each}
   </div>
@@ -39,7 +39,7 @@
 
       <div class="overflow-auto">
         <code class="flex min-w-max items-center justify-center gap-2">
-          {#each fingerprint as word, i}
+          {#each fingerprint as word, i (word)}
             <span class:ml-1={i === fingerprint.length / 2}>{word}</span>
           {/each}
         </code>

@@ -1,9 +1,8 @@
 <script lang="ts">
-  import type { PageData } from './$types'
-
   import TagLink from '$components/TagLink.svelte'
+  import type { PageProps } from './$types'
 
-  export let data: PageData
+  const { data }: PageProps = $props()
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">

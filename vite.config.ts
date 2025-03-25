@@ -7,33 +7,37 @@ import nesting from 'tailwindcss/nesting'
 import icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 
-export default defineConfig(({ mode }) => ({
-  css: {
-    postcss: {
-      plugins: [
-        nesting(),
-        tailwindcss(),
-        autoprefixer(),
-        ...(mode === 'development'
-          ? []
-          : [
-              cssnano({
-                preset: advancedPreset({
-                  convertValues: { length: true },
-                  discardComments: { removeAll: true },
+export default defineConfig(({ mode }) => {
+  const dev = mode === 'development'
+
+  return {
+    css: {
+      postcss: {
+        plugins: [
+          nesting(),
+          tailwindcss(),
+          autoprefixer(),
+          ...(dev
+            ? []
+            : [
+                cssnano({
+                  preset: advancedPreset({
+                    convertValues: { length: true },
+                    discardComments: { removeAll: true },
+                  }),
                 }),
-              }),
-            ]),
-      ],
+              ]),
+        ],
+      },
     },
-  },
-  esbuild: { drop: mode === 'development' ? [] : ['console', 'debugger'] },
-  plugins: [
-    sveltekit(),
-    icons({
-      autoInstall: true,
-      compiler: 'svelte',
-    }),
-  ],
-  server: { strictPort: true },
-}))
+    esbuild: { drop: dev ? undefined : ['console', 'debugger'] },
+    plugins: [
+      sveltekit(),
+      icons({
+        autoInstall: true,
+        compiler: 'svelte',
+      }),
+    ],
+    server: { strictPort: true },
+  }
+})

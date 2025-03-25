@@ -1,6 +1,6 @@
-import { ErrorMessage, formatTitle, postsMetadata, postTag } from '$lib'
 import { error } from '@sveltejs/kit'
 
+import { ErrorMessage, formatTitle, postsMetadata, postTag } from '$lib'
 import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = ({ params }) => {
