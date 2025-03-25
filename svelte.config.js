@@ -13,7 +13,6 @@ const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
-  compilerOptions: { runes: true },
   extensions: ['.svelte', ...mdsvexExtensions],
   kit: {
     adapter: adapter(),
