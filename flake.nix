@@ -1,6 +1,11 @@
 {
   description = "tedbyron's website";
 
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "flake-utils";
+  };
+
   outputs =
     {
       nixpkgs,
