@@ -40,6 +40,7 @@ export default defineConfig(({ mode }) => {
       icons({
         autoInstall: true,
         compiler: 'svelte',
+        scale: 1,
       }),
     ],
     server: { strictPort: true },

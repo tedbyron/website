@@ -37,8 +37,9 @@
     @apply underline-orange hover:text-orange;
   }
 
-  code:not([class*='language-']) {
-    @apply rounded-[.3125rem] bg-gray px-1 text-start;
+  code:not([class*='language-']),
+  samp:not([class*='language-']) {
+    @apply rounded-[5px] bg-gray px-1 py-[1.75px] text-start;
   }
 }
 
