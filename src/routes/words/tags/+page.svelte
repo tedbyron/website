@@ -3,16 +3,15 @@
   import type { PageProps } from './$types'
 
   const { data }: PageProps = $props()
+  const { postTags } = $derived(data)
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
   <h1>Tags</h1>
 
-  {#if Array.isArray(data.postTags) && data.postTags.length > 0}
-    <ul>
-      {#each data.postTags as [tag, { label, class: className }] (tag)}
-        <li><TagLink {tag} {label} class={className} /></li>
-      {/each}
-    </ul>
-  {/if}
+  <ul>
+    {#each postTags as [tag, { class: className }] (tag)}
+      <li><TagLink {tag} class={className} /></li>
+    {/each}
+  </ul>
 </div>

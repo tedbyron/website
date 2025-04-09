@@ -15,7 +15,7 @@ export const load: PageLoad = async ({ params }) => {
   )
   const post = await match?.[1]()
 
-  if (post?.metadata.published !== true) {
+  if (!post?.metadata.published) {
     error(404, ErrorMessage.NotFound)
   }
 

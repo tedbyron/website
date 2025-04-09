@@ -3,6 +3,7 @@ const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
 const mdPat = new RegExp(
   `([\\w-]+)(${mdsvexExtensions.map((ext) => ext.replaceAll('.', '\\.')).join('|')})`,
 )
+
 /** Get a post's slug from its path. */
 export function postPath(path: string): string {
   const slug = path.match(mdPat)?.[1]
@@ -16,6 +17,7 @@ export function postPath(path: string): string {
 export const postModules = import.meta.glob<App.Post>(
   `$lib/posts/**/*.{md,svelte.md,svx}`,
 )
+
 /** Parsed post metadata promises.  */
 const postsMetadataPromises = Object.entries(postModules).map<
   Promise<App.PostMetadataParsed>
@@ -26,6 +28,7 @@ const postsMetadataPromises = Object.entries(postModules).map<
     date: new Date(metadata.date),
   })),
 )
+
 /** Parsed, filtedered, and sorted post metadata. */
 export const postsMetadata: App.PostMetadataParsed[] = (
   await Promise.all(postsMetadataPromises)
@@ -38,6 +41,7 @@ const dateTimeFormat = new Intl.DateTimeFormat('en', {
   month: '2-digit',
   day: '2-digit',
 })
+
 /** Format a date like `yyyy-mm-dd`. */
 export function formatDate(date: string | Date): string {
   if (!(date instanceof Date)) {
@@ -56,17 +60,14 @@ export function formatDate(date: string | Date): string {
 }
 
 /** Map of post tags to display value and text color. */
-export const postTag = {
+export const postTags = {
   nix: {
-    label: 'Nix',
-    class: 'text-cyan hover:text-cyan',
+    class: 'text-cyan hover:text-cyan decoration-cyan',
   },
   rust: {
-    label: 'Rust',
-    class: 'text-orange hover:text-orange',
+    class: 'text-orange hover:text-orange decoration-orange',
   },
   svelte: {
-    label: 'Svelte',
-    class: 'text-red hover:text-red',
+    class: 'text-red hover:text-red decoration-red',
   },
 } as const satisfies App.PostTags

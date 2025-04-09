@@ -16,7 +16,7 @@ declare global {
       sourcePath?: string
 
       postsMetadata?: PostMetadataParsed[]
-      postTagLabel?: PostTags[keyof PostTags]['label']
+      postTag?: keyof PostTags
       postTags?: [keyof PostTags, PostTags[keyof PostTags]][]
 
       component?: Component
@@ -41,13 +41,7 @@ declare global {
       date: Date
     }
 
-    type PostTags = Record<
-      string,
-      {
-        label: string
-        class: ClassValue
-      }
-    >
+    type PostTags = Record<string, { class: ClassValue }>
   }
 }
 

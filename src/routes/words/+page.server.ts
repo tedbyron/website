@@ -1,7 +1,7 @@
-import { formatTitle, postsMetadata, postTag } from '$lib'
+import { formatTitle, postsMetadata, postTags } from '$lib'
 import type { PageServerLoad } from './$types'
 
-if (postsMetadata.some((post) => post.tags.some((tag) => !(tag in postTag)))) {
+if (postsMetadata.some((post) => post.tags.some((tag) => !(tag in postTags)))) {
   throw new Error('Invalid tag')
 }
 

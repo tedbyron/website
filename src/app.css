@@ -41,7 +41,7 @@
 
   code:not([class*='language-']),
   samp:not([class*='language-']) {
-    @apply rounded-[5px] bg-gray px-1 py-[1.75px] text-start;
+    @apply bg-black1 rounded-[5px] px-1 py-[1.75px] text-start;
   }
 }
 
