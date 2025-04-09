@@ -22,7 +22,11 @@ export default {
         'base-uri': ['self'],
         'connect-src': ['self', 'cloudflareinsights.com'],
         'default-src': ['self'],
-        'script-src': ['self', 'ajax.cloudflare.com', 'static.cloudflareinsights.com'],
+        'script-src': [
+          'self',
+          'ajax.cloudflare.com',
+          'static.cloudflareinsights.com',
+        ],
       },
     },
     typescript: {
@@ -44,10 +48,16 @@ export default {
     mdsvex({
       extensions: mdsvexExtensions,
       remarkPlugins: [
-        [remarkGithub, { repository: 'https://github.com/tedbyron/website.git' }],
+        [
+          remarkGithub,
+          { repository: 'https://github.com/tedbyron/website.git' },
+        ],
         remarkAbbr,
       ],
-      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      ],
       smartypants: {
         dashes: 'oldschool',
       },

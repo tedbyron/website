@@ -15,6 +15,8 @@ export const load: PageServerLoad = ({ params }) => {
     title: formatTitle('Tags'),
     description: 'Post tags',
     postTagLabel: postTag[tag].label,
-    postsMetadata: postsMetadata.filter((post) => post.published && post.tags.includes(tag)),
+    postsMetadata: postsMetadata.filter(
+      (post) => post.published && post.tags.includes(tag),
+    ),
   }
 }

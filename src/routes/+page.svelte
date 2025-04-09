@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { job, fingerprint, links } from '$lib/constants'
+  import { fingerprint, job, links } from '$lib/constants'
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
@@ -20,13 +20,11 @@
   </div>
 
   <!-- Pgp fingerprint -->
-  <div class="flex max-w-full flex-col gap-2">
-    <div class="flex flex-wrap items-center justify-center gap-2">
-      <span>pgp</span>
+  <div class="flex max-w-full flex-wrap items-center justify-center gap-2">
+    <span>pgp</span>
 
-      <div class="overflow-auto">
-        <samp>{fingerprint}</samp>
-      </div>
+    <div class="overflow-auto">
+      <samp>{fingerprint}</samp>
     </div>
   </div>
 </div>

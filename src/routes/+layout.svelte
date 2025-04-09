@@ -30,7 +30,13 @@
   <meta name="color-scheme" content="#282828" />
   <meta name="theme-color" content="#282828" />
 
-  <link rel="preload" href={Curlio} as="font" type="font/woff2" crossorigin="anonymous" />
+  <link
+    rel="preload"
+    href={Curlio}
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
 </svelte:head>
 
 <div class="flex min-h-dvh flex-col">
@@ -38,7 +44,7 @@
     <!-- <nav class="flex justify-center">
       <a href="/" aria-label="home" class="rounded-full">
         <div
-          class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-1 hover:outline-offset-1 hover:outline-green"
+          class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-1 hover:outline-offset-1 hover:outline-orange"
         ></div>
       </a>
     </nav> -->

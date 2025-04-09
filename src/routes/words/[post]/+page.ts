@@ -1,10 +1,18 @@
 import { error } from '@sveltejs/kit'
 
-import { ErrorMessage, formatDate, formatTitle, postModules, postPath } from '$lib'
+import {
+  ErrorMessage,
+  formatDate,
+  formatTitle,
+  postModules,
+  postPath,
+} from '$lib'
 import type { PageLoad } from './$types'
 
 export const load: PageLoad = async ({ params }) => {
-  const match = Object.entries(postModules).find(([path]) => postPath(path) === params.post)
+  const match = Object.entries(postModules).find(
+    ([path]) => postPath(path) === params.post,
+  )
   const post = await match?.[1]()
 
   if (post?.metadata.published !== true) {

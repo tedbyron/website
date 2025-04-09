@@ -13,18 +13,23 @@ export function postPath(path: string): string {
 }
 
 /** Post modules. */
-export const postModules = import.meta.glob<App.Post>(`$lib/posts/**/*.{md,svelte.md,svx}`)
+export const postModules = import.meta.glob<App.Post>(
+  `$lib/posts/**/*.{md,svelte.md,svx}`,
+)
 /** Parsed post metadata promises.  */
-const postsMetadataPromises = Object.entries(postModules).map<Promise<App.PostMetadataParsed>>(
-  ([path, resolve]) =>
-    resolve().then(({ metadata }) => ({
-      ...metadata,
-      slug: postPath(path),
-      date: new Date(metadata.date),
-    })),
+const postsMetadataPromises = Object.entries(postModules).map<
+  Promise<App.PostMetadataParsed>
+>(([path, resolve]) =>
+  resolve().then(({ metadata }) => ({
+    ...metadata,
+    slug: postPath(path),
+    date: new Date(metadata.date),
+  })),
 )
 /** Parsed, filtedered, and sorted post metadata. */
-export const postsMetadata: App.PostMetadataParsed[] = (await Promise.all(postsMetadataPromises))
+export const postsMetadata: App.PostMetadataParsed[] = (
+  await Promise.all(postsMetadataPromises)
+)
   .filter((post) => post.published)
   .sort((a, b) => a.date.getTime() - b.date.getTime())
 
@@ -38,7 +43,9 @@ export function formatDate(date: string | Date): string {
   if (!(date instanceof Date)) {
     date = new Date(date)
   }
-  const parts = dateTimeFormat.formatToParts(date).filter(({ type }) => type !== 'literal')
+  const parts = dateTimeFormat
+    .formatToParts(date)
+    .filter(({ type }) => type !== 'literal')
   const year = parts.find(({ type }) => type === 'year')
   const month = parts.find(({ type }) => type === 'month')
   const day = parts.find(({ type }) => type === 'day')

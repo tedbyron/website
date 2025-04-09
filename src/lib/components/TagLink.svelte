@@ -10,5 +10,8 @@
 
 <a
   href="/words/tags/{tag}"
-  class={['inline-flex items-center gap-0.5 no-underline hover:underline', className]}>#{label}</a
+  class={[
+    'inline-flex items-center gap-0.5 no-underline hover:underline',
+    className,
+  ]}>#{label}</a
 >
