@@ -1,10 +1,8 @@
 <script lang="ts">
-  import type { postTag } from '$lib'
-
   interface Props {
-    tag: App.PostTag
-    label: (typeof postTag)[App.PostTag]['label']
-    class: (typeof postTag)[App.PostTag]['className']
+    tag: keyof App.PostTags
+    label: App.PostTags[keyof App.PostTags]['label']
+    class: App.PostTags[keyof App.PostTags]['class']
   }
 
   const { tag, label, class: className }: Props = $props()

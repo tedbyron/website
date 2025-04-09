@@ -5,7 +5,7 @@ import type { PageServerLoad } from './$types'
 export const load: PageServerLoad = () => ({
   title: formatTitle('Tags'),
   description: 'Post tags',
-  postTags: (Object.entries(postTag) as [App.PostTag, (typeof postTag)[App.PostTag]][])
+  postTags: Object.entries(postTag)
     .filter(([tag]) =>
       postsMetadata.some((post) => post.published === true && post.tags.includes(tag)),
     )

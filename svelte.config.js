@@ -1,10 +1,8 @@
 import adapter from '@sveltejs/adapter-cloudflare'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
-// @ts-expect-error: no types.
 import { mdsvex } from 'mdsvex'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
-// @ts-expect-error: no types.
 import remarkAbbr from 'remark-abbr'
 import remarkGithub from 'remark-github'
 
@@ -43,7 +41,6 @@ export default {
   },
   preprocess: [
     vitePreprocess(),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     mdsvex({
       extensions: mdsvexExtensions,
       remarkPlugins: [

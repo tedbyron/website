@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     build: {
-      // Top-level await: https://esbuild.github.io/content-types/#javascript.
+      // https://esbuild.github.io/content-types/#javascript
       target: 'es2022',
     },
     css: {

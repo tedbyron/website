@@ -1,7 +1,8 @@
+import type { Component } from 'svelte'
+import type { ClassValue } from 'svelte/elements'
 import 'unplugin-icons/types/svelte'
 
-import type { ErrorMessage, PostTag } from '$lib'
-import type { Component } from 'svelte'
+import type { ErrorMessage } from '$lib'
 
 declare global {
   namespace App {
@@ -15,8 +16,8 @@ declare global {
       sourcePath?: string
 
       postsMetadata?: PostMetadataParsed[]
-      postTagLabel?: (typeof postTag)[PostTag]['label']
-      postTags?: [PostTag, (typeof postTag)[PostTag]][]
+      postTagLabel?: PostTags[keyof PostTags]['label']
+      postTags?: [keyof PostTags, PostTags[keyof PostTags]][]
 
       component?: Component
       metadata?: PostMetadata
@@ -30,7 +31,7 @@ declare global {
     interface PostMetadata {
       title: string
       description: string
-      tags: PostTag[]
+      tags: (keyof PostTags)[]
       date: string
       published?: boolean
     }
@@ -39,6 +40,14 @@ declare global {
       slug: string
       date: Date
     }
+
+    type PostTags = Record<
+      string,
+      {
+        label: string
+        class: ClassValue
+      }
+    >
   }
 }
 

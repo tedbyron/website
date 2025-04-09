@@ -1,12 +1,10 @@
-import type { ClassValue } from 'svelte/elements'
-
 // Matches extensions in svelte.config.js.
 const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
 const mdPat = new RegExp(
   `([\\w-]+)(${mdsvexExtensions.map((ext) => ext.replaceAll('.', '\\.')).join('|')})`,
 )
 /** Get a post's slug from its path. */
-export const postPath = (path: string): string => {
+export function postPath(path: string): string {
   const slug = path.match(mdPat)?.[1]
   if (slug === undefined) {
     throw new Error('Invalid path')
@@ -36,7 +34,7 @@ const dateTimeFormat = new Intl.DateTimeFormat('en', {
   day: '2-digit',
 })
 /** Format a date like `yyyy-mm-dd`. */
-export const formatDate = (date: string | Date): string => {
+export function formatDate(date: string | Date): string {
   if (!(date instanceof Date)) {
     date = new Date(date)
   }
@@ -64,5 +62,4 @@ export const postTag = {
     label: 'Svelte',
     class: 'text-red hover:text-red',
   },
-} as const satisfies Record<string, { label: string; class: ClassValue }>
-export type PostTag = typeof postTag
+} as const satisfies App.PostTags

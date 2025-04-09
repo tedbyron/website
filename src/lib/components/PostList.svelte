@@ -9,7 +9,9 @@
   const { postsMetadata }: Props = $props()
   const tags = (post: App.PostMetadataParsed) =>
     [...new Set(post.tags)]
-      .map<[App.PostTag, (typeof postTag)[App.PostTag]]>((tag) => [tag, postTag[tag]])
+      .map<
+        [keyof App.PostTags, App.PostTags[keyof App.PostTags]]
+      >((tag) => [tag, postTag[tag as keyof typeof postTag]])
       .toSorted((a, b) => (a[1].label < b[1].label ? -1 : 1))
 </script>
 
@@ -31,7 +33,7 @@
 
       <!-- Post tags -->
       <div class="flex gap-2">
-        {#each tags(post) as [tag, { label, className }] (tag)}
+        {#each tags(post) as [tag, { label, class: className }] (tag)}
           <TagLink {tag} {label} class={className} />
         {/each}
       </div>

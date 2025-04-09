@@ -10,7 +10,7 @@
 
   {#if Array.isArray(data.postTags) && data.postTags.length > 0}
     <ul>
-      {#each data.postTags as [tag, { label, className }] (tag)}
+      {#each data.postTags as [tag, { label, class: className }] (tag)}
         <li><TagLink {tag} {label} class={className} /></li>
       {/each}
     </ul>
