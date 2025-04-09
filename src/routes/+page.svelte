@@ -1,18 +1,5 @@
 <script lang="ts">
-  import Discord from '~icons/tabler/brand-discord'
-  import GitHub from '~icons/tabler/brand-github'
-  import GitLab from '~icons/tabler/brand-gitlab'
-  import Matrix from '~icons/tabler/brand-matrix'
-  import Mail from '~icons/tabler/mail'
-
-  const fingerprint = '9FD6 F552 F73C A25A EBA8  C21E 0BE1 3105 91EC E7CF'.split(/\s+/)
-  const links = [
-    { label: 'github', icon: GitHub, href: 'https://github.com/tedbyron' },
-    { label: 'gitlab', icon: GitLab, href: 'https://gitlab.com/tedbyron' },
-    { label: 'discord', icon: Discord, href: 'https://discord.com/users/176074985377366017' },
-    { label: 'matrix', icon: Matrix, href: 'https://matrix.to/#/@tedbyron:matrix.org' },
-    { label: 'email', icon: Mail, href: 'mailto:ted@ted.ooo' },
-  ]
+  import { fingerprint, links } from '$lib/constants'
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
@@ -39,9 +26,7 @@
 
       <div class="overflow-auto">
         <code class="flex min-w-max items-center justify-center gap-2">
-          {#each fingerprint as word, i (word)}
-            <span class:ml-1={i === fingerprint.length / 2}>{word}</span>
-          {/each}
+          {fingerprint}
         </code>
       </div>
     </div>
