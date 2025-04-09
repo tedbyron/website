@@ -1,7 +1,6 @@
 import { defaultTitle } from '$lib'
 import type { LayoutServerLoad } from './$types'
 
-export const csr = false
 export const prerender = true
 
 export const load: LayoutServerLoad = ({ setHeaders }) => {

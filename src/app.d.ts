@@ -1,6 +1,6 @@
 import 'unplugin-icons/types/svelte'
 
-import type { ErrorMessage, postTag } from '$lib'
+import type { ErrorMessage, PostTag } from '$lib'
 import type { Component } from 'svelte'
 
 declare global {
@@ -39,8 +39,6 @@ declare global {
       slug: string
       date: Date
     }
-
-    type PostTag = keyof typeof postTag
   }
 }
 

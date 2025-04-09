@@ -50,25 +50,19 @@ export const formatDate = (date: string | Date): string => {
   return `${year.value}-${month.value}-${day.value}`
 }
 
-type PostTag = Record<
-  string,
-  {
-    label: string
-    className?: ClassValue
-  }
->
 /** Map of post tags to display value and text color. */
 export const postTag = {
   nix: {
     label: 'Nix',
-    className: 'text-cyan hover:text-cyan',
+    class: 'text-cyan hover:text-cyan',
   },
   rust: {
     label: 'Rust',
-    className: 'text-orange hover:text-orange',
+    class: 'text-orange hover:text-orange',
   },
   svelte: {
     label: 'Svelte',
-    className: 'text-red hover:text-red',
+    class: 'text-red hover:text-red',
   },
-} as const satisfies PostTag
+} as const satisfies Record<string, { label: string; class: ClassValue }>
+export type PostTag = typeof postTag
