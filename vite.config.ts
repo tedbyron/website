@@ -3,7 +3,6 @@ import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
 import advancedPreset from 'cssnano-preset-advanced'
 import tailwindcss from 'tailwindcss'
-import nesting from 'tailwindcss/nesting'
 import icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 
@@ -18,7 +17,6 @@ export default defineConfig(({ mode }) => {
     css: {
       postcss: {
         plugins: [
-          nesting(),
           tailwindcss(),
           autoprefixer(),
           ...(dev

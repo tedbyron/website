@@ -26,8 +26,9 @@
 <svelte:head>
   <title>{page.data.title}</title>
 
+  <meta name="author" content="Teddy Byron" />
   <meta name="description" content={page.data.description} />
-  <meta name="color-scheme" content="#282828" />
+  <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#282828" />
 
   <link
@@ -41,7 +42,7 @@
 
 <div class="flex min-h-dvh flex-col">
   <header class="container px-2 py-4">
-    <!-- <nav class="flex justify-center">
+    <!-- <nav class="mx-auto">
       <a href="/" aria-label="home" class="rounded-full">
         <div
           class="h-8 w-8 rounded-full bg-green hover:outline hover:outline-1 hover:outline-offset-1 hover:outline-orange"
@@ -54,7 +55,9 @@
     {@render children?.()}
   </main>
 
-  <footer class="mb-4 mt-8 flex justify-center">
+  <footer
+    class="animate-in slide-in-from-bottom-4 fade-in-0 fill-mode-backwards mx-auto mb-4 mt-8 transition-none duration-1000"
+  >
     <a href={source}>source</a>
   </footer>
 </div>

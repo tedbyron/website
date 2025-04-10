@@ -16,16 +16,24 @@ export const links = [
     label: 'github',
     icon: GitHub,
     href: 'https://github.com/tedbyron',
+    class: 'delay-200',
   },
   {
     label: 'discord',
     icon: Discord,
     href: 'https://discord.com/users/176074985377366017',
+    class: 'delay-300',
   },
   {
     label: 'matrix',
     icon: Matrix,
     href: 'https://matrix.to/#/@tedbyron:matrix.org',
+    class: 'delay-400',
   },
-  { label: 'email', icon: Mail, href: 'mailto:tedbyron@gmail.com' },
+  {
+    label: 'email',
+    icon: Mail,
+    href: 'mailto:tedbyron@gmail.com',
+    class: 'delay-500',
+  },
 ] as const

@@ -36,13 +36,25 @@
   }
 
   a {
-    @apply underline-orange hover:text-orange;
+    @apply underline decoration-orange decoration-[1.3px] underline-offset-2 hover:text-orange;
   }
 
   code:not([class*='language-']),
   samp:not([class*='language-']) {
-    @apply bg-black1 rounded-[5px] px-1 py-[1.75px] text-start;
+    @apply rounded-[5px] bg-black1 px-1 py-[1.75px] text-start;
   }
+
+  .animate,
+  .animate-in,
+  .animate-out,
+  .animate-spin,
+  .animate-ping,
+  .animate-pulse,
+  .animate-bounce {
+    @apply motion-reduce:animate-none sm:animate-none;
+  }
+
+  /* TODO: keyboard nav/focus ring colors */
 }
 
 @layer components {
@@ -52,11 +64,5 @@
 
   .prose h3 > a {
     @apply decoration-[1.5px] underline-offset-[2.6px];
-  }
-}
-
-@layer utilities {
-  .underline-orange {
-    @apply underline decoration-orange decoration-[1.3px] underline-offset-2;
   }
 }

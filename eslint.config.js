@@ -36,6 +36,15 @@ export default ts.config(
     },
     rules: {
       '@typescript-eslint/no-non-null-assertion': 0,
+      '@typescript-eslint/restrict-template-expressions': [
+        1,
+        {
+          allowBoolean: true,
+          allowNullish: true,
+          allowNumber: true,
+          allowRegExp: true,
+        },
+      ],
     },
   },
   {
