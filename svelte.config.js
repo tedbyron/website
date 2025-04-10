@@ -27,6 +27,7 @@ export default {
           'ajax.cloudflare.com',
           'static.cloudflareinsights.com',
         ],
+        'style-src': ['self', 'unsafe-inline'],
       },
     },
     typescript: {

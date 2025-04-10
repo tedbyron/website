@@ -65,4 +65,8 @@
   .prose h3 > a {
     @apply decoration-[1.5px] underline-offset-[2.6px];
   }
+
+  .home-animate {
+    @apply animate-in fade-in slide-in-from-top-4 fill-mode-backwards transition-none duration-700 ease-out;
+  }
 }
