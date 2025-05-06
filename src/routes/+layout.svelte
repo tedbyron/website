@@ -55,9 +55,7 @@
     {@render children?.()}
   </main>
 
-  <footer
-    class="animate-in slide-in-from-bottom-4 fade-in-0 fill-mode-backwards mx-auto mb-4 mt-8 transition-none duration-1000"
-  >
+  <footer class="mx-auto mb-4 mt-8">
     <a href={source}>source</a>
   </footer>
 </div>

@@ -1,6 +1,4 @@
 {
-  description = "tedbyron's website";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     flake-utils.url = "flake-utils";
@@ -22,9 +20,7 @@
         formatter = nixfmt-rfc-style;
 
         devShells.default = mkShellNoCC {
-          packages = [
-            nodejs_22
-          ];
+          packages = [ nodejs ];
         };
       }
     );

@@ -1,6 +1,6 @@
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply hyphens-none whitespace-pre break-normal text-left;
+  @apply hyphens-auto whitespace-pre break-normal text-left;
   word-wrap: normal;
   tab-size: 4;
 }

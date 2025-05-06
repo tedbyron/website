@@ -3,13 +3,13 @@ import GitHub from '~icons/tabler/brand-github'
 import Matrix from '~icons/tabler/brand-matrix'
 import Mail from '~icons/tabler/mail'
 
-interface Work {
+type Work = Partial<{
   title: string
-  company?: { name: string; url?: string }
-  location?: string
-}
+  company: { name: string; url?: string }
+  location: string
+}>
 
-export const work: Work = { title: 'web developer' }
+export const work: Work = {}
 export const fingerprint = '9FD6F552F73CA25AEBA8C21E0BE1310591ECE7CF'
 export const links = [
   {

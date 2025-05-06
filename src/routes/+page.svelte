@@ -7,17 +7,24 @@
   <!-- Header -->
   <div class="flex flex-col gap-4 text-center">
     <h1 class="home-animate">Teddy Byron</h1>
-    <span class="home-animate delay-100">
-      {work.title}
 
-      {#if work.company?.url && work.company.name}
-        @ <a href={work.company.url}>{work.company.name}</a>
-      {:else if work.company?.name}
-        @ {work.company.name}
-      {:else if work.location}
-        in {work.location}
-      {/if}
-    </span>
+    {#if Object.keys(work).length}
+      <span class="home-animate delay-100">
+        {#if work.title}
+          {work.title}
+        {/if}
+
+        {#if work.company?.url && work.company.name}
+          @ <a href={work.company.url}>{work.company.name}</a>
+        {:else if work.company?.name}
+          @ {work.company.name}
+        {/if}
+
+        {#if work.location}
+          in {work.location}
+        {/if}
+      </span>
+    {/if}
   </div>
 
   <!-- Links -->

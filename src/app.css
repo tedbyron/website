@@ -67,6 +67,6 @@
   }
 
   .home-animate {
-    @apply animate-in fade-in slide-in-from-top-4 fill-mode-backwards transition-none duration-700 ease-out;
+    @apply transition-none duration-700 ease-out animate-in fade-in slide-in-from-top-4 fill-mode-backwards;
   }
 }

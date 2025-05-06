@@ -70,4 +70,7 @@ export const postTags = {
   svelte: {
     class: 'text-red hover:text-red decoration-red',
   },
+  zsh: {
+    class: 'text-green hover:text-green decoration-green',
+  },
 } as const satisfies App.PostTags
