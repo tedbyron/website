@@ -25,7 +25,9 @@
       <a href="/words/{post.slug}" class="flex gap-4 no-underline">
         <div class="flex flex-col">
           <span class="mb-1 text-lg font-bold leading-tight">{post.title}</span>
-          <span>{post.description}</span>
+          {#if post.description}
+            <span>{post.description}</span>
+          {/if}
         </div>
       </a>
 

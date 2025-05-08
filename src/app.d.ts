@@ -30,7 +30,7 @@ declare global {
 
     interface PostMetadata {
       title: string
-      description: string
+      description?: string
       tags: (keyof PostTags)[]
       date: string
       published?: boolean

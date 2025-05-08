@@ -1,6 +1,5 @@
 ---
 title: Kinda maybe useful zsh stuff
-description: Some zsh things I've picked up on
 date: 2025-05-05T23:00:00-04:00
 tags:
   - zsh

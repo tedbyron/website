@@ -3,5 +3,5 @@ import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = () => ({
   title: formatTitle('PGP'),
-  description: "Teddy's PGP info",
+  description: "Teddy Byron's PGP info",
 })
