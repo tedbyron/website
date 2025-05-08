@@ -32,16 +32,23 @@
   }
 
   :root {
-    @apply min-h-dvh min-w-80 bg-black text-white;
+    @apply min-h-dvh min-w-80 bg-bg text-fg;
   }
 
   a {
     @apply underline decoration-orange decoration-[1.3px] underline-offset-2 hover:text-orange;
   }
 
+  h2 > a {
+    @apply decoration-[1.8px] underline-offset-[3px];
+  }
+  h3 > a {
+    @apply decoration-[1.5px] underline-offset-[2.6px];
+  }
+
   code:not([class*='language-']),
   samp:not([class*='language-']) {
-    @apply rounded-[5px] bg-black1 px-1 py-[1.75px] text-start;
+    @apply rounded-[5px] bg-bgc px-1 py-[1.75px] text-start;
   }
 
   .animate,
@@ -51,22 +58,22 @@
   .animate-ping,
   .animate-pulse,
   .animate-bounce {
-    @apply motion-reduce:animate-none sm:animate-none;
+    @apply motion-reduce:animate-none motion-reduce:transition-none;
   }
-
-  /* TODO: keyboard nav/focus ring colors */
 }
 
 @layer components {
-  .prose h2 > a {
-    @apply decoration-[1.8px] underline-offset-[3px];
-  }
-
-  .prose h3 > a {
-    @apply decoration-[1.5px] underline-offset-[2.6px];
-  }
-
   .home-animate {
     @apply transition-none duration-700 ease-out animate-in fade-in slide-in-from-top-4 fill-mode-backwards;
+  }
+
+  .prose {
+    h2 > a,
+    h3 > a,
+    h4 > a,
+    h5 > a,
+    h6 > a {
+      @apply font-bold no-underline hover:underline;
+    }
   }
 }

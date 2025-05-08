@@ -3,7 +3,6 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import { mdsvex } from 'mdsvex'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
-import remarkAbbr from 'remark-abbr'
 import remarkGithub from 'remark-github'
 
 // Matches extensions in $lib.
@@ -53,15 +52,12 @@ export default {
           remarkGithub,
           { repository: 'https://github.com/tedbyron/website.git' },
         ],
-        remarkAbbr,
       ],
       rehypePlugins: [
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       ],
-      smartypants: {
-        dashes: 'oldschool',
-      },
+      smartypants: false,
     }),
   ],
 }

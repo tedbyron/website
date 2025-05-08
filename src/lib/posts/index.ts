@@ -29,7 +29,7 @@ const postsMetadataPromises = Object.entries(postModules).map<
   })),
 )
 
-/** Parsed, filtedered, and sorted post metadata. */
+/** Parsed, filtered, and sorted post metadata. */
 export const postsMetadata: App.PostMetadataParsed[] = (
   await Promise.all(postsMetadataPromises)
 )
@@ -62,7 +62,7 @@ export function formatDate(date: string | Date): string {
 /** Map of post tags to display value and text color. */
 export const postTags = {
   nix: {
-    class: 'text-cyan hover:text-cyan decoration-cyan',
+    class: 'text-blue hover:text-blue decoration-blue',
   },
   rust: {
     class: 'text-orange hover:text-orange decoration-orange',

@@ -1,6 +1,6 @@
 <script lang="ts">
   import HomeBackground from '$components/HomeBackground.svelte'
-  import { fingerprint, work, links } from '$lib/constants'
+  import { work, links } from '$lib/constants'
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
@@ -47,11 +47,7 @@
   <div
     class="home-animate flex max-w-full flex-wrap items-center justify-center gap-2 delay-600"
   >
-    <span>pgp</span>
-
-    <div class="overflow-auto">
-      <samp>{fingerprint}</samp>
-    </div>
+    <a href="/pgp">pgp</a>
   </div>
 
   <HomeBackground />

@@ -1,5 +1,5 @@
 ---
-title: Kind of maybe useful zsh stuff
+title: Kinda maybe useful zsh stuff
 description: Some zsh things I've picked up on
 date: 2025-05-05T23:00:00-04:00
 tags:
@@ -7,76 +7,70 @@ tags:
 published: true
 ---
 
-- **Alternate forms**
+## Alternate forms
 
-  `man zshmisc(1)` § Alternate forms for complex commands
-
-  It's both easier and faster to write scripts with alternate forms of builtin
+- It's both easier and faster to write scripts with alternate forms of builtin
   constructs than using their `sh` equivalents, but you do have to be aware of
-  the listed limitations
+  the limitations listed in the docs
 
   ```shell
   foo() echo $@
-
   for arg in $@
-    if [[ $arg =~ search ]] {
-      foo bar
-    } else {
-      foo baz
-    }
+      if [[ $arg =~ pattern ]] {
+          foo bar
+      } else {
+          foo baz
+      }
   ```
 
-- **Don't need the double quotes**
+- `man zshmisc(1)` § Alternate forms for complex commands
 
-  `man zshoptions(1)` § Shell emulation
+## Don't need the double quotes
 
-  Zsh doesn't perform field splitting on unquoted parameter expansions, unless
+- Zsh doesn't perform field splitting on unquoted parameter expansions, unless
   you have `SH_WORD_SPLIT` set for some reason
 
-  ```shell
-  a='some path/with spaces/'
-  cd $a
+  ```shell-session
+  $ a='some path/with spaces/'
+  $ cd $a
   ```
 
-- **`MULTIOS` option**
+- `man zshoptions(1)` § Shell emulation
 
-  `man zshoptions(1)` § Scripts and functions
+## `MULTIOS` option
 
-  On by default, performs implicit `tee`s or `cats` when multiple redirections
+- On by default, performs implicit `tee`s or `cats` when multiple redirections
   are attempted
 
-  ```shell
-  # tee: writes the date to two files
-  date >foo >bar
+  ```shell-session
+  $ date >foo >bar # writes the date to both files like tee
 
-  # cat: same as `cat foo bar | sort`
-  sort <foo <bar
+  $ sort <foo <bar # same as `cat foo bar | sort`
   ```
 
-- **`AUTO_CD` option**
+- `man zshoptions(1)` § Scripts and functions
 
-  `man zshoptions(1)` § Changing directories
+## `AUTO_CD` option
 
-  If a command isn't a command, and the command is the name of a dir, tries to
+- If a command isn't a command, and the command is the name of a dir, tries to
   `cd` to that dir
 
   ```shell-session
   $ setopt autocd
   $ ls
   foo  bar
-  $ foo # or foo/
+  $ foo # or foo/, ./foo, etc.
   $ pwd
   …/foo
   ```
 
-- **`print`**
+- `man zshoptions(1)` § Changing directories
 
-  `man zshbuiltins(1)`
+## `print`
 
-  Zsh's `print` builtin has `-c` and `-C` options to print in columns, which can
+- Zsh's `print` builtin has `-c` and `-C` options to print in columns, which can
   be useful when a system doesn't have util-linux's `column` installed
-
-  There's also an `-l` option to print arguments separated by newline, useful
+- There's also an `-l` option to print arguments separated by newline, useful
   for arrays
 
   ```shell-session
@@ -87,23 +81,23 @@ published: true
   …
   ```
 
-- **`r`**
+- `man zshbuiltins(1)`
 
-  `man zshbuiltins(1)`
+## `r`
 
-  The `r` builtin runs the previous command again, and is equivalent to `fc -s`
+- The `r` builtin runs the previous command again, and is equivalent to `fc -s`
   and `fc -e -`
+- `man zshbuiltins(1)`
 
-- **`whence`, `where`, `which`**
+## `whence`, `where`, `which`
 
-  `man zshbuiltins(1)`
+- `which` does what you expect and prints in `csh`-like format (`whence -c`),
+  `where` does the same but also lists all paths (`whence -ca`)
+- `man zshbuiltins(1)`
 
-  `which` prints in `csh`-like format (`whence -c`), `where` does the same and
-  lists all paths (`whence -ca`)
+## Global aliases
 
-- **Global aliases**
-
-  Alias anywhere in the command line
+- Alias anywhere in the command line
 
   ```shell
   # adds highlighting to any command run with `-h` or `--help`
@@ -111,11 +105,11 @@ published: true
   alias -g -- --help='--help |& bat --plain --language help'
   ```
 
-- **Dir hash table**
+- `man zshbuiltins(1)`
 
-  `man zshbuiltins(1)`
+## Dir hash table
 
-  `hash -d` can list or add to the named directory hash table
+- `hash -d` can list or add to the named directory hash table
 
   ```shell-session
   $ hash -d foo=$HOME/some/long/path
@@ -123,3 +117,5 @@ published: true
   $ pwd
   /home/ted/some/long/path
   ```
+
+- `man zshbuiltins(1)`

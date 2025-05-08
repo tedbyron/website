@@ -7,7 +7,7 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  @apply overflow-auto rounded-md px-3 py-2;
+  @apply overflow-auto rounded-md bg-bgc px-3 py-2;
 }
 
 /* Inline code */
@@ -23,7 +23,7 @@ pre[class*='language-'] {
 }
 
 .token.punctuation {
-  @apply text-white;
+  @apply text-fg;
 }
 
 .namespace {
@@ -58,7 +58,7 @@ pre[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  @apply text-white;
+  @apply text-fg;
 }
 
 .token.atrule,
@@ -69,7 +69,7 @@ pre[class*='language-'] {
 }
 
 .token.keyword {
-  @apply text-cyan;
+  @apply text-blue;
 }
 
 .token.regex,

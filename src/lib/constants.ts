@@ -3,6 +3,8 @@ import GitHub from '~icons/tabler/brand-github'
 import Matrix from '~icons/tabler/brand-matrix'
 import Mail from '~icons/tabler/mail'
 
+export const domain = 'tedbyron.com'
+
 type Work = Partial<{
   title: string
   company: { name: string; url?: string }
@@ -10,7 +12,12 @@ type Work = Partial<{
 }>
 
 export const work: Work = {}
+
 export const fingerprint = '9FD6F552F73CA25AEBA8C21E0BE1310591ECE7CF'
+if (fingerprint.length % 4 !== 0) {
+  throw new Error('fingerprint has invalid length')
+}
+
 export const links = [
   {
     label: 'github',
