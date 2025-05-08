@@ -3,6 +3,6 @@
   import Page from './index.svx'
 </script>
 
-<MdPage>
+<MdPage class="max-w-min">
   <Page />
 </MdPage>
