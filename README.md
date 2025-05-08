@@ -16,7 +16,6 @@
 <!-- TODO
 - ligatures not working (missing from woff2?)
 - keyboard nav/focus ring colors
-- /pgp <code> on its own line looks different
 - headings link should be to the side but it's automatically adding the entire
   text
 -->

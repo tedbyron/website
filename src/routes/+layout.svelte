@@ -10,17 +10,17 @@
   }
 
   const { children }: Props = $props()
-
   const base = 'https://github.com/tedbyron/website/blob/main'
   const routes = base + '/src/routes'
-  const source =
+  const source = $derived(
     page.data.sourcePath === undefined
       ? page.route.id === null
         ? `${routes}/+error.svelte`
         : page.route.id === '/'
           ? `${routes}/+page.svelte`
           : `${routes}${encodeURI(page.route.id)}/+page.svelte`
-      : base + page.data.sourcePath
+      : base + page.data.sourcePath,
+  )
 </script>
 
 <svelte:head>
