@@ -1,8 +1,8 @@
 <script lang="ts">
-  import MdPage from '$components/MdPage.svelte'
+  import MdWrapper from '$components/MdWrapper.svelte'
   import Page from './index.svx'
 </script>
 
-<MdPage class="max-w-min">
+<MdWrapper class="max-w-min">
   <Page />
-</MdPage>
+</MdWrapper>

@@ -19,7 +19,8 @@
   {#each postsMetadata as post (post.slug)}
     <li class="grid grid-cols-[auto_1fr] grid-rows-[repeat(2,auto)] gap-x-4">
       <!-- Post date -->
-      <span class="text-gray">{formatDate(post.date)}</span>
+      <span class="text-light-gray dark:text-gray">{formatDate(post.date)}</span
+      >
 
       <!-- Post title and description -->
       <a href="/words/{post.slug}" class="flex gap-4 no-underline">

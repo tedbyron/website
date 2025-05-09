@@ -61,16 +61,10 @@ export function formatDate(date: string | Date): string {
 
 /** Map of post tags to display value and text color. */
 export const postTags = {
-  nix: {
-    class: 'text-blue hover:text-blue decoration-blue',
-  },
-  rust: {
-    class: 'text-orange hover:text-orange decoration-orange',
-  },
-  svelte: {
-    class: 'text-red hover:text-red decoration-red',
-  },
-  zsh: {
-    class: 'text-green hover:text-green decoration-green',
-  },
+  javascript: { class: 'text-yellow hover:text-yellow decoration-yellow' },
+  typescript: { class: 'text-blue hover:text-blue decoration-blue' },
+  nix: { class: 'text-blue hover:text-blue decoration-blue' },
+  rust: { class: 'text-orange hover:text-orange decoration-orange' },
+  svelte: { class: 'text-red hover:text-red decoration-red' },
+  zsh: { class: 'text-green hover:text-green decoration-green' },
 } as const satisfies App.PostTags

@@ -5,17 +5,15 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import remarkGithub from 'remark-github'
 
-// Matches extensions in $lib.
-const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
+// Matches extensions in $lib/posts.
+export const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
   extensions: ['.svelte', ...mdsvexExtensions],
   kit: {
     adapter: adapter(),
-    alias: {
-      $components: 'src/lib/components',
-    },
+    alias: { $components: 'src/lib/components' },
     csp: {
       directives: {
         'base-uri': ['self'],
@@ -36,7 +34,6 @@ export default {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           ...config.include,
           '../eslint.config.js',
-          '../mdsvex.config.js',
           '../svelte.config.js',
           '../tailwind.config.ts',
         ],
@@ -47,6 +44,7 @@ export default {
     vitePreprocess(),
     mdsvex({
       extensions: mdsvexExtensions,
+      smartypants: false,
       remarkPlugins: [
         [
           remarkGithub,
@@ -57,7 +55,6 @@ export default {
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       ],
-      smartypants: false,
     }),
   ],
 }

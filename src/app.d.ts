@@ -1,8 +1,7 @@
+import type { ErrorMessage } from '$lib'
 import type { Component } from 'svelte'
 import type { ClassValue } from 'svelte/elements'
 import 'unplugin-icons/types/svelte'
-
-import type { ErrorMessage } from '$lib'
 
 declare global {
   namespace App {

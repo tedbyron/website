@@ -55,5 +55,9 @@ export default ts.config(
         extraFileExtensions: ['.svelte'],
       },
     },
+    rules: {
+      // Svelte snippets aren't compatible with this.
+      '@typescript-eslint/no-confusing-void-expression': 0,
+    },
   },
 )

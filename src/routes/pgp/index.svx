@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { domain, fingerprint } from '../../lib/constants'
+  import { domain, fingerprint } from '$lib'
 
   const split = fingerprint.match(/.{4}/g)
 </script>
@@ -8,21 +8,22 @@ My PGP fingerprint is
 <span class="whitespace-nowrap overflow-x-auto"><code>{#each split as word, i
 (i)}<span class="mr-2 last:m-0">{word}</span>{/each}</code></span>
 
-<!-- gpg --auto-key-locate hkp://localhost:5173 --locate-keys clear,nodefault,wkd address@example.com -->
-
 Retrieve my key by running
 
-<span class="whitespace-nowrap overflow-x-auto"><code>gpg --auto-key-locate
-hkps://tedbyron.com --recv-key {fingerprint}</code></span>
+<!--
+gpg --auto-key-locate hkp://localhost:5173 --locate-keys clear,nodefault,wkd address@example.com
+-->
 
-or
+<span class="max-w-full whitespace-nowrap overflow-x-auto"><code>gpg
+--auto-key-locate hkps://tedbyron.com --recv-key {fingerprint}</code></span>
+
+Or
 
 <span class="whitespace-nowrap overflow-x-auto"><code>curl
 <a href="/pgp.asc">https://{domain}/pgp.asc</a> | gpg --import</code></span>
 
----
+My key is also on
+<span class="whitespace-nowrap overflow-x-auto"><code>hkps://keys.openpgp.org</code></span>
 
-My key is also available at `hkps://keys.openpgp.org`
-
-My git signing keys are available at
-[https://github.com/tedbyron.gpg](https://github.com/tedbyron.gpg)
+My git signing keys, including expired and unused keys, are available at
+<a href="https://github.com/tedbyron.gpg" class="whitespace-nowrap overflow-x-auto">https://github.com/tedbyron.gpg</a>

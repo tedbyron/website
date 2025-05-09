@@ -32,11 +32,11 @@
   }
 
   :root {
-    @apply min-h-dvh min-w-80 bg-bg text-fg;
+    @apply min-h-dvh min-w-80 bg-light-bg text-light-fg dark:bg-bg dark:text-fg;
   }
 
   a {
-    @apply underline decoration-orange decoration-[1.3px] underline-offset-2 hover:text-orange;
+    @apply underline decoration-light-orange decoration-[1.3px] underline-offset-2 hover:text-light-orange dark:decoration-orange dark:hover:text-orange;
   }
 
   h2 > a {
@@ -48,7 +48,7 @@
 
   code:not([class*='language-']),
   samp:not([class*='language-']) {
-    @apply rounded-[5px] bg-bgc px-1 py-[1.75px] text-start;
+    @apply rounded-[5px] bg-light-bgc px-1 py-[1.75px] dark:bg-bgc;
   }
 
   .animate,
@@ -63,11 +63,19 @@
 }
 
 @layer components {
+  .underline-link {
+    @apply underline decoration-light-orange decoration-[1.3px] underline-offset-2 dark:decoration-orange;
+  }
+
   .home-animate {
     @apply transition-none duration-700 ease-out animate-in fade-in slide-in-from-top-4 fill-mode-backwards;
   }
 
   .prose {
+    p {
+      @apply hyphens-none;
+    }
+
     h2 > a,
     h3 > a,
     h4 > a,

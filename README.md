@@ -14,8 +14,12 @@
 -->
 
 <!-- TODO
+- light mode text too light
+- dark mode media query listener
+- dynamic <meta> theme-color
+- page transition quick crossfade
+
+- headings link should be to the side but it's automatically adding the entire text
 - ligatures not working (missing from woff2?)
 - keyboard nav/focus ring colors
-- headings link should be to the side but it's automatically adding the entire
-  text
 -->

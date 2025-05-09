@@ -21,26 +21,22 @@ if (fingerprint.length % 4 !== 0) {
 export const links = [
   {
     label: 'github',
-    icon: GitHub,
+    component: GitHub,
     href: 'https://github.com/tedbyron',
-    class: 'delay-200',
   },
   {
     label: 'discord',
-    icon: Discord,
+    component: Discord,
     href: 'https://discord.com/users/176074985377366017',
-    class: 'delay-300',
   },
   {
     label: 'matrix',
-    icon: Matrix,
+    component: Matrix,
     href: 'https://matrix.to/#/@tedbyron:matrix.org',
-    class: 'delay-400',
   },
   {
     label: 'email',
-    icon: Mail,
+    component: Mail,
     href: 'mailto:tedbyron@gmail.com',
-    class: 'delay-500',
   },
-] as const
+]

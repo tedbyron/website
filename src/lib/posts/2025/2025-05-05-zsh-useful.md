@@ -43,7 +43,6 @@ published: true
 
   ```shell-session
   $ date >foo >bar # writes the date to both files like tee
-
   $ sort <foo <bar # same as `cat foo bar | sort`
   ```
 
@@ -70,7 +69,7 @@ published: true
 - Zsh's `print` builtin has `-c` and `-C` options to print in columns, which can
   be useful when a system doesn't have util-linux's `column` installed
 - There's also an `-l` option to print arguments separated by newline, useful
-  for arrays
+  for printing arrays
 
   ```shell-session
   $ print -l $path

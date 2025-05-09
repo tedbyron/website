@@ -5,25 +5,23 @@ pre[class*='language-'] {
   tab-size: 4;
 }
 
-/* Code blocks */
 pre[class*='language-'] {
-  @apply overflow-auto rounded-md bg-bgc px-3 py-2;
+  @apply overflow-auto rounded-md bg-light-bg px-3 py-2 dark:bg-bg;
 }
 
-/* Inline code */
 :not(pre) > code[class*='language-'] {
-  @apply whitespace-normal rounded-sm;
+  /* @apply whitespace-normal rounded-sm; */
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray;
+  @apply text-light-gray dark:text-gray;
 }
 
 .token.punctuation {
-  @apply text-fg;
+  @apply text-light-fg dark:text-fg;
 }
 
 .namespace {
@@ -35,12 +33,12 @@ pre[class*='language-'] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-aqua;
+  @apply text-light-aqua dark:text-aqua;
 }
 
 .token.boolean,
 .token.number {
-  @apply text-purple;
+  @apply text-light-purple dark:text-purple;
 }
 
 .token.selector,
@@ -49,7 +47,7 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-green;
+  @apply text-light-green dark:text-green;
 }
 
 .token.operator,
@@ -58,23 +56,23 @@ pre[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  @apply text-fg;
+  @apply text-light-fg dark:text-fg;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-  @apply text-yellow;
+  @apply text-light-yellow dark:text-yellow;
 }
 
 .token.keyword {
-  @apply text-blue;
+  @apply text-light-blue dark:text-blue;
 }
 
 .token.regex,
 .token.important {
-  @apply text-orange;
+  @apply text-light-orange dark:text-orange;
 }
 
 .token.important,

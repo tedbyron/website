@@ -1,4 +1,6 @@
-export * from '$lib/posts'
+export * from './constants'
+export * from './posts'
+export * from './state.svelte'
 
 export const enum ErrorMessage {
   /** 404 */
@@ -6,4 +8,4 @@ export const enum ErrorMessage {
 }
 
 export const defaultTitle = 'Teddy Byron'
-export const formatTitle = (title: string) => `${title} • ${defaultTitle}`
+export const formatTitle = (title: string) => `${title} \u2022 ${defaultTitle}`
