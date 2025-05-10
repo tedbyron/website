@@ -45,11 +45,13 @@ const postsMetadataPromises = Object.entries(postModules).map<
 )
 
 /** Parsed, filtered, and sorted post metadata. */
-export const postsMetadata: App.PostMetadataParsed[] = (
-  await Promise.all(postsMetadataPromises)
+export const postsMetadata: Promise<App.PostMetadataParsed[]> = Promise.all(
+  postsMetadataPromises,
+).then((posts) =>
+  posts
+    .filter((post) => post.published)
+    .sort((a, b) => a.date.getTime() - b.date.getTime()),
 )
-  .filter((post) => post.published)
-  .sort((a, b) => a.date.getTime() - b.date.getTime())
 
 const dateTimeFormat = new Intl.DateTimeFormat('en', {
   year: 'numeric',

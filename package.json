@@ -6,7 +6,7 @@
     "node": ">=22"
   },
   "browserslist": [
-    "defaults and fully supports es6-module"
+    "defaults"
   ],
   "prettier": {
     "semi": false,

@@ -10,10 +10,6 @@ export default defineConfig(({ mode }) => {
   const dev = mode === 'development'
 
   return {
-    build: {
-      // https://esbuild.github.io/content-types/#javascript
-      target: 'es2022',
-    },
     css: {
       postcss: {
         plugins: [
