@@ -3,8 +3,7 @@
   import { page } from '$app/state'
   import { appState, themes, type Theme } from '$lib'
   import Curlio from '$lib/assets/fonts/Iosevkacurlio-normal.woff2'
-  import { onMount, type Component, type Snippet } from 'svelte'
-  import type { SvelteHTMLElements } from 'svelte/elements'
+  import { onMount, type Snippet } from 'svelte'
   import GitHub from '~icons/tabler/brand-github'
   import Circle from '~icons/tabler/circle-filled'
   import Percentage50 from '~icons/tabler/percentage-50'
@@ -29,9 +28,11 @@
   )
   const root = $derived(page.route.id === '/')
 
-  const themeIcons = Object.fromEntries<Component<SvelteHTMLElements['svg']>>(
-    themes.map((name) => [name, name === 'system' ? Percentage50 : Circle]),
-  )
+  const themeIcons = {
+    system: Percentage50,
+    light: Circle,
+    dark: Circle,
+  }
   const theme = $derived({ icon: themeIcons[appState.theme] })
   const toggleDarkClass = () => {
     if (!browser) return
@@ -90,24 +91,27 @@
     </a>
 
     <nav class="flex gap-4">
-      <button
-        bind:this={themeEle}
-        type="button"
-        onclick={() => {
-          appState.theme =
-            themes[
-              (themes.findIndex((t) => t === appState.theme) + 1) %
-                themes.length
-            ]!
-          toggleDarkClass()
-          console.log('theme', appState.theme)
-          localStorage.setItem('theme', appState.theme)
-        }}
-        class="invisible py-2 leading-none transition-none duration-700 ease-in animate-in fade-in disabled:text-bgc dark:disabled:text-bgc"
-        aria-label="change theme"
-      >
-        <theme.icon class="text-xl"></theme.icon>
-      </button>
+      <ul>
+        <li>
+          <button
+            bind:this={themeEle}
+            type="button"
+            aria-label="change theme"
+            onclick={() => {
+              appState.theme =
+                themes[
+                  (themes.findIndex((t) => t === appState.theme) + 1) %
+                    themes.length
+                ]!
+              toggleDarkClass()
+              localStorage.setItem('theme', appState.theme)
+            }}
+            class="invisible py-2 leading-none transition-none duration-700 ease-in animate-in fade-in disabled:text-bgc dark:disabled:text-bgc"
+          >
+            <theme.icon class="text-xl"></theme.icon>
+          </button>
+        </li>
+      </ul>
     </nav>
   </header>
 
