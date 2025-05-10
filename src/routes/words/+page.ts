@@ -1,11 +1,11 @@
 import { formatTitle, postsMetadata, postTags } from '$lib'
-import type { PageServerLoad } from './$types'
+import type { PageLoad } from './$types'
 
 if (postsMetadata.some((post) => post.tags.some((tag) => !(tag in postTags)))) {
   throw new Error('Invalid tag')
 }
 
-export const load: PageServerLoad = () => ({
+export const load: PageLoad = () => ({
   title: formatTitle('Words'),
   description: 'Some words about things',
   postsMetadata,

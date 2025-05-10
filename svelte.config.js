@@ -6,7 +6,7 @@ import rehypeSlug from 'rehype-slug'
 import remarkGithub from 'remark-github'
 
 // Matches extensions in $lib/posts.
-export const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
+const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -25,6 +25,11 @@ export default {
           'static.cloudflareinsights.com',
         ],
         'style-src': ['self', 'unsafe-inline'],
+      },
+    },
+    prerender: {
+      handleHttpError: (err) => {
+        throw new Error(JSON.stringify(err))
       },
     },
     typescript: {

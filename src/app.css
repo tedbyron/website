@@ -32,7 +32,7 @@
   }
 
   :root {
-    @apply min-h-dvh min-w-80 bg-light-bg text-light-fg dark:bg-bg dark:text-fg;
+    @apply min-h-dvh min-w-80 bg-light-bg text-light-fg transition-colors dark:bg-bg dark:text-fg;
   }
 
   a {
@@ -58,17 +58,13 @@
   .animate-ping,
   .animate-pulse,
   .animate-bounce {
-    @apply motion-reduce:animate-none motion-reduce:transition-none;
+    @apply motion-reduce:animate-none;
   }
 }
 
 @layer components {
   .underline-link {
     @apply underline decoration-light-orange decoration-[1.3px] underline-offset-2 dark:decoration-orange;
-  }
-
-  .home-animate {
-    @apply transition-none duration-700 ease-out animate-in fade-in slide-in-from-top-4 fill-mode-backwards;
   }
 
   .prose {

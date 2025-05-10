@@ -1,5 +1,5 @@
 import { error, text } from '@sveltejs/kit'
-import key from '../../../../static/pgp.asc?raw'
+import key from '../../../../../static/pgp.asc?raw'
 import type { RequestHandler } from './$types'
 
 export const GET: RequestHandler = ({ url }) => {
@@ -7,7 +7,10 @@ export const GET: RequestHandler = ({ url }) => {
 
   if (op === 'get') {
     return text(key, {
-      headers: { 'content-type': 'text/plain' },
+      headers: {
+        'cache-control': 'max-age=86400, public',
+        'content-type': 'text/plain',
+      },
     })
   }
 

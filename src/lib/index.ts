@@ -8,4 +8,6 @@ export const enum ErrorMessage {
 }
 
 export const defaultTitle = 'Teddy Byron'
-export const formatTitle = (title: string) => `${title} \u2022 ${defaultTitle}`
+export function formatTitle(title: string) {
+  return `${title} \u2022 ${defaultTitle}`
+}

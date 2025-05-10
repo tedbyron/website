@@ -5,13 +5,13 @@
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script nonce="%sveltekit.nonce%">
+      /** @type {'system' | 'light' | 'dark'} */
       let theme = localStorage.getItem('theme') ?? 'system'
-      if (theme === 'system') {
+      if (theme === 'system')
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches
           ? 'dark'
           : 'light'
-      }
-      document.documentElement.classList.add(theme)
+      if (theme === 'dark') document.documentElement.classList.add('dark')
     </script>
     %sveltekit.head%
   </head>

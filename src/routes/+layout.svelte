@@ -1,15 +1,10 @@
 <script lang="ts">
   import { browser } from '$app/environment'
-  import { goto } from '$app/navigation'
   import { page } from '$app/state'
-  import { appState, links, themes, type Theme } from '$lib'
+  import { appState, themes, type Theme } from '$lib'
   import Curlio from '$lib/assets/fonts/Iosevkacurlio-normal.woff2'
   import { onMount, type Component, type Snippet } from 'svelte'
-  import type {
-    ClassValue,
-    MouseEventHandler,
-    SvelteHTMLElements,
-  } from 'svelte/elements'
+  import type { SvelteHTMLElements } from 'svelte/elements'
   import GitHub from '~icons/tabler/brand-github'
   import Circle from '~icons/tabler/circle-filled'
   import Percentage50 from '~icons/tabler/percentage-50'
@@ -18,18 +13,6 @@
   interface Props {
     children?: Snippet
   }
-
-  type NavButton =
-    | ((typeof links)[number] & { type: 'link' })
-    | { type: 'spacer' }
-    | {
-        type: 'button'
-        label: string
-        component?: Component<SvelteHTMLElements['svg']>
-        class?: ClassValue
-        disabled?: boolean
-        onclick: MouseEventHandler<HTMLButtonElement>
-      }
 
   const { children }: Props = $props()
 
@@ -44,53 +27,33 @@
           : `${routes}${encodeURI(page.route.id)}/+page.svelte`
       : base + page.data.sourcePath,
   )
+  const root = $derived(page.route.id === '/')
 
   const themeIcons = Object.fromEntries<Component<SvelteHTMLElements['svg']>>(
     themes.map((name) => [name, name === 'system' ? Percentage50 : Circle]),
   )
-  const rightNav = $state<NavButton[]>([
-    // ...links.map((link) => ({ type: 'link' as const, ...link })),
-    {
-      type: 'button',
-      label: 'theme',
-      component: Percentage50,
-      class: 'invisible',
-      onclick: () => {
-        appState.theme =
-          themes[
-            (themes.findIndex((t) => t === appState.theme) + 1) % themes.length
-          ]!
-        localStorage.setItem('theme', appState.theme)
-      },
-    },
-  ])
+  const theme = $derived({ icon: themeIcons[appState.theme] })
+  const toggleDarkClass = () => {
+    if (!browser) return
+    document.documentElement.classList.toggle(
+      'dark',
+      appState.theme === 'dark' ||
+        (appState.theme === 'system' &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches),
+    )
+  }
+  let themeEle: HTMLButtonElement
 
   if (browser) {
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
-    const toggleDark = () => {
-      document.documentElement.classList.toggle(
-        'dark',
-        appState.theme === 'dark' ||
-          (appState.theme === 'system' && systemDark.matches),
-      )
-    }
-
-    $effect(() => {
-      toggleDark()
-      if (rightNav[0] && 'component' in rightNav[0]) {
-        rightNav[0].component = themeIcons[appState.theme]
-      }
-    })
 
     onMount(() => {
       appState.theme = localStorage.getItem('theme') as Theme
-      systemDark.addEventListener('change', toggleDark)
-      if (rightNav[0] && 'class' in rightNav[0]) {
-        rightNav[0].class = 'visible'
-      }
+      systemDark.addEventListener('change', toggleDarkClass)
+      themeEle.classList.replace('invisible', 'visible')
 
       return () => {
-        systemDark.removeEventListener('change', toggleDark)
+        systemDark.removeEventListener('change', toggleDarkClass)
       }
     })
   }
@@ -115,41 +78,36 @@
 
 <div class="flex min-h-dvh flex-col">
   <header class="container flex items-center justify-between px-2 py-4">
-    <button
-      type="button"
-      disabled={page.route.id === '/'}
+    <a
+      href="/"
       aria-label="home"
-      class="h-8 w-8 rounded-full bg-light-orange outline-2 outline-offset-1 outline-light-orange hover:enabled:outline dark:bg-orange dark:hover:outline-orange"
-      onclick={async () => {
-        await goto('/')
-      }}
-    ></button>
+      aria-hidden={root}
+      class={['group', root && 'pointer-events-none']}
+    >
+      <div
+        class="h-8 w-8 rounded-full bg-light-orange outline-2 outline-offset-1 outline-light-orange group-hover:outline dark:bg-orange dark:outline-orange"
+      ></div>
+    </a>
 
     <nav class="flex gap-4">
-      {#each rightNav as item, i (i)}
-        {#if item.type === 'spacer'}
-          <!-- <div></div> -->
-        {:else if item.type === 'link'}
-          <!-- <div></div> -->
-        {:else if item.type === 'button'}
-          <button
-            type="button"
-            disabled={item.disabled}
-            onclick={item.onclick}
-            class={[
-              item.class,
-              'py-2 leading-none disabled:text-bgc dark:disabled:text-bgc',
-            ]}
-            aria-label={item.component ? item.label : undefined}
-          >
-            {#if item.component}
-              <item.component class="text-xl" />
-            {:else}
-              {item.label}
-            {/if}
-          </button>
-        {/if}
-      {/each}
+      <button
+        bind:this={themeEle}
+        type="button"
+        onclick={() => {
+          appState.theme =
+            themes[
+              (themes.findIndex((t) => t === appState.theme) + 1) %
+                themes.length
+            ]!
+          toggleDarkClass()
+          console.log('theme', appState.theme)
+          localStorage.setItem('theme', appState.theme)
+        }}
+        class="invisible py-2 leading-none transition-none duration-700 ease-in animate-in fade-in disabled:text-bgc dark:disabled:text-bgc"
+        aria-label="change theme"
+      >
+        <theme.icon class="text-xl"></theme.icon>
+      </button>
     </nav>
   </header>
 

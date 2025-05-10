@@ -2,6 +2,10 @@ import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 import animate from 'tailwindcss-animate'
 
+const range50ms2sStep50ms = Object.fromEntries(
+  Array.from({ length: 40 }, (_, i) => [`${i * 50}`, `${i * 50}ms`]),
+)
+
 export default {
   content: ['./src/**/*.{html,js,svelte,ts,md,svx}'],
   darkMode: 'selector',
@@ -34,9 +38,7 @@ export default {
           purple: '#945e80',
         },
       },
-      animationDelay: Object.fromEntries(
-        Array.from({ length: 40 }, (_, i) => [`${i * 50}`, `${i * 50}ms`]),
-      ),
+      animationDelay: range50ms2sStep50ms,
       keyframes: {
         pop: {
           '0%': {
@@ -74,9 +76,11 @@ export default {
           },
         },
       },
-      transitionDelay: Object.fromEntries(
-        Array.from({ length: 40 }, (_, i) => [`${i * 50}`, `${i * 50}ms`]),
-      ),
+      transitionDelay: range50ms2sStep50ms,
+      transitionDuration: {
+        DEFAULT: '400ms',
+        ...range50ms2sStep50ms,
+      },
       typography: (theme: (field: string) => string) => ({
         DEFAULT: {
           css: {

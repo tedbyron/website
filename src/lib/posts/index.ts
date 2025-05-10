@@ -1,11 +1,21 @@
 // Matches extensions in svelte.config.js.
-const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
+const mdsvexExtensions = ['.md', '.svelte.md', '.svx'] as const
 const mdPat = new RegExp(
   `([\\w-]+)(${mdsvexExtensions.map((ext) => ext.replaceAll('.', '\\.')).join('|')})`,
 )
 
+/** Map of post tags to display value and text color. */
+export const postTags = {
+  javascript: { class: 'text-yellow hover:text-yellow decoration-yellow' },
+  typescript: { class: 'text-blue hover:text-blue decoration-blue' },
+  nix: { class: 'text-blue hover:text-blue decoration-blue' },
+  rust: { class: 'text-orange hover:text-orange decoration-orange' },
+  svelte: { class: 'text-red hover:text-red decoration-red' },
+  zsh: { class: 'text-green hover:text-green decoration-green' },
+} as const satisfies App.PostTags
+
 /** Get a post's slug from its path. */
-export function postPath(path: string): string {
+function postPath(path: string) {
   const slug = path.match(mdPat)?.[1]
   if (slug === undefined) {
     throw new Error('Invalid path')
@@ -14,9 +24,14 @@ export function postPath(path: string): string {
 }
 
 /** Post modules. */
-export const postModules = import.meta.glob<App.Post>(
+const postModules = import.meta.glob<App.Post>(
   `$lib/posts/**/*.{md,svelte.md,svx}`,
 )
+
+/** Find a post. */
+export function findPost(name: string) {
+  return Object.entries(postModules).find(([path]) => postPath(path) === name)
+}
 
 /** Parsed post metadata promises.  */
 const postsMetadataPromises = Object.entries(postModules).map<
@@ -58,13 +73,3 @@ export function formatDate(date: string | Date): string {
   }
   return `${year.value}-${month.value}-${day.value}`
 }
-
-/** Map of post tags to display value and text color. */
-export const postTags = {
-  javascript: { class: 'text-yellow hover:text-yellow decoration-yellow' },
-  typescript: { class: 'text-blue hover:text-blue decoration-blue' },
-  nix: { class: 'text-blue hover:text-blue decoration-blue' },
-  rust: { class: 'text-orange hover:text-orange decoration-orange' },
-  svelte: { class: 'text-red hover:text-red decoration-red' },
-  zsh: { class: 'text-green hover:text-green decoration-green' },
-} as const satisfies App.PostTags

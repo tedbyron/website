@@ -1,10 +1,9 @@
 <script lang="ts">
-  import HomeBackground from '$components/HomeBackground.svelte'
   import { work, links } from '$lib'
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
-  <!-- Header -->
+  <!-- Heading -->
   <div class="flex flex-col gap-4 text-center">
     <h1>Teddy Byron</h1>
 
@@ -41,6 +40,4 @@
   <div class="flex max-w-full flex-wrap items-center justify-center gap-2">
     <a href="/pgp">pgp</a>
   </div>
-
-  <HomeBackground />
 </div>

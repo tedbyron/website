@@ -1,7 +1,7 @@
 import { formatTitle } from '$lib'
-import type { PageServerLoad } from './$types'
+import type { PageLoad } from './$types'
 
-export const load: PageServerLoad = () => ({
+export const load: PageLoad = () => ({
   title: formatTitle('PGP'),
   description: "Teddy Byron's PGP info",
 })
