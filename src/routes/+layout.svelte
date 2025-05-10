@@ -49,7 +49,10 @@
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
 
     onMount(() => {
-      appState.theme = localStorage.getItem('theme') as Theme
+      const storedTheme = localStorage.getItem('theme')
+      if (storedTheme) {
+        appState.theme = storedTheme as Theme
+      }
       systemDark.addEventListener('change', toggleDarkClass)
       themeEle.classList.replace('invisible', 'visible')
 
@@ -96,7 +99,6 @@
           <button
             bind:this={themeEle}
             type="button"
-            aria-label="change theme"
             onclick={() => {
               appState.theme =
                 themes[
@@ -107,6 +109,7 @@
               localStorage.setItem('theme', appState.theme)
             }}
             class="invisible py-2 leading-none transition-none duration-700 ease-in animate-in fade-in disabled:text-bgc dark:disabled:text-bgc"
+            aria-label="change theme"
           >
             <theme.icon class="text-xl"></theme.icon>
           </button>
