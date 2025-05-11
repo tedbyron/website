@@ -8,7 +8,7 @@
 </script>
 
 <a
-  href="/words/tags/{tag}"
+  href="/notes/tags/{tag}"
   class={[
     'inline-flex items-center gap-0.5 no-underline hover:underline',
     className,

@@ -14,19 +14,19 @@ export const postTags = {
   zsh: { class: 'text-green hover:text-green decoration-green' },
 } as const satisfies App.PostTags
 
+/** Post modules. */
+export const postModules = import.meta.glob<App.Post>(
+  `$lib/posts/**/*.{md,svelte.md,svx}`,
+)
+
 /** Get a post's slug from its path. */
-function postPath(path: string) {
+export function postPath(path: string) {
   const slug = path.match(mdPat)?.[1]
   if (slug === undefined) {
     throw new Error('Invalid path')
   }
   return slug
 }
-
-/** Post modules. */
-const postModules = import.meta.glob<App.Post>(
-  `$lib/posts/**/*.{md,svelte.md,svx}`,
-)
 
 /** Find a post. */
 export function findPost(name: string) {
@@ -52,6 +52,15 @@ export const postsMetadata: Promise<App.PostMetadataParsed[]> = Promise.all(
     .filter((post) => post.published)
     .sort((a, b) => a.date.getTime() - b.date.getTime()),
 )
+
+// Validate post tags.
+postsMetadata
+  .then((posts) => {
+    if (posts.some((post) => post.tags.some((tag) => !(tag in postTags)))) {
+      throw new Error('Invalid tag')
+    }
+  })
+  .catch(console.error)
 
 const dateTimeFormat = new Intl.DateTimeFormat('en', {
   year: 'numeric',

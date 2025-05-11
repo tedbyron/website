@@ -27,11 +27,7 @@ export default {
         'style-src': ['self', 'unsafe-inline'],
       },
     },
-    prerender: {
-      handleHttpError: (err) => {
-        throw new Error(JSON.stringify(err))
-      },
-    },
+    prerender: { handleHttpError: 'warn' },
     typescript: {
       config: (config) => ({
         ...config,

@@ -37,7 +37,7 @@
   </div>
 
   <!-- Pgp fingerprint -->
-  <div class="flex max-w-full flex-wrap items-center justify-center gap-2">
+  <div class="flex flex-col gap-4">
     <a href="/pgp">pgp</a>
   </div>
 </div>
