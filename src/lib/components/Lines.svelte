@@ -12,7 +12,7 @@
   import { onMount } from 'svelte'
 
   const app = new Application()
-  const color = [colors.orange, colors.yellow, colors.gray]
+  const color = [colors.orange, colors.yellow, colors.gray].reverse()
   const noise = createNoise3D()
   const filters = [
     new AlphaFilter({ alpha: 0.3 }),
@@ -28,13 +28,14 @@
 
   const update: TickerCallback<undefined> = () => {
     nt += 3e-4
+
     for (let i = 0; i < graphics.length; i++) {
       const g = graphics[i]!
       g.clear()
         .setStrokeStyle({ width: 80, color: color[i] })
-        .moveTo(0, noise(0, 0.25 * i, nt) * 100 + (3 * h) / 4)
+        .moveTo(0, noise(0, 0.2 * i, nt) * 100 + (3 * h) / 4)
       for (let x = 0; x < w; x += 5) {
-        g.lineTo(x, noise(x / 800, 0.25 * i, nt) * 100 + (3 * h) / 4).stroke()
+        g.lineTo(x, noise(x / 800, 0.2 * i, nt) * 100 + (3 * h) / 4).stroke()
       }
     }
   }
