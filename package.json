@@ -35,10 +35,15 @@
     "lint": "prettier --check . \"!package-lock.json\" && eslint .",
     "format": "prettier --write . \"!package-lock.json\""
   },
+  "dependencies": {
+    "pixi.js": "^8.9.2",
+    "simplex-noise": "^4.0.3"
+  },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
     "@iconify-json/tabler": "^1.2.17",
     "@sveltejs/adapter-cloudflare": "^7.0.3",
+    "@sveltejs/enhanced-img": "^0.6.0",
     "@sveltejs/kit": "^2.21.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tailwindcss/typography": "^0.5.16",

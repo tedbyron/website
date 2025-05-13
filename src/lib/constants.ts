@@ -1,7 +1,11 @@
+import resolveConfig from 'tailwindcss/resolveConfig'
 import Discord from '~icons/tabler/brand-discord'
 import GitHub from '~icons/tabler/brand-github'
 import Matrix from '~icons/tabler/brand-matrix'
 import Mail from '~icons/tabler/mail'
+import tailwindConfig from '../../tailwind.config'
+
+export const colors = resolveConfig(tailwindConfig).theme.colors
 
 export const domain = 'tedbyron.com'
 

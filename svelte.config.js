@@ -18,7 +18,7 @@ export default {
       directives: {
         'base-uri': ['self'],
         'connect-src': ['self', 'cloudflareinsights.com'],
-        'default-src': ['self'],
+        'default-src': ['self', 'data:'],
         'script-src': [
           'self',
           'ajax.cloudflare.com',

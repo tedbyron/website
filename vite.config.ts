@@ -5,6 +5,7 @@ import advancedPreset from 'cssnano-preset-advanced'
 import tailwindcss from 'tailwindcss'
 import icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
+import { enhancedImages } from '@sveltejs/enhanced-img'
 
 export default defineConfig(({ mode }) => {
   const dev = mode === 'development'
@@ -30,6 +31,7 @@ export default defineConfig(({ mode }) => {
     },
     esbuild: { drop: dev ? undefined : ['console', 'debugger'] },
     plugins: [
+      enhancedImages(),
       sveltekit(),
       icons({
         autoInstall: true,
@@ -37,6 +39,9 @@ export default defineConfig(({ mode }) => {
         scale: 1,
       }),
     ],
-    server: { strictPort: true },
+    server: {
+      fs: { allow: ['..'] },
+      strictPort: true,
+    },
   }
 })

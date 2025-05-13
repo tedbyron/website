@@ -6,7 +6,7 @@ pre[class*='language-'] {
 }
 
 pre[class*='language-'] {
-  @apply overflow-auto rounded-md bg-light-bg px-3 py-2 dark:bg-bg;
+  @apply overflow-auto rounded-md px-3 py-2;
 }
 
 :not(pre) > code[class*='language-'] {

@@ -1,8 +1,10 @@
 <script lang="ts">
   import { browser } from '$app/environment'
+  import { prefersReducedMotion } from 'svelte/motion'
   import { page } from '$app/state'
-  import { appState, themes, type Theme } from '$lib'
+  import { appState, colors, themes, type Theme } from '$lib'
   import Curlio from '$lib/assets/fonts/Iosevkacurlio-normal.woff2'
+  import Lines from '$lib/components/Lines.svelte'
   import { onMount, type Snippet } from 'svelte'
   import GitHub from '~icons/tabler/brand-github'
   import Circle from '~icons/tabler/circle-filled'
@@ -28,7 +30,6 @@
   )
   const root = $derived(page.route.id === '/')
 
-  // Theme stuff is a bit messy because it needs to work with SSR
   const themeIcons = {
     system: Percentage50,
     light: Circle,
@@ -42,7 +43,8 @@
       (appState.theme === 'system' &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     document.documentElement.classList.toggle('dark', dark)
-    if (themeColorEle) themeColorEle.content = dark ? '#282828' : '#fbf1c7'
+    if (themeColorEle)
+      themeColorEle.content = dark ? colors.bg : colors.light.bg
   }
   let themeEle: HTMLButtonElement
   let themeColorEle: HTMLMetaElement | undefined
@@ -122,6 +124,10 @@
 
   <main class="flex grow flex-col">
     {@render children?.()}
+
+    {#if browser && !prefersReducedMotion.current}
+      <Lines />
+    {/if}
   </main>
 
   <footer class="mx-auto mb-4 mt-8">

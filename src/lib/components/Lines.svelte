@@ -1,0 +1,77 @@
+<script lang="ts">
+  import { colors } from '$lib'
+  import {
+    AlphaFilter,
+    Application,
+    BlurFilter,
+    Graphics,
+    type TickerCallback,
+  } from 'pixi.js'
+  import 'pixi.js/unsafe-eval'
+  import { createNoise3D } from 'simplex-noise'
+  import { onMount } from 'svelte'
+
+  const app = new Application()
+  const color = [
+    colors.orange,
+    colors.yellow,
+    colors.gray,
+    colors.blue,
+  ].reverse()
+  const noise = createNoise3D()
+  const filters = [
+    new AlphaFilter({ alpha: 0.3 }),
+    new BlurFilter({ strength: 64, quality: 16, antialias: true }),
+  ]
+
+  let canvas: HTMLCanvasElement
+  let graphics: Graphics[] = []
+  let nt = 0
+  let w = window.innerWidth
+  let h = window.innerHeight
+
+  const update: TickerCallback<undefined> = () => {
+    nt += 3e-4
+    for (let i = 0; i < graphics.length; i++) {
+      const g = graphics[i]!
+      g.clear()
+        .setStrokeStyle({ width: 80, color: color[i] })
+        .moveTo(0, noise(0, 0.2 * i, nt) * 100 + h / 2)
+      for (let x = 0; x < w; x += 5) {
+        g.lineTo(x, noise(x / 1000, 0.2 * i, nt) * 100 + h / 2).stroke()
+      }
+    }
+  }
+
+  onMount(async () => {
+    await app.init({
+      canvas,
+      width: document.body.clientWidth,
+      height: document.body.clientHeight,
+      antialias: true,
+      autoDensity: true,
+      backgroundAlpha: 0,
+      sharedTicker: true,
+      resizeTo: document.body,
+    })
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    for (const _ of color) {
+      graphics.push(new Graphics({ filters }))
+    }
+
+    app.stage.addChild(...graphics)
+    app.ticker.add(update)
+  })
+
+  onMount(() => () => {
+    app.ticker.remove(update)
+    app.destroy(false, { children: true })
+
+    for (const filter of filters) {
+      filter.destroy()
+    }
+  })
+</script>
+
+<canvas bind:this={canvas} class="absolute top-0 -z-10"></canvas>
