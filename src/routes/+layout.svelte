@@ -28,6 +28,7 @@
   )
   const root = $derived(page.route.id === '/')
 
+  // Theme stuff is a bit messy because it needs to work with SSR
   const themeIcons = {
     system: Percentage50,
     light: Circle,
@@ -36,23 +37,25 @@
   const theme = $derived({ icon: themeIcons[appState.theme] })
   const toggleDarkClass = () => {
     if (!browser) return
-    document.documentElement.classList.toggle(
-      'dark',
+    const dark =
       appState.theme === 'dark' ||
-        (appState.theme === 'system' &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches),
-    )
+      (appState.theme === 'system' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.classList.toggle('dark', dark)
+    if (themeColorEle) themeColorEle.content = dark ? '#282828' : '#fbf1c7'
   }
   let themeEle: HTMLButtonElement
+  let themeColorEle: HTMLMetaElement | undefined
 
   if (browser) {
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
 
     onMount(() => {
+      themeColorEle = document.querySelector(
+        'meta[name="theme-color"]',
+      ) as typeof themeColorEle
       const storedTheme = localStorage.getItem('theme')
-      if (storedTheme) {
-        appState.theme = storedTheme as Theme
-      }
+      if (storedTheme) appState.theme = storedTheme as Theme
       systemDark.addEventListener('change', toggleDarkClass)
       themeEle.classList.replace('invisible', 'visible')
 
@@ -69,7 +72,6 @@
   <meta name="author" content="Teddy Byron" />
   <meta name="description" content={page.data.description} />
   <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#282828" />
 
   <link
     rel="preload"

@@ -15,11 +15,12 @@
 
 <!-- TODO
 - light mode text too light
-- dark mode media query listener
-- dynamic <meta> theme-color
+- dynamic <meta> theme-color: needs tested on Safari
 - page transition quick crossfade
+- fix prerendering
 
 - headings link should be to the side but it's automatically adding the entire text
-- ligatures not working (missing from woff2?)
+- ligatures removed from woff2?
 - keyboard nav/focus ring colors
+- sitemap.xml
 -->
