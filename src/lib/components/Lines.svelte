@@ -32,9 +32,9 @@
       const g = graphics[i]!
       g.clear()
         .setStrokeStyle({ width: 80, color: color[i] })
-        .moveTo(0, noise(0, 0.25 * i, nt) * 100 + h / 2)
+        .moveTo(0, noise(0, 0.25 * i, nt) * 100 + (3 * h) / 4)
       for (let x = 0; x < w; x += 5) {
-        g.lineTo(x, noise(x / 800, 0.25 * i, nt) * 100 + h / 2).stroke()
+        g.lineTo(x, noise(x / 800, 0.25 * i, nt) * 100 + (3 * h) / 4).stroke()
       }
     }
   }
