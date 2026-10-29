@@ -34,7 +34,11 @@ no tests.
 - `vite.config.ts`: Vite and SvelteKit config (there is no `svelte.config.js`)
 - `_headers`: Cloudflare response headers for static and prerendered files;
   `src/hooks.server.ts` sets the same ones on worker responses
-- `src/app.css`: global base styles and fonts
+- `src/app.css`: global base styles
+- `src/lib/assets/fonts/`: Curlio WOFF2s (from the dotfiles curlio flake's
+  `all-web-latin` package) and `fonts.css`, which declares a `@font-face` for
+  each one. `app.css` imports it so cssnano sees the fonts are used; importing
+  it on its own lets cssnano drop every rule
 - `tailwind.config.ts`: color palette and typography (prose) colors
 
 Keep values local to the file that uses them; only move something into `#lib`
