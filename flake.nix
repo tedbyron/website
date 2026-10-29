@@ -32,7 +32,6 @@
       {
         formatter = nixfmt;
 
-        # Replace the Curlio WOFF2s and their @font-face CSS with the curlio flake's.
         apps.update-fonts = flake-utils.lib.mkApp {
           drv = writeShellApplication {
             name = "update-fonts";
