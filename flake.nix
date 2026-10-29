@@ -10,13 +10,19 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
+        nodeMajor =
+          ./.node-version
+          |> builtins.readFile
+          |> pkgs.lib.trim
+          |> pkgs.lib.removePrefix "v"
+          |> pkgs.lib.versions.major;
       in
       with pkgs;
       {
-        formatter = nixfmt-rfc-style;
+        formatter = nixfmt;
 
         devShells.default = mkShellNoCC {
-          packages = [ nodejs ];
+          packages = [ pkgs."nodejs_${nodeMajor}" ];
         };
       }
     );
