@@ -28,6 +28,11 @@ no tests.
 - `src/lib/posts/`: notes as Markdown files in `YYYY/` folders, plus `tags.ts`,
   which defines `postTags`, and `index.ts`, which loads post modules
 - `src/lib/components/`: shared components, imported as `#components/*`
+- `src/lib/components/Grain.svelte` and `src/lib/assets/shaders/`: the animated
+  WebGL 2 background, adapted from Paper Shaders' grain gradient (Apache 2.0,
+  keep the credit comments). `grain.glsl` renders the static grain into a
+  texture once per canvas size, and `lava-lamp.glsl` draws the moving blobs over
+  it each frame, in theme colors read from the `--color-*` variables
 - `src/params.ts`: route param matchers for posts and tags. SvelteKit imports it
   with plain Node at build time, so it can't import anything that needs Vite
   (`import.meta.glob`, enums, `#lib` itself)

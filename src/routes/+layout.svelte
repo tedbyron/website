@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths'
   import { page } from '$app/state'
+  import Grain from '#components/Grain.svelte'
   import Curlio from '#lib/assets/fonts/Iosevkacurlio-normal.woff2'
   import CurlioBold from '#lib/assets/fonts/Iosevkacurlio-normalBold.woff2'
   import type { Snippet } from 'svelte'
@@ -44,6 +45,8 @@
     />
   {/each}
 </svelte:head>
+
+<Grain />
 
 <div class="flex min-h-dvh flex-col">
   <header class="container flex items-center px-4 py-4">
