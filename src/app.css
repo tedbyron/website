@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './lib/assets/fonts/fonts.css' layer(base);
+@import './lib/assets/fonts/curlio.css' layer(base);
 
 @plugin '@tailwindcss/typography';
 

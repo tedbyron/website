@@ -11,11 +11,11 @@
       },
       "locked": {
         "dir": "flakes/curlio",
-        "lastModified": 1793296109,
-        "narHash": "sha256-xLvDYd9CwqSZy9XZBmc6+LRR9cjoExNdEj2/+KJSTNg=",
+        "lastModified": 1793299133,
+        "narHash": "sha256-6KtwaqirIVHPCNS84KJaujVpQx3X3hmMpAlSL6LMheA=",
         "owner": "tedbyron",
         "repo": "dotfiles",
-        "rev": "7f9037ccdc34b4e35f79d554aade012ca47f9ef8",
+        "rev": "f1e512f013c0d49c2e318aeb655bcfac4e0eaab0",
         "type": "github"
       },
       "original": {
