@@ -1,5 +1,6 @@
 {
   "extends": "$app/tsconfig",
+  "include": ["src", "eslint.config.js", "vite.config.ts"],
   "compilerOptions": {
     /* Type Checking */
     "allowUnreachableCode": false,
@@ -28,6 +29,5 @@
 
     /* Projects */
     "incremental": true
-  },
-  "include": ["src", "eslint.config.js", "vite.config.ts"]
+  }
 }
