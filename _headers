@@ -1,0 +1,5 @@
+# Cloudflare applies these to static files, including prerendered pages. Keep in
+# sync with src/hooks.server.ts, which sets them on responses from the worker.
+/*
+  X-Frame-Options: DENY
+  Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin

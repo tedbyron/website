@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PostList from '$components/PostList.svelte'
+  import PostList from '#components/PostList.svelte'
   import type { PageProps } from './$types'
 
   let { data }: PageProps = $props()

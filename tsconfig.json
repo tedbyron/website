@@ -1,5 +1,5 @@
 {
-  "extends": "./.svelte-kit/tsconfig.json",
+  "extends": "$app/tsconfig",
   "compilerOptions": {
     /* Type Checking */
     "allowUnreachableCode": false,
@@ -12,15 +12,8 @@
     "noUnusedParameters": true,
     "strict": true,
 
-    /* Modules */
-    "resolveJsonModule": true,
-
     /* Emit */
     "sourceMap": true,
-
-    /* JavaScript Support */
-    "allowJs": true,
-    "checkJs": true,
 
     /* Editor Support */
     "plugins": [
@@ -32,13 +25,9 @@
 
     /* Interop Constraints */
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
 
     /* Projects */
-    "incremental": true,
-
-    /* Completeness */
-    "skipLibCheck": true
-  }
+    "incremental": true
+  },
+  "include": ["src", "eslint.config.js", "tailwind.config.ts", "vite.config.ts"]
 }

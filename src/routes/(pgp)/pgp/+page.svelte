@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MdWrapper from '$components/MdWrapper.svelte'
+  import MdWrapper from '#components/MdWrapper.svelte'
   import Page from './index.svx'
 </script>
 

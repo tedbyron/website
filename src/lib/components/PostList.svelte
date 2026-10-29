@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths'
-  import TagLink from '$components/TagLink.svelte'
-  import { formatDate, postTags } from '$lib'
+  import TagLink from '#components/TagLink.svelte'
+  import { formatDate, postTags } from '#lib'
 
   interface Props {
     postsMetadata: App.PostMetadataParsed[]

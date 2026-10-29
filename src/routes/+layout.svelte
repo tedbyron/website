@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths'
   import { page } from '$app/state'
-  import Curlio from '$lib/assets/fonts/Iosevkacurlio-normal.woff2'
+  import Curlio from '#lib/assets/fonts/Iosevkacurlio-normal.woff2'
   import type { Snippet } from 'svelte'
   import GitHub from '~icons/tabler/brand-github'
   import '../app.css'

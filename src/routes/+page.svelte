@@ -76,7 +76,7 @@
       </a>
     {/each}
 
-    <a href={resolve('/pgp')} class="flex items-center gap-2">
+    <a href={resolve('pgp')} class="flex items-center gap-2">
       {@render linkContent(Lock, 'pgp')}
     </a>
   </div>

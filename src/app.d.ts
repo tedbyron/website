@@ -1,4 +1,4 @@
-import type { ErrorMessage } from '$lib'
+import type { ErrorMessage } from '#lib'
 import type { Component } from 'svelte'
 import type { ClassValue } from 'svelte/elements'
 import 'unplugin-icons/types/svelte'

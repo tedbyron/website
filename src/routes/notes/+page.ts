@@ -1,4 +1,4 @@
-import { formatTitle, postsMetadata } from '$lib'
+import { formatTitle, postsMetadata } from '#lib'
 import type { PageLoad } from './$types'
 
 export const load: PageLoad = async () => {

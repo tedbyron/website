@@ -1,12 +1,13 @@
 # AGENTS.md
 
-Personal website built with SvelteKit 2 (Svelte 5 runes), Tailwind CSS 3, and
+Personal website built with SvelteKit 3 (Svelte 5 runes), Tailwind CSS 3, and
 mdsvex, deployed to Cloudflare with `@sveltejs/adapter-cloudflare`.
 
 ## Setup and commands
 
-The dev shell comes from `flake.nix` via direnv (`.envrc`); Node 22+ is
-required.
+The dev shell comes from `flake.nix` via direnv (`.envrc`). The Node major
+version lives in `.node-version`, which the flake and Cloudflare's build both
+read; keep `engines.node` in `package.json` in sync with it.
 
 - `npm run dev`: start the Vite dev server on port 5173
 - `npm run build`: production build, which prerenders the site
@@ -24,14 +25,19 @@ no tests.
 - `src/routes/(pgp)/`: the PGP page (`index.svx`) and the WKD/HKP key routes
 - `src/lib/index.ts`: shared helpers (`formatTitle`, `ErrorMessage`, ...) and
   re-exports of `src/lib/posts`
-- `src/lib/posts/`: notes as Markdown files in `YYYY/` folders, plus `index.ts`,
-  which defines `postTags` and loads post modules
-- `src/lib/components/`: shared components, aliased as `$components`
-- `src/params/`: route param matchers for posts and tags
+- `src/lib/posts/`: notes as Markdown files in `YYYY/` folders, plus `tags.ts`,
+  which defines `postTags`, and `index.ts`, which loads post modules
+- `src/lib/components/`: shared components, imported as `#components/*`
+- `src/params.ts`: route param matchers for posts and tags. SvelteKit imports it
+  with plain Node at build time, so it can't import anything that needs Vite
+  (`import.meta.glob`, enums, `#lib` itself)
+- `vite.config.ts`: Vite and SvelteKit config (there is no `svelte.config.js`)
+- `_headers`: Cloudflare response headers for static and prerendered files;
+  `src/hooks.server.ts` sets the same ones on worker responses
 - `src/app.css`: global base styles and fonts
 - `tailwind.config.ts`: color palette and typography (prose) colors
 
-Keep values local to the file that uses them; only move something into `$lib`
+Keep values local to the file that uses them; only move something into `#lib`
 when more than one place needs it.
 
 ## Notes (posts)
@@ -49,7 +55,7 @@ published: true
 ---
 ```
 
-Every tag must be a key of `postTags` in `src/lib/posts/index.ts`. Posts without
+Every tag must be a key of `postTags` in `src/lib/posts/tags.ts`. Posts without
 `published: true` return 404.
 
 ## Conventions
@@ -72,7 +78,7 @@ Every tag must be a key of `postTags` in `src/lib/posts/index.ts`. Posts without
   text) when picking palette colors.
 - `src/index.d.ts` stubs the `mdsvex` module types on purpose: mdsvex's bundled
   types are too old for the current remark/rehype plugins. Don't remove it.
-- A content security policy is set in `svelte.config.js`. Inline scripts and
+- A content security policy is set in `vite.config.ts`. Inline scripts and
   third-party origins are blocked unless added there.
 
 ## Git

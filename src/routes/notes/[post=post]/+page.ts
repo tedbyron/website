@@ -5,7 +5,7 @@ import {
   formatTitle,
   postModules,
   postPath,
-} from '$lib'
+} from '#lib'
 import { error } from '@sveltejs/kit'
 import type { EntryGenerator, PageLoad } from './$types'
 

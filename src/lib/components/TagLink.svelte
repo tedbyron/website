@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths'
-  import type { postTags } from '$lib'
+  import type { postTags } from '#lib'
 
   interface Props {
     tag: keyof App.PostTags

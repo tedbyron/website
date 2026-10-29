@@ -1,4 +1,4 @@
-import { formatTitle } from '$lib'
+import { formatTitle } from '#lib'
 import type { PageLoad } from './$types'
 
 export const load: PageLoad = () => ({

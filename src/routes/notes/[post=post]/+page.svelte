@@ -1,6 +1,6 @@
 <script lang="ts">
-  import MdWrapper from '$components/MdWrapper.svelte'
-  import '$lib/assets/css/prism.css'
+  import MdWrapper from '#components/MdWrapper.svelte'
+  import '#lib/assets/css/prism.css'
   import type { PageProps } from './$types'
 
   const { data }: PageProps = $props()

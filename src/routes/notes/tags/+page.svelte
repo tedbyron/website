@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TagLink from '$components/TagLink.svelte'
+  import TagLink from '#components/TagLink.svelte'
   import type { PageProps } from './$types'
 
   const { data }: PageProps = $props()
