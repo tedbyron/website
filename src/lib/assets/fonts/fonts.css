@@ -1,328 +1,4 @@
-/* Curlio, built from the curlio flake's all-web-latin package in tedbyron/dotfiles. */
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 100;
-  src: url('./Iosevkacurlio-normalThin.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 100;
-  src: url('./Iosevkacurlio-normalThinItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 100;
-  src: url('./Iosevkacurlio-normalThinOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 200;
-  src: url('./Iosevkacurlio-normalExtraLight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 200;
-  src: url('./Iosevkacurlio-normalExtraLightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 200;
-  src: url('./Iosevkacurlio-normalExtraLightOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 300;
-  src: url('./Iosevkacurlio-normalLight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 300;
-  src: url('./Iosevkacurlio-normalLightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 300;
-  src: url('./Iosevkacurlio-normalLightOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 400;
-  src: url('./Iosevkacurlio-normal.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 400;
-  src: url('./Iosevkacurlio-normalItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 400;
-  src: url('./Iosevkacurlio-normalOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 500;
-  src: url('./Iosevkacurlio-normalMedium.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 500;
-  src: url('./Iosevkacurlio-normalMediumItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 500;
-  src: url('./Iosevkacurlio-normalMediumOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 600;
-  src: url('./Iosevkacurlio-normalSemiBold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 600;
-  src: url('./Iosevkacurlio-normalSemiBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 600;
-  src: url('./Iosevkacurlio-normalSemiBoldOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 700;
-  src: url('./Iosevkacurlio-normalBold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 700;
-  src: url('./Iosevkacurlio-normalBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 700;
-  src: url('./Iosevkacurlio-normalBoldOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 800;
-  src: url('./Iosevkacurlio-normalExtraBold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 800;
-  src: url('./Iosevkacurlio-normalExtraBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 800;
-  src: url('./Iosevkacurlio-normalExtraBoldOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 900;
-  src: url('./Iosevkacurlio-normalHeavy.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: italic;
-  font-weight: 900;
-  src: url('./Iosevkacurlio-normalHeavyItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: normal;
-  font-style: oblique;
-  font-weight: 900;
-  src: url('./Iosevkacurlio-normalHeavyOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: normal;
-  font-weight: 100;
-  src: url('./Iosevkacurlio-condensedThin.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 100;
-  src: url('./Iosevkacurlio-condensedThinItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: oblique;
-  font-weight: 100;
-  src: url('./Iosevkacurlio-condensedThinOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: normal;
-  font-weight: 200;
-  src: url('./Iosevkacurlio-condensedExtraLight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 200;
-  src: url('./Iosevkacurlio-condensedExtraLightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: oblique;
-  font-weight: 200;
-  src: url('./Iosevkacurlio-condensedExtraLightOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: normal;
-  font-weight: 300;
-  src: url('./Iosevkacurlio-condensedLight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 300;
-  src: url('./Iosevkacurlio-condensedLightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: oblique;
-  font-weight: 300;
-  src: url('./Iosevkacurlio-condensedLightOblique.woff2') format('woff2');
-}
+/* Generated by `nix run .#update-fonts` from the dotfiles curlio flake. */
 
 @font-face {
   font-family: 'Curlio';
@@ -331,78 +7,6 @@
   font-style: normal;
   font-weight: 400;
   src: url('./Iosevkacurlio-condensed.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 400;
-  src: url('./Iosevkacurlio-condensedItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: oblique;
-  font-weight: 400;
-  src: url('./Iosevkacurlio-condensedOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: normal;
-  font-weight: 500;
-  src: url('./Iosevkacurlio-condensedMedium.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 500;
-  src: url('./Iosevkacurlio-condensedMediumItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: oblique;
-  font-weight: 500;
-  src: url('./Iosevkacurlio-condensedMediumOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: normal;
-  font-weight: 600;
-  src: url('./Iosevkacurlio-condensedSemiBold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 600;
-  src: url('./Iosevkacurlio-condensedSemiBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Curlio';
-  font-display: swap;
-  font-stretch: condensed;
-  font-style: oblique;
-  font-weight: 600;
-  src: url('./Iosevkacurlio-condensedSemiBoldOblique.woff2') format('woff2');
 }
 
 @font-face {
@@ -464,6 +68,33 @@
   font-display: swap;
   font-stretch: condensed;
   font-style: normal;
+  font-weight: 200;
+  src: url('./Iosevkacurlio-condensedExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 200;
+  src: url('./Iosevkacurlio-condensedExtraLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: oblique;
+  font-weight: 200;
+  src: url('./Iosevkacurlio-condensedExtraLightOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: normal;
   font-weight: 900;
   src: url('./Iosevkacurlio-condensedHeavy.woff2') format('woff2');
 }
@@ -484,4 +115,373 @@
   font-style: oblique;
   font-weight: 900;
   src: url('./Iosevkacurlio-condensedHeavyOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 400;
+  src: url('./Iosevkacurlio-condensedItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./Iosevkacurlio-condensedLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 300;
+  src: url('./Iosevkacurlio-condensedLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: oblique;
+  font-weight: 300;
+  src: url('./Iosevkacurlio-condensedLightOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./Iosevkacurlio-condensedMedium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 500;
+  src: url('./Iosevkacurlio-condensedMediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: oblique;
+  font-weight: 500;
+  src: url('./Iosevkacurlio-condensedMediumOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: oblique;
+  font-weight: 400;
+  src: url('./Iosevkacurlio-condensedOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: normal;
+  font-weight: 600;
+  src: url('./Iosevkacurlio-condensedSemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 600;
+  src: url('./Iosevkacurlio-condensedSemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: oblique;
+  font-weight: 600;
+  src: url('./Iosevkacurlio-condensedSemiBoldOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: normal;
+  font-weight: 100;
+  src: url('./Iosevkacurlio-condensedThin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 100;
+  src: url('./Iosevkacurlio-condensedThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: condensed;
+  font-style: oblique;
+  font-weight: 100;
+  src: url('./Iosevkacurlio-condensedThinOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./Iosevkacurlio-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  src: url('./Iosevkacurlio-normalBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 700;
+  src: url('./Iosevkacurlio-normalBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 700;
+  src: url('./Iosevkacurlio-normalBoldOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  src: url('./Iosevkacurlio-normalExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 800;
+  src: url('./Iosevkacurlio-normalExtraBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 800;
+  src: url('./Iosevkacurlio-normalExtraBoldOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 200;
+  src: url('./Iosevkacurlio-normalExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 200;
+  src: url('./Iosevkacurlio-normalExtraLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 200;
+  src: url('./Iosevkacurlio-normalExtraLightOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 900;
+  src: url('./Iosevkacurlio-normalHeavy.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 900;
+  src: url('./Iosevkacurlio-normalHeavyItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 900;
+  src: url('./Iosevkacurlio-normalHeavyOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 400;
+  src: url('./Iosevkacurlio-normalItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./Iosevkacurlio-normalLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 300;
+  src: url('./Iosevkacurlio-normalLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 300;
+  src: url('./Iosevkacurlio-normalLightOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./Iosevkacurlio-normalMedium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 500;
+  src: url('./Iosevkacurlio-normalMediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 500;
+  src: url('./Iosevkacurlio-normalMediumOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 400;
+  src: url('./Iosevkacurlio-normalOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  src: url('./Iosevkacurlio-normalSemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 600;
+  src: url('./Iosevkacurlio-normalSemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 600;
+  src: url('./Iosevkacurlio-normalSemiBoldOblique.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 100;
+  src: url('./Iosevkacurlio-normalThin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 100;
+  src: url('./Iosevkacurlio-normalThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Curlio';
+  font-display: swap;
+  font-stretch: normal;
+  font-style: oblique;
+  font-weight: 100;
+  src: url('./Iosevkacurlio-normalThinOblique.woff2') format('woff2');
 }

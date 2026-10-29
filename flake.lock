@@ -1,5 +1,30 @@
 {
   "nodes": {
+    "curlio": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "flakes/curlio",
+        "lastModified": 1793296109,
+        "narHash": "sha256-xLvDYd9CwqSZy9XZBmc6+LRR9cjoExNdEj2/+KJSTNg=",
+        "owner": "tedbyron",
+        "repo": "dotfiles",
+        "rev": "7f9037ccdc34b4e35f79d554aade012ca47f9ef8",
+        "type": "github"
+      },
+      "original": {
+        "dir": "flakes/curlio",
+        "owner": "tedbyron",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -33,6 +58,7 @@
     },
     "root": {
       "inputs": {
+        "curlio": "curlio",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       }
