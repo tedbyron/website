@@ -39,11 +39,15 @@
             runtimeInputs = [
               coreutils
               git
+              pkgs."nodejs_${nodeMajor}"
             ];
             text = ''
-              fonts="$(git rev-parse --show-toplevel)/src/lib/assets/fonts"
-              rm -f "$fonts"/*.woff2 "$fonts"/*.css
-              install -m644 ${curlioFonts}/share/fonts/woff2/* "$fonts"
+              assets="$(git rev-parse --show-toplevel)/src/lib/assets"
+              rm -f "$assets"/fonts/*.woff2
+              install -m644 ${curlioFonts}/share/fonts/woff2/*.woff2 "$assets/fonts"
+              sed "s#url('./#url('../fonts/#" \
+                ${curlioFonts}/share/fonts/woff2/curlio.css > "$assets/css/curlio.css"
+              npx --no-install prettier --write "$assets/css/curlio.css"
             '';
           };
         };
