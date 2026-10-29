@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
 
-    <script nonce="%sveltekit.nonce%">
-      let theme = localStorage.getItem('theme') ?? 'system'
-      if (theme === 'system')
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light'
-      if (theme === 'dark') document.documentElement.classList.add('dark')
-      const themeMeta = document.createElement('meta')
-      themeMeta.name = 'theme-color'
-      themeMeta.content = theme === 'dark' ? '#282828' : '#fbf1c7'
-      document.head.appendChild(themeMeta)
-    </script>
+    <meta
+      name="theme-color"
+      content="#fbf1c7"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#282828"
+      media="(prefers-color-scheme: dark)"
+    />
 
     %sveltekit.head%
   </head>

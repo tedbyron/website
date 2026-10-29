@@ -14,8 +14,6 @@
 -->
 
 <!-- TODO
-- light mode text too light
-- dynamic <meta> theme-color: needs tested on Safari
 - page transition quick crossfade
 - fix prerendering
 

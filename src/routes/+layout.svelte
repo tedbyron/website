@@ -1,14 +1,9 @@
 <script lang="ts">
-  import { browser } from '$app/environment'
-  import { prefersReducedMotion } from 'svelte/motion'
+  import { resolve } from '$app/paths'
   import { page } from '$app/state'
-  import { appState, colors, themes, type Theme } from '$lib'
   import Curlio from '$lib/assets/fonts/Iosevkacurlio-normal.woff2'
-  import Lines from '$lib/components/Lines.svelte'
-  import { onMount, type Snippet } from 'svelte'
+  import type { Snippet } from 'svelte'
   import GitHub from '~icons/tabler/brand-github'
-  import Circle from '~icons/tabler/circle-filled'
-  import Percentage50 from '~icons/tabler/percentage-50'
   import '../app.css'
 
   interface Props {
@@ -29,43 +24,6 @@
       : base + page.data.sourcePath,
   )
   const root = $derived(page.route.id === '/')
-
-  const themeIcons = {
-    system: Percentage50,
-    light: Circle,
-    dark: Circle,
-  }
-  const theme = $derived({ icon: themeIcons[appState.theme] })
-  const toggleDarkClass = () => {
-    if (!browser) return
-    const dark =
-      appState.theme === 'dark' ||
-      (appState.theme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.classList.toggle('dark', dark)
-    if (themeColorEle)
-      themeColorEle.content = dark ? colors.bg : colors.light.bg
-  }
-  let themeEle: HTMLButtonElement
-  let themeColorEle: HTMLMetaElement | undefined
-
-  if (browser) {
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
-
-    onMount(() => {
-      themeColorEle = document.querySelector(
-        'meta[name="theme-color"]',
-      ) as typeof themeColorEle
-      const storedTheme = localStorage.getItem('theme')
-      if (storedTheme) appState.theme = storedTheme as Theme
-      systemDark.addEventListener('change', toggleDarkClass)
-      themeEle.classList.replace('invisible', 'visible')
-
-      return () => {
-        systemDark.removeEventListener('change', toggleDarkClass)
-      }
-    })
-  }
 </script>
 
 <svelte:head>
@@ -85,56 +43,29 @@
 </svelte:head>
 
 <div class="flex min-h-dvh flex-col">
-  <header class="container flex items-center justify-between px-2 py-4">
-    <a
-      href="/"
-      aria-label="home"
-      aria-hidden={root}
-      class={['group', root && 'pointer-events-none']}
-    >
-      <div
-        class="h-8 w-8 rounded-full bg-light-orange outline-2 outline-offset-1 outline-light-orange group-hover:outline dark:bg-orange dark:outline-orange"
-      ></div>
-    </a>
-
-    <nav class="flex gap-4">
-      <ul>
-        <li>
-          <button
-            bind:this={themeEle}
-            type="button"
-            onclick={() => {
-              appState.theme =
-                themes[
-                  (themes.findIndex((t) => t === appState.theme) + 1) %
-                    themes.length
-                ]!
-              toggleDarkClass()
-              localStorage.setItem('theme', appState.theme)
-            }}
-            class="invisible py-2 leading-none transition-none duration-700 ease-in animate-in fade-in disabled:text-bgc dark:disabled:text-bgc"
-            aria-label="change theme"
-          >
-            <theme.icon class="text-xl"></theme.icon>
-          </button>
-        </li>
-      </ul>
-    </nav>
+  <header class="container flex items-center px-4 py-4">
+    {#if root}
+      <span
+        aria-hidden="true"
+        class="h-8 w-8 rounded-full bg-light-orange dark:bg-orange"
+      ></span>
+    {:else}
+      <a href={resolve('/')} aria-label="home" class="group">
+        <span
+          class="block h-8 w-8 rounded-full bg-light-orange outline-2 outline-offset-1 outline-light-orange group-hover:outline dark:bg-orange dark:outline-orange"
+        ></span>
+      </a>
+    {/if}
   </header>
 
   <main class="flex grow flex-col">
     {@render children?.()}
-
-    {#if browser && !prefersReducedMotion.current}
-      <Lines />
-    {/if}
   </main>
 
   <footer class="mx-auto mb-4 mt-8">
-    <a href={source}
-      ><span class="underline-link inline-flex items-center gap-1"
-        ><GitHub aria-hidden /> source</span
-      ></a
-    >
+    <a href={source} rel="external" class="inline-flex items-center gap-1">
+      <GitHub aria-hidden />
+      <span>source</span>
+    </a>
   </footer>
 </div>

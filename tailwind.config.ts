@@ -8,7 +8,7 @@ const range50ms2sStep50ms = Object.fromEntries(
 
 export default {
   content: ['./src/**/*.{html,js,svelte,ts,md,svx}'],
-  darkMode: 'selector',
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
@@ -81,52 +81,36 @@ export default {
         DEFAULT: '400ms',
         ...range50ms2sStep50ms,
       },
-      typography: (theme: (field: string) => string) => ({
-        DEFAULT: {
-          css: {
-            '--tw-prose-body': theme('colors.fg'),
-            '--tw-prose-headings': theme('colors.fg'),
-            '--tw-prose-lead': theme('colors.fg'),
-            '--tw-prose-links': theme('colors.fg'),
-            '--tw-prose-bold': theme('colors.fg'),
-            '--tw-prose-counters': theme('colors.gray'),
-            '--tw-prose-bullets': theme('colors.gray'),
-            '--tw-prose-hr': theme('colors.bgc'),
-            '--tw-prose-quotes': theme('colors.fg'),
-            '--tw-prose-quote-borders': theme('colors.bgc'),
-            '--tw-prose-captions': theme('colors.fg'),
-            '--tw-prose-kbd': theme('colors.fg'),
-            '--tw-prose-kbd-shadows': theme('colors.fg'),
-            '--tw-prose-code': theme('colors.fg'),
-            '--tw-prose-pre-code': theme('colors.fg'),
-            '--tw-prose-pre-bg': theme('colors.bg'),
-            '--tw-prose-th-borders': theme('colors.fg'),
-            '--tw-prose-td-borders': theme('colors.fg'),
-          },
-        },
-        // light: {
-        //   css: {
-        //     '--tw-prose-body': theme('colors.light-fg'),
-        //     '--tw-prose-headings': theme('colors.light-fg'),
-        //     '--tw-prose-lead': theme('colors.light-fg'),
-        //     '--tw-prose-links': theme('colors.light-fg'),
-        //     '--tw-prose-bold': theme('colors.light-fg'),
-        //     '--tw-prose-counters': theme('colors.light-gray'),
-        //     '--tw-prose-bullets': theme('colors.light-gray'),
-        //     '--tw-prose-hr': theme('colors.light-bgc'),
-        //     '--tw-prose-quotes': theme('colors.light-fg'),
-        //     '--tw-prose-quote-borders': theme('colors.light-bgc'),
-        //     '--tw-prose-captions': theme('colors.light-fg'),
-        //     '--tw-prose-kbd': theme('colors.light-fg'),
-        //     '--tw-prose-kbd-shadows': theme('colors.light-fg'),
-        //     '--tw-prose-code': theme('colors.light-fg'),
-        //     '--tw-prose-pre-code': theme('colors.light-fg'),
-        //     '--tw-prose-pre-bg': theme('colors.light-bg'),
-        //     '--tw-prose-th-borders': theme('colors.light-fg'),
-        //     '--tw-prose-td-borders': theme('colors.light-fg'),
-        //   },
-        // },
-      }),
+      typography: (theme: (field: string) => string) => {
+        // Light colors by default, dark colors via `prose-invert`.
+        const vars = {
+          body: 'fg',
+          headings: 'fg',
+          lead: 'fg',
+          links: 'fg',
+          bold: 'fg',
+          counters: 'gray',
+          bullets: 'gray',
+          hr: 'bgc',
+          quotes: 'fg',
+          'quote-borders': 'bgc',
+          captions: 'fg',
+          kbd: 'fg',
+          'kbd-shadows': 'fg',
+          code: 'fg',
+          'pre-code': 'fg',
+          'pre-bg': 'bg',
+          'th-borders': 'fg',
+          'td-borders': 'fg',
+        }
+        const css = Object.fromEntries(
+          Object.entries(vars).flatMap(([name, color]) => [
+            [`--tw-prose-${name}`, theme(`colors.light.${color}`)],
+            [`--tw-prose-invert-${name}`, theme(`colors.${color}`)],
+          ]),
+        )
+        return { DEFAULT: { css } }
+      },
     },
     container: {
       center: true,

@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { domain, fingerprint } from '$lib'
+  const domain = 'tedbyron.com'
+  const fingerprint = '9FD6F552F73CA25AEBA8C21E0BE1310591ECE7CF'
+  if (fingerprint.length % 4 !== 0) {
+    throw new Error('fingerprint has invalid length')
+  }
 
   const split = fingerprint.match(/.{4}/g)
 </script>

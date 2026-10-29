@@ -13,8 +13,11 @@ declare module '*.svx' {
   export default c satisfies Component
 }
 
+// mdsvex's bundled types are too old for current remark/rehype plugins.
 declare module 'mdsvex' {
-  export function mdsvex(options: unknown): unknown
+  export function mdsvex(
+    options: unknown,
+  ): import('svelte/compiler').PreprocessorGroup
 }
 
 declare module 'remark-abbr'

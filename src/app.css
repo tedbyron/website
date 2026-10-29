@@ -32,11 +32,11 @@
   }
 
   :root {
-    @apply min-h-dvh min-w-80 bg-light-bg text-light-fg transition-colors dark:bg-bg dark:text-fg;
+    @apply min-h-dvh min-w-80 bg-light-bg text-light-fg dark:bg-bg dark:text-fg;
   }
 
   a {
-    @apply underline decoration-light-orange decoration-[1.3px] underline-offset-2 hover:text-light-orange dark:decoration-orange dark:hover:text-orange;
+    @apply underline decoration-light-orange decoration-[1.5px] underline-offset-2 hover:text-light-orange dark:decoration-orange dark:hover:text-orange;
   }
 
   h2 > a {
@@ -63,10 +63,6 @@
 }
 
 @layer components {
-  .underline-link {
-    @apply underline decoration-light-orange decoration-[1.3px] underline-offset-2 dark:decoration-orange;
-  }
-
   .prose {
     p {
       @apply hyphens-none;

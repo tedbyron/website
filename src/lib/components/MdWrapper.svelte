@@ -14,7 +14,7 @@
 <article
   class={[
     className,
-    'container prose flex max-w-[80ch] flex-col px-2 pt-4',
+    'container prose flex max-w-[80ch] flex-col px-2 pt-4 dark:prose-invert',
     'prose-p:hyphens-auto prose-p:text-pretty prose-p:break-words',
     'prose-a:decoration-light-orange prose-a:decoration-[1.3px] prose-a:underline-offset-2',
     'dark:prose-a:decoration-orange',

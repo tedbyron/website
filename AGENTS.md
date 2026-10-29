@@ -1,0 +1,81 @@
+# AGENTS.md
+
+Personal website built with SvelteKit 2 (Svelte 5 runes), Tailwind CSS 3, and
+mdsvex, deployed to Cloudflare with `@sveltejs/adapter-cloudflare`.
+
+## Setup and commands
+
+The dev shell comes from `flake.nix` via direnv (`.envrc`); Node 22+ is
+required.
+
+- `npm run dev`: start the Vite dev server on port 5173
+- `npm run build`: production build, which prerenders the site
+- `npm run check`: `svelte-kit sync` and `svelte-check`
+- `npm run lint`: Prettier check and ESLint
+- `npm run format`: format everything with Prettier
+
+Run `npm run lint` and `npm run check` before calling a change done. There are
+no tests.
+
+## Layout
+
+- `src/routes/`: pages; `+layout.svelte` holds the header, footer, and `<head>`
+  tags
+- `src/routes/(pgp)/`: the PGP page (`index.svx`) and the WKD/HKP key routes
+- `src/lib/index.ts`: shared helpers (`formatTitle`, `ErrorMessage`, ...) and
+  re-exports of `src/lib/posts`
+- `src/lib/posts/`: notes as Markdown files in `YYYY/` folders, plus `index.ts`,
+  which defines `postTags` and loads post modules
+- `src/lib/components/`: shared components, aliased as `$components`
+- `src/params/`: route param matchers for posts and tags
+- `src/app.css`: global base styles and fonts
+- `tailwind.config.ts`: color palette and typography (prose) colors
+
+Keep values local to the file that uses them; only move something into `$lib`
+when more than one place needs it.
+
+## Notes (posts)
+
+Posts are `.md`, `.svelte.md`, or `.svx` files with frontmatter:
+
+```yaml
+---
+title: Post title
+description: Optional one-line summary
+date: 2025-05-05T23:00:00-04:00
+tags:
+  - zsh
+published: true
+---
+```
+
+Every tag must be a key of `postTags` in `src/lib/posts/index.ts`. Posts without
+`published: true` return 404.
+
+## Conventions
+
+- Formatting is Prettier: no semicolons, single quotes, and `proseWrap: always`
+  (Markdown wraps at 80 columns). `prettier-plugin-tailwindcss` sorts class
+  lists, so don't hand-order them.
+- Internal links use `resolve()` from `$app/paths`, and external links need
+  `rel="external"`. ESLint's `svelte/no-navigation-without-resolve` enforces
+  both.
+- Icons are Tabler icons imported from `~icons/tabler/<name>` (unplugin-icons).
+  Decorative icons get `aria-hidden`.
+- All `<a>` elements are underlined by the base style in `app.css`. To keep an
+  icon out of the underline, put the label in a `<span>` inside a flex `<a>`.
+- Theme follows `prefers-color-scheme` (Tailwind `darkMode: 'media'`); there is
+  no theme toggle. Every color needs both variants: `light-*` by default and the
+  plain name under `dark:`, e.g. `text-light-orange dark:text-orange`. Write
+  class names out in full so Tailwind can find them.
+- Check text color contrast against both backgrounds (WCAG AA, 4.5:1 for normal
+  text) when picking palette colors.
+- `src/index.d.ts` stubs the `mdsvex` module types on purpose: mdsvex's bundled
+  types are too old for the current remark/rehype plugins. Don't remove it.
+- A content security policy is set in `svelte.config.js`. Inline scripts and
+  third-party origins are blocked unless added there.
+
+## Git
+
+Commit subjects are short and imperative, starting with a capital letter (e.g.
+`Fix page source link`). Don't add `Co-Authored-By` or other AI attribution.
