@@ -4,9 +4,9 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: Curlio;
-  --font-serif: Curlio;
-  --font-mono: Curlio;
+  --font-sans: Curlio, ui-monospace, monospace;
+  --font-serif: Curlio, ui-monospace, monospace;
+  --font-mono: Curlio, ui-monospace, monospace;
 
   --color-bg: #282828;
   --color-bgc: #3c3836;

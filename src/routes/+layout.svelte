@@ -2,6 +2,7 @@
   import { resolve } from '$app/paths'
   import { page } from '$app/state'
   import Curlio from '#lib/assets/fonts/Iosevkacurlio-normal.woff2'
+  import CurlioBold from '#lib/assets/fonts/Iosevkacurlio-normalBold.woff2'
   import type { Snippet } from 'svelte'
   import GitHub from '~icons/tabler/brand-github'
   import '../app.css'
@@ -33,13 +34,15 @@
   <meta name="description" content={page.data.description} />
   <meta name="color-scheme" content="dark light" />
 
-  <link
-    rel="preload"
-    href={Curlio}
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
+  {#each [Curlio, CurlioBold] as href (href)}
+    <link
+      rel="preload"
+      {href}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+  {/each}
 </svelte:head>
 
 <div class="flex min-h-dvh flex-col">
