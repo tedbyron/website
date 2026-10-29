@@ -9,10 +9,10 @@ export const GET: RequestHandler = ({ url }) => {
     return new Response(key, {
       headers: {
         'cache-control': 'max-age=86400, public',
-        'content-type': 'text/plain',
+        'content-type': 'application/pgp-keys',
       },
     })
   }
 
-  return error(405)
+  error(501)
 }

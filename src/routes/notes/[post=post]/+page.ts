@@ -1,30 +1,29 @@
 import {
   ErrorMessage,
-  findPost,
   formatDate,
   formatTitle,
-  postModules,
-  postPath,
+  getPostsMetadata,
+  posts,
 } from '#lib'
 import { error } from '@sveltejs/kit'
 import type { EntryGenerator, PageLoad } from './$types'
 
 export const load: PageLoad = async ({ params }) => {
-  const match = findPost(params.post)
-  const post = await match?.[1]()
+  const entry = posts.get(params.post)
+  const post = await entry?.load()
 
-  if (!post?.metadata.published) {
+  if (entry === undefined || !post?.metadata.published) {
     error(404, ErrorMessage.NotFound)
   }
 
   return {
     title: formatTitle(post.metadata.title),
-    description: post.metadata.description,
-    sourcePath: match?.[0],
+    description: post.metadata.description ?? post.metadata.title,
+    sourcePath: entry.path,
     component: post.default,
     metadata: { ...post.metadata, date: formatDate(post.metadata.date) },
   }
 }
 
-export const entries: EntryGenerator = () =>
-  Object.keys(postModules).map((path) => ({ post: postPath(path) }))
+export const entries: EntryGenerator = async () =>
+  (await getPostsMetadata()).map(({ slug }) => ({ post: slug }))

@@ -9,8 +9,8 @@
   <h1>Tags</h1>
 
   <ul>
-    {#each data.postTags as [tag, { class: className }] (tag)}
-      <li><TagLink {tag} class={className} /></li>
+    {#each data.postTags as tag (tag)}
+      <li><TagLink {tag} /></li>
     {/each}
   </ul>
 </div>

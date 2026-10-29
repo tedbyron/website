@@ -23,14 +23,9 @@ export default defineConfig(
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
-        ecmaVersion: 2020,
-        ecmaFeatures: {
-          impliedStrict: true,
-        },
       },
       globals: {
         ...globals.browser,
-        ...globals.es2017,
         App: true,
       },
     },

@@ -5,5 +5,5 @@ export const prerender = true
 
 export const load: LayoutLoad = () => ({
   title: defaultTitle,
-  description: 'Teddy Byron',
+  description: "Teddy Byron's personal website",
 })

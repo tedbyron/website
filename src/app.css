@@ -106,8 +106,8 @@
     @apply decoration-[1.5px] underline-offset-[2.6px];
   }
 
-  code:not([class*='language-']),
-  samp:not([class*='language-']) {
+  :not(pre) > code,
+  :not(pre) > samp {
     @apply rounded-[5px] bg-light-bgc px-1 py-[1.75px] dark:bg-bgc;
   }
 }

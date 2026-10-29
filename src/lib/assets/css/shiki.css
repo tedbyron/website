@@ -33,6 +33,6 @@
     --shiki-token-changed: var(--color-yellow);
   }
 
-  @apply overflow-auto rounded-md px-3 py-2 text-left break-normal hyphens-auto whitespace-pre;
+  @apply overflow-auto rounded-md px-3 py-2 text-left whitespace-pre;
   tab-size: 4;
 }

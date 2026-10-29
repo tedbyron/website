@@ -22,7 +22,7 @@ no tests.
 
 - `src/routes/`: pages; `+layout.svelte` holds the header, footer, and `<head>`
   tags
-- `src/routes/(pgp)/`: the PGP page (`index.svx`) and the WKD/HKP key routes
+- `src/routes/(pgp)/`: the PGP page (`index.svx`) and the HKP key routes
 - `src/lib/index.ts`: shared helpers (`formatTitle`, `ErrorMessage`, ...) and
   re-exports of `src/lib/posts`
 - `src/lib/posts/`: notes as Markdown files in `YYYY/` folders, plus `tags.ts`,

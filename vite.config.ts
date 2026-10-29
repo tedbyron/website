@@ -79,24 +79,14 @@ export default defineConfig(() => {
             'base-uri': ['self'],
             'connect-src': ['self', 'cloudflareinsights.com'],
             'default-src': ['self', 'data:'],
-            'script-src': [
-              'self',
-              'ajax.cloudflare.com',
-              'static.cloudflareinsights.com',
-            ],
+            'script-src': ['self', 'static.cloudflareinsights.com'],
             'style-src': ['self', 'unsafe-inline'],
           },
         },
-        prerender: {
-          handleHttpError: (err) => {
-            throw new Error(JSON.stringify(err))
-          },
-        },
       }),
-      icons({ autoInstall: true, compiler: 'svelte', scale: 1 }),
+      icons({ compiler: 'svelte', scale: 1 }),
     ],
     server: {
-      fs: { allow: ['..'] },
       host: true,
       strictPort: true,
     },

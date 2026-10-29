@@ -2,4 +2,4 @@
 # sync with src/hooks.server.ts, which sets them on responses from the worker.
 /*
   X-Frame-Options: DENY
-  Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+  Referrer-Policy: strict-origin-when-cross-origin

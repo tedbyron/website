@@ -1,21 +1,23 @@
-import { formatTitle, postsMetadata, postTags } from '#lib'
+import { ErrorMessage, formatTitle, getPostsMetadata, getUsedTags } from '#lib'
+import { error } from '@sveltejs/kit'
 import type { EntryGenerator, PageLoad } from './$types'
 
 export const load: PageLoad = async ({ params }) => {
-  const postsMeta = await postsMetadata
+  const postsMetadata = (await getPostsMetadata()).filter((post) =>
+    post.tags.includes(params.tag),
+  )
+
+  if (postsMetadata.length === 0) {
+    error(404, ErrorMessage.NotFound)
+  }
 
   return {
-    title: formatTitle('Tags'),
-    description: 'Post tags',
+    title: formatTitle(`#${params.tag}`),
+    description: `Notes about #${params.tag}`,
     postTag: params.tag,
-    postsMetadata: postsMeta.filter(
-      (post) => post.published && post.tags.includes(params.tag),
-    ),
+    postsMetadata,
   }
 }
 
-export const entries: EntryGenerator = () => {
-  return Object.keys(postTags).map((tag) => ({
-    tag: tag as keyof typeof postTags,
-  }))
-}
+export const entries: EntryGenerator = async () =>
+  (await getUsedTags()).map((tag) => ({ tag }))

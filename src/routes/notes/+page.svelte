@@ -2,7 +2,7 @@
   import PostList from '#components/PostList.svelte'
   import type { PageProps } from './$types'
 
-  let { data }: PageProps = $props()
+  const { data }: PageProps = $props()
 </script>
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">

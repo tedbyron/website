@@ -5,9 +5,8 @@ import type { Handle } from '@sveltejs/kit/hooks'
 export const handle: Handle = async ({ event, resolve }) => {
   event.setHeaders({
     'x-frame-options': 'DENY',
-    'referrer-policy':
-      'origin-when-cross-origin, strict-origin-when-cross-origin',
+    'referrer-policy': 'strict-origin-when-cross-origin',
   })
 
-  return await resolve(event)
+  return resolve(event)
 }

@@ -7,14 +7,6 @@
   import Lock from '~icons/tabler/lock'
   import Mail from '~icons/tabler/mail'
 
-  type Work = Partial<{
-    title: string
-    company: { name: string; url?: string }
-    location: string
-  }>
-
-  const work: Work = {}
-
   const links = [
     {
       label: 'github',
@@ -46,27 +38,7 @@
 
 <div class="container flex flex-col items-center gap-8 px-2 pt-4">
   <!-- Heading -->
-  <div class="flex flex-col gap-4 text-center">
-    <h1>Teddy Byron</h1>
-
-    {#if Object.keys(work).length}
-      <span>
-        {#if work.title}
-          {work.title}
-        {/if}
-
-        {#if work.company?.url && work.company.name}
-          @ <a href={work.company.url} rel="external">{work.company.name}</a>
-        {:else if work.company?.name}
-          @ {work.company.name}
-        {/if}
-
-        {#if work.location}
-          in {work.location}
-        {/if}
-      </span>
-    {/if}
-  </div>
+  <h1>Teddy Byron</h1>
 
   <!-- Links -->
   <div class="flex flex-col gap-4">
@@ -76,7 +48,7 @@
       </a>
     {/each}
 
-    <a href={resolve('pgp')} class="flex items-center gap-2">
+    <a href={resolve('/(pgp)/pgp')} class="flex items-center gap-2">
       {@render linkContent(Lock, 'pgp')}
     </a>
   </div>

@@ -1,25 +1,18 @@
 <script lang="ts">
   import { resolve } from '$app/paths'
   import TagLink from '#components/TagLink.svelte'
-  import { formatDate, postTags } from '#lib'
+  import { formatDate } from '#lib'
 
   interface Props {
     postsMetadata: App.PostMetadataParsed[]
   }
 
   const { postsMetadata }: Props = $props()
-  const tags = (post: App.PostMetadataParsed) =>
-    [...new Set(post.tags)]
-      .map<[keyof App.PostTags, App.PostTags[keyof App.PostTags]]>((tag) => [
-        tag,
-        postTags[tag as keyof typeof postTags],
-      ])
-      .toSorted((a, b) => a[0].localeCompare(b[0], 'en'))
 </script>
 
 <ul>
   {#each postsMetadata as post (post.slug)}
-    <li class="grid grid-cols-[auto_1fr] grid-rows-[repeat(2,auto)] gap-x-4">
+    <li class="grid grid-cols-[auto_1fr] gap-x-4">
       <!-- Post date -->
       <span class="text-light-gray dark:text-gray">{formatDate(post.date)}</span
       >
@@ -27,22 +20,18 @@
       <!-- Post title and description -->
       <a
         href={resolve('/notes/[post=post]', { post: post.slug })}
-        class="flex gap-4 no-underline"
+        class="flex flex-col no-underline"
       >
-        <div class="flex flex-col">
-          <span class="mb-1 text-lg leading-tight font-bold">{post.title}</span>
-          {#if post.description}
-            <span>{post.description}</span>
-          {/if}
-        </div>
+        <span class="mb-1 text-lg leading-tight font-bold">{post.title}</span>
+        {#if post.description}
+          <span>{post.description}</span>
+        {/if}
       </a>
 
-      <div></div>
-
       <!-- Post tags -->
-      <div class="flex gap-2">
-        {#each tags(post) as [tag, { class: className }] (tag)}
-          <TagLink {tag} class={className} />
+      <div class="col-start-2 flex gap-2">
+        {#each post.tags as tag (tag)}
+          <TagLink {tag} />
         {/each}
       </div>
     </li>

@@ -1,16 +1,14 @@
+// `*.md` also covers `*.svelte.md`.
 declare module '*.md' {
-  import { Component } from 'svelte'
-  export default c satisfies Component
-}
-
-declare module '*.svelte.md' {
-  import { Component } from 'svelte'
-  export default c satisfies Component
+  import type { Component } from 'svelte'
+  const component: Component
+  export default component
 }
 
 declare module '*.svx' {
-  import { Component } from 'svelte'
-  export default c satisfies Component
+  import type { Component } from 'svelte'
+  const component: Component
+  export default component
 }
 
 // mdsvex's bundled types are too old for current remark/rehype plugins.
@@ -20,5 +18,3 @@ declare module 'mdsvex' {
   ): import('svelte/compiler').PreprocessorGroup
   export function escapeSvelte(str: string): string
 }
-
-declare module 'remark-abbr'
