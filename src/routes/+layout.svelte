@@ -16,13 +16,19 @@
 
   const base = 'https://github.com/tedbyron/website/blob/main'
   const routes = base + '/src/routes'
+  // Routes whose content lives in an index.svx next to +page.svelte
+  const svxRoutes = new Set(
+    Object.keys(import.meta.glob('./**/index.svx')).map((path) =>
+      path.slice(1, -'/index.svx'.length),
+    ),
+  )
   const source = $derived(
     page.data.sourcePath === undefined
       ? page.route.id === null
         ? `${routes}/+error.svelte`
         : page.route.id === '/'
           ? `${routes}/+page.svelte`
-          : `${routes}${encodeURI(page.route.id)}/+page.svelte`
+          : `${routes}${encodeURI(page.route.id)}/${svxRoutes.has(page.route.id) ? 'index.svx' : '+page.svelte'}`
       : base + page.data.sourcePath,
   )
   const root = $derived(page.route.id === '/')
