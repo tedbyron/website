@@ -77,6 +77,8 @@
 
   const dark = new MediaQuery('(prefers-color-scheme: dark)')
   let visible = $state(false)
+  // Counts restored WebGL contexts, to start over on a new canvas.
+  let restores = $state(0)
 
   // Random per blob, between .55 and .95, stored as 1 / size for the shader.
   const inverseSizes = Array.from(
@@ -213,16 +215,23 @@
     // Also runs once right away, for the first frame.
     const observer = new ResizeObserver(resize)
     observer.observe(canvas)
-    canvas.addEventListener('webglcontextlost', () => (visible = false))
 
-    // With reduced motion, the first frame stays as a still background.
-    $effect(() => {
-      if (prefersReducedMotion.current) return
-      lastFrameTime = performance.now()
-      rafId = requestAnimationFrame(tick)
-      return () => cancelAnimationFrame(rafId)
+    // The GPU can be lost, like after a driver reset or when a phone reclaims
+    // memory from a background tab. Hide until it's back, then start over.
+    const listeners = new AbortController()
+    canvas.addEventListener(
+      'webglcontextlost',
+      (event) => {
+        // Lets the browser restore the context.
+        event.preventDefault()
+        visible = false
+      },
+      { signal: listeners.signal },
+    )
+    canvas.addEventListener('webglcontextrestored', () => restores++, {
+      signal: listeners.signal,
     })
-
+    rafId = requestAnimationFrame(tick)
     // Fade in once the first frame has rendered.
     requestAnimationFrame(() => (visible = !gl.isContextLost()))
 
@@ -235,8 +244,10 @@
     })
 
     return () => {
+      cancelAnimationFrame(rafId)
       observer.disconnect()
       pixelRatio?.removeEventListener('change', resize)
+      listeners.abort()
       // Frees the GPU memory now instead of whenever the canvas is collected.
       gl.getExtension('WEBGL_lose_context')?.loseContext()
       visible = false
@@ -244,13 +255,18 @@
   }
 </script>
 
-<!-- Sized to the largest viewport so that phones showing or hiding the address
+<!-- Not shown with reduced motion: without the animation, it's not much to look
+at. Sized to the largest viewport so that phones showing or hiding the address
 bar while scrolling don't resize it. -->
-<canvas
-  {@attach grain}
-  aria-hidden="true"
-  class={[
-    'fixed top-0 left-0 -z-10 h-lvh w-full transition-opacity duration-1000',
-    visible ? 'opacity-100' : 'opacity-0',
-  ]}
-></canvas>
+{#if !prefersReducedMotion.current}
+  {#key restores}
+    <canvas
+      {@attach grain}
+      aria-hidden="true"
+      class={[
+        'fixed top-0 left-0 -z-10 h-lvh w-full transition-opacity duration-1000',
+        visible ? 'opacity-100' : 'opacity-0',
+      ]}
+    ></canvas>
+  {/key}
+{/if}
