@@ -82,7 +82,7 @@ Every tag must be a key of `postTags` in `src/lib/posts/tags.ts`. Posts without
   Tailwind can find them.
 - CSS files other than `app.css` that use `@apply` or theme values need
   `@reference '<path>/app.css';` at the top (see
-  `src/lib/assets/css/prism.css`).
+  `src/lib/assets/css/shiki.css`).
 - Check text color contrast against both backgrounds (WCAG AA, 4.5:1 for normal
   text) when picking palette colors.
 - `src/index.d.ts` stubs the `mdsvex` module types on purpose: mdsvex's bundled

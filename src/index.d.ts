@@ -18,6 +18,7 @@ declare module 'mdsvex' {
   export function mdsvex(
     options: unknown,
   ): import('svelte/compiler').PreprocessorGroup
+  export function escapeSvelte(str: string): string
 }
 
 declare module 'remark-abbr'

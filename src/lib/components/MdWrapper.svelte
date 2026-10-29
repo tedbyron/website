@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte'
 
-  import '#lib/assets/css/prism.css'
+  import '#lib/assets/css/shiki.css'
 
   interface Props {
     children?: Snippet

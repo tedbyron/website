@@ -1,0 +1,38 @@
+@reference '../../../app.css';
+
+/* Colors for Shiki's css-variables theme (see vite.config.ts). */
+.shiki {
+  --shiki-foreground: var(--color-light-fg);
+  --shiki-background: var(--tw-prose-pre-bg);
+  --shiki-token-comment: var(--color-light-gray);
+  --shiki-token-constant: var(--color-light-aqua);
+  --shiki-token-string: var(--color-light-green);
+  --shiki-token-string-expression: var(--color-light-green);
+  --shiki-token-keyword: var(--color-light-blue);
+  --shiki-token-function: var(--color-light-yellow);
+  --shiki-token-parameter: var(--color-light-fg);
+  --shiki-token-punctuation: var(--color-light-fg);
+  --shiki-token-link: var(--color-light-orange);
+  --shiki-token-inserted: var(--color-light-green);
+  --shiki-token-deleted: var(--color-light-red);
+  --shiki-token-changed: var(--color-light-yellow);
+
+  @variant dark {
+    --shiki-foreground: var(--color-fg);
+    --shiki-token-comment: var(--color-gray);
+    --shiki-token-constant: var(--color-aqua);
+    --shiki-token-string: var(--color-green);
+    --shiki-token-string-expression: var(--color-green);
+    --shiki-token-keyword: var(--color-blue);
+    --shiki-token-function: var(--color-yellow);
+    --shiki-token-parameter: var(--color-fg);
+    --shiki-token-punctuation: var(--color-fg);
+    --shiki-token-link: var(--color-orange);
+    --shiki-token-inserted: var(--color-green);
+    --shiki-token-deleted: var(--color-red);
+    --shiki-token-changed: var(--color-yellow);
+  }
+
+  @apply overflow-auto rounded-md px-3 py-2 text-left break-normal hyphens-auto whitespace-pre;
+  tab-size: 4;
+}
