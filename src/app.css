@@ -1,8 +1,94 @@
-@import './lib/assets/fonts/fonts.css';
+@import 'tailwindcss';
+@import './lib/assets/fonts/fonts.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: Curlio;
+  --font-serif: Curlio;
+  --font-mono: Curlio;
+
+  --color-bg: #282828;
+  --color-bgc: #3c3836;
+  --color-gray: #7c6f64;
+  --color-fg: #d4be98;
+  --color-red: #ea6962;
+  --color-orange: #e78a4e;
+  --color-yellow: #d8a657;
+  --color-green: #a9b665;
+  --color-aqua: #89b482;
+  --color-blue: #7daea3;
+  --color-purple: #d3869b;
+
+  --color-light-bg: #fbf1c7;
+  --color-light-bgc: #f2e5bc;
+  --color-light-gray: #a89984;
+  --color-light-fg: #654735;
+  --color-light-red: #c14a4a;
+  --color-light-orange: #c35e0a;
+  --color-light-yellow: #b47109;
+  --color-light-green: #6c782e;
+  --color-light-aqua: #4c7a5d;
+  --color-light-blue: #45707a;
+  --color-light-purple: #945e80;
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+/* Light colors by default, dark colors via `prose-invert`. */
+@utility prose {
+  --tw-prose-body: var(--color-light-fg);
+  --tw-prose-headings: var(--color-light-fg);
+  --tw-prose-lead: var(--color-light-fg);
+  --tw-prose-links: var(--color-light-fg);
+  --tw-prose-bold: var(--color-light-fg);
+  --tw-prose-counters: var(--color-light-gray);
+  --tw-prose-bullets: var(--color-light-gray);
+  --tw-prose-hr: var(--color-light-bgc);
+  --tw-prose-quotes: var(--color-light-fg);
+  --tw-prose-quote-borders: var(--color-light-bgc);
+  --tw-prose-captions: var(--color-light-fg);
+  --tw-prose-kbd: var(--color-light-fg);
+  --tw-prose-kbd-shadows: var(--color-light-fg);
+  --tw-prose-code: var(--color-light-fg);
+  --tw-prose-pre-code: var(--color-light-fg);
+  --tw-prose-pre-bg: var(--color-light-bg);
+  --tw-prose-th-borders: var(--color-light-fg);
+  --tw-prose-td-borders: var(--color-light-fg);
+
+  --tw-prose-invert-body: var(--color-fg);
+  --tw-prose-invert-headings: var(--color-fg);
+  --tw-prose-invert-lead: var(--color-fg);
+  --tw-prose-invert-links: var(--color-fg);
+  --tw-prose-invert-bold: var(--color-fg);
+  --tw-prose-invert-counters: var(--color-gray);
+  --tw-prose-invert-bullets: var(--color-gray);
+  --tw-prose-invert-hr: var(--color-bgc);
+  --tw-prose-invert-quotes: var(--color-fg);
+  --tw-prose-invert-quote-borders: var(--color-bgc);
+  --tw-prose-invert-captions: var(--color-fg);
+  --tw-prose-invert-kbd: var(--color-fg);
+  --tw-prose-invert-kbd-shadows: var(--color-fg);
+  --tw-prose-invert-code: var(--color-fg);
+  --tw-prose-invert-pre-code: var(--color-fg);
+  --tw-prose-invert-pre-bg: var(--color-bg);
+  --tw-prose-invert-th-borders: var(--color-fg);
+  --tw-prose-invert-td-borders: var(--color-fg);
+
+  p {
+    @apply hyphens-none;
+  }
+
+  h2 > a,
+  h3 > a,
+  h4 > a,
+  h5 > a,
+  h6 > a {
+    @apply font-bold no-underline hover:underline;
+  }
+}
 
 @layer base {
   :root {
@@ -23,31 +109,5 @@
   code:not([class*='language-']),
   samp:not([class*='language-']) {
     @apply rounded-[5px] bg-light-bgc px-1 py-[1.75px] dark:bg-bgc;
-  }
-
-  .animate,
-  .animate-in,
-  .animate-out,
-  .animate-spin,
-  .animate-ping,
-  .animate-pulse,
-  .animate-bounce {
-    @apply motion-reduce:animate-none;
-  }
-}
-
-@layer components {
-  .prose {
-    p {
-      @apply hyphens-none;
-    }
-
-    h2 > a,
-    h3 > a,
-    h4 > a,
-    h5 > a,
-    h6 > a {
-      @apply font-bold no-underline hover:underline;
-    }
   }
 }

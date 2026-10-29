@@ -1,6 +1,8 @@
+@reference '../../../app.css';
+
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply hyphens-auto whitespace-pre break-normal text-left;
+  @apply text-left break-normal hyphens-auto whitespace-pre;
   word-wrap: normal;
   tab-size: 4;
 }

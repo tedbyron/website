@@ -52,7 +52,7 @@
     {:else}
       <a href={resolve('/')} aria-label="home" class="group">
         <span
-          class="block h-8 w-8 rounded-full bg-light-orange outline-2 outline-offset-1 outline-light-orange group-hover:outline dark:bg-orange dark:outline-orange"
+          class="block h-8 w-8 rounded-full bg-light-orange outline-offset-1 outline-light-orange group-hover:outline-2 dark:bg-orange dark:outline-orange"
         ></span>
       </a>
     {/if}
@@ -62,7 +62,7 @@
     {@render children?.()}
   </main>
 
-  <footer class="mx-auto mb-4 mt-8">
+  <footer class="mx-auto mt-8 mb-4">
     <a href={source} rel="external" class="inline-flex items-center gap-1">
       <GitHub aria-hidden />
       <span>source</span>

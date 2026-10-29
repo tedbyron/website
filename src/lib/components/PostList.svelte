@@ -30,7 +30,7 @@
         class="flex gap-4 no-underline"
       >
         <div class="flex flex-col">
-          <span class="mb-1 text-lg font-bold leading-tight">{post.title}</span>
+          <span class="mb-1 text-lg leading-tight font-bold">{post.title}</span>
           {#if post.description}
             <span>{post.description}</span>
           {/if}

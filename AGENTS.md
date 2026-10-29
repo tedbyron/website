@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal website built with SvelteKit 3 (Svelte 5 runes), Tailwind CSS 3, and
+Personal website built with SvelteKit 3 (Svelte 5 runes), Tailwind CSS 4, and
 mdsvex, deployed to Cloudflare with `@sveltejs/adapter-cloudflare`.
 
 ## Setup and commands
@@ -34,12 +34,11 @@ no tests.
 - `vite.config.ts`: Vite and SvelteKit config (there is no `svelte.config.js`)
 - `_headers`: Cloudflare response headers for static and prerendered files;
   `src/hooks.server.ts` sets the same ones on worker responses
-- `src/app.css`: global base styles
+- `src/app.css`: Tailwind config (`@theme` color palette and fonts, typography
+  (prose) colors) and global base styles
 - `src/lib/assets/fonts/`: Curlio WOFF2s (from the dotfiles curlio flake's
   `all-web-latin` package) and `fonts.css`, which declares a `@font-face` for
-  each one. `app.css` imports it so cssnano sees the fonts are used; importing
-  it on its own lets cssnano drop every rule
-- `tailwind.config.ts`: color palette and typography (prose) colors
+  each one and is imported by `app.css`
 
 Keep values local to the file that uses them; only move something into `#lib`
 when more than one place needs it.
@@ -74,10 +73,14 @@ Every tag must be a key of `postTags` in `src/lib/posts/tags.ts`. Posts without
   Decorative icons get `aria-hidden`.
 - All `<a>` elements are underlined by the base style in `app.css`. To keep an
   icon out of the underline, put the label in a `<span>` inside a flex `<a>`.
-- Theme follows `prefers-color-scheme` (Tailwind `darkMode: 'media'`); there is
-  no theme toggle. Every color needs both variants: `light-*` by default and the
-  plain name under `dark:`, e.g. `text-light-orange dark:text-orange`. Write
-  class names out in full so Tailwind can find them.
+- Theme follows `prefers-color-scheme` (Tailwind's default `dark:` variant);
+  there is no theme toggle. Every color needs both variants: `light-*` by
+  default and the plain name under `dark:`, e.g.
+  `text-light-orange dark:text-orange`. Write class names out in full so
+  Tailwind can find them.
+- CSS files other than `app.css` that use `@apply` or theme values need
+  `@reference '<path>/app.css';` at the top (see
+  `src/lib/assets/css/prism.css`).
 - Check text color contrast against both backgrounds (WCAG AA, 4.5:1 for normal
   text) when picking palette colors.
 - `src/index.d.ts` stubs the `mdsvex` module types on purpose: mdsvex's bundled

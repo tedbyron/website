@@ -5,9 +5,6 @@
   "engines": {
     "node": ">=26"
   },
-  "browserslist": [
-    "defaults"
-  ],
   "prettier": {
     "semi": false,
     "singleQuote": true,
@@ -23,7 +20,8 @@
           "parser": "svelte"
         }
       }
-    ]
+    ],
+    "tailwindStylesheet": "./src/app.css"
   },
   "scripts": {
     "prepare": "svelte-kit sync",
@@ -42,16 +40,13 @@
     "@sveltejs/enhanced-img": "^1.0.0",
     "@sveltejs/kit": "^3.1.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.15.17",
-    "autoprefixer": "^10.4.21",
-    "cssnano": "^7.0.7",
-    "cssnano-preset-advanced": "^7.0.7",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-svelte": "^3.23.1",
     "mdsvex": "^0.12.6",
-    "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^4.1.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
@@ -60,8 +55,7 @@
     "remark-github": "^12.0.0",
     "svelte": "^5.57.3",
     "svelte-check": "^4.7.7",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.1",
     "typescript-svelte-plugin": "^0.3.52",

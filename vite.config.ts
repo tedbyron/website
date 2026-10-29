@@ -5,10 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import remarkGithub from 'remark-github'
 import { sveltekit } from '@sveltejs/kit/vite'
-import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
-import advancedPreset from 'cssnano-preset-advanced'
-import tailwindcss from 'tailwindcss'
+import tailwindcss from '@tailwindcss/vite'
 import icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 import { enhancedImages } from '@sveltejs/enhanced-img'
@@ -16,28 +13,8 @@ import { enhancedImages } from '@sveltejs/enhanced-img'
 // Matches extensions in #lib/posts.
 const mdsvexExtensions = ['.md', '.svelte.md', '.svx']
 
-export default defineConfig(({ mode }) => {
-  const dev = mode === 'development'
-
+export default defineConfig(() => {
   return {
-    css: {
-      postcss: {
-        plugins: [
-          tailwindcss(),
-          autoprefixer(),
-          ...(dev
-            ? []
-            : [
-                cssnano({
-                  preset: advancedPreset({
-                    convertValues: { length: true },
-                    discardComments: { removeAll: true },
-                  }),
-                }),
-              ]),
-        ],
-      },
-    },
     build: {
       rolldownOptions: {
         output: {
@@ -50,6 +27,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     plugins: [
+      tailwindcss(),
       enhancedImages(),
       sveltekit({
         extensions: ['.svelte', ...mdsvexExtensions],
